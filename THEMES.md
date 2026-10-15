@@ -13,30 +13,38 @@
 
 ---
 
-## 主题：企业 Agent 与 Agentic 工作流
+## 主题：OpenAI 监管与诉讼
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
-  - 2026-10-15 — Google 推出 Gemini Enterprise Agent Platform，称其为企业 agent 的“mission control”。【已证实】([来源](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/))
-  - 2026-10-15 — AWS 发布基于 Amazon Bedrock AgentCore 的自改进文档处理方案，8 个 agent 协作处理可变布局单据。【已证实】([来源](https://aws.amazon.com/blogs/machine-learning/build-self-improving-document-processing-using-amazon-bedrock-agentcore/))
-  - 2026-10-15 — OpenAI 刊出 Amp 案例，展示 GPT-6 Astra 等模型将 agent 从编码扩展到写作、设计、营销与语音协调。【已证实】([来源](https://openai.com/index/amp-beyond-coding/))
-  - 2026-10-15 — Nous Research 开源 Hermes Agent，强调自改进学习循环与跨平台接入。【已证实】([来源](https://github.com/NousResearch/hermes-agent))
+  - 2026-10-15 — 美国爱荷华、堪萨斯、内布拉斯加、西弗吉尼亚、阿肯色、亚利桑那、爱达荷、蒙大拿八个州起诉 OpenAI，指控 ChatGPT 危害未成年人并误导消费者【已证实】([The Verge](https://www.theverge.com/ai-artificial-intelligence/1011500/openai-state-lawsuits-chatgpt-safety))
 
-## 主题：AI 生成代码
+## 主题：EU AI Act 执法
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
-  - 2026-10-15 — Google 披露工程师批准的新代码中 75% 由 AI 生成，较去年秋季的 50% 上升。【已证实】([来源](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/))
+  - 2026-10-15 — 欧盟委员会 AI Office 就 OpenAI 与 Anthropic 的失控 agent 事件启动 AI Act 执法，争议焦点为测试阶段是否适用【已证实】([Euronews](https://www.euronews.com/2026/10/14/eus-ai-rules-face-first-enforcement-test-over-lab-incidents))
 
-## 主题：AI 硬件与算力
+## 主题：GitHub Copilot 模型池与开发者工具定价
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-15 — GitHub Copilot 正式上线 Google Gemini 4 Argon，按 provider list pricing 用量计费，覆盖 Pro+/Max/Business/Enterprise【已证实】([GitHub Changelog](https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot/))
+
+## 主题：AI 数据中心硬件与开放标准
 - 状态：长期跟踪
 - 时间线（最新在最上，最多 12 条）：
-  - 2026-10-15 — Google 发布第八代 TPU，首次分拆为训练专用 TPU 8t 与推理专用 TPU 8i。【已证实】([来源](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/))
+  - 2026-10-15 — NVIDIA 在 OCP 峰会贡献 Vera Rubin 机架设计、更新 MGX 1.2，与 Cisco 推出 USFP 光模块标准，并开源 DSX OS 组件【已证实】([NVIDIA Blog](https://blogs.nvidia.com/blog/ocp-global-summit-vera-rubin-scale-ai-factories/))
+  - 2026-10-15 — Salience Labs 完成 1.25 亿美元 B 轮融资，加速 AI 数据中心光交换芯片部署【厂商宣称】([Salience Labs](https://www.saliencelabs.ai/salience-labs-125-million-series-b-funding/))
 
-## 主题：AI 基准与评测
+## 主题：Anthropic 选举安全
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
-  - 2026-10-15 — Artificial Analysis 发布实体 AI 基准 AA-Robotics v0.1，GPT-6 Astra 以 69.4 分居首，人类形态任务仍低于 2/100。【已证实】([来源](https://artificialanalysis.ai/articles/aa-robotics))
+  - 2026-10-15 — Anthropic 发布 2026 美国中期选举安全机制更新，接入 Democracy Works 官方投票信息并披露外国背景滥用案例【厂商宣称】([Anthropic](https://www.anthropic.com/news/2026-us-midterms))
 
-## 主题：AI 监管与法律
-- 状态：长期跟踪
+## 主题：Cursor 与 AI 编码 Agent 平台
+- 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
-  - 2026-10-15 — 美国八个州（Kansas、Arizona、Montana、Iowa 等）起诉 OpenAI，指控 ChatGPT 危害儿童。【已证实】([来源](https://www.theguardian.com/technology/2026/oct/14/openai-child-self-harm-lawsuit))
+  - 2026-10-15 — Cursor 推出 Origin App Marketplace、开放第三方提交，并发布远程控制本地 agent、Rollouts / Security Review bots、Cursor Projects【已证实】([Cursor Changelog](https://cursor.com/changelog))
+
+## 主题：AI 安全隔离与 containment
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-15 — 420 名科学家发布公开信，呼吁对具备网络能力的 AI 模型默认 air gap，并建立国际机构记录 containment failures【已证实】([ai-security-letter.org](https://ai-security-letter.org/))

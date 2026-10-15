@@ -29,9 +29,18 @@ check "logs/ 可写" test -w "$PROJECT_DIR/logs"
 echo
 
 echo "[2] 提示词契约（prompt.md 必须约束住产出路径）"
-for token in '{{DATE}}' 'reports/{{DATE}}.md' 'INDEX.md' 'THEMES.md' 'web_search' '【已证实】'; do
+for token in '{{DATE}}' 'reports/{{DATE}}.md' 'INDEX.md' 'THEMES.md' 'web_search' '【已证实】' '本轮实际'; do
   check "prompt.md 含 $token" grep -qF -- "$token" "$PROJECT_DIR/prompt.md"
 done
+echo
+
+echo "[2b] 执行器护栏（防“零检索凭记忆交作业”与上下文复用）"
+check "session 收在项目内（logs/sessions）" grep -qF 'SESSION_DIR="$LOG_DIR/sessions"' "$PROJECT_DIR/run.sh"
+check "每次调用生成独立 session id" grep -qF 'SESSION_ID="ai-radar-$DATE-$(date +%H%M%S)"' "$PROJECT_DIR/run.sh"
+check "run.sh 传了 --session-dir" grep -qF -- '--session-dir "$SESSION_DIR"' "$PROJECT_DIR/run.sh"
+check "存在真实检索次数护栏" grep -qF 'AI_RADAR_MIN_SEARCHES' "$PROJECT_DIR/run.sh"
+check "无效报告会触发重试" grep -qF 'report 可能凭空生成' "$PROJECT_DIR/run.sh"
+check "sessions 目录也被保留策略清理" grep -qF "prune \"\$SESSION_DIR\"" "$PROJECT_DIR/run.sh"
 echo
 
 echo "[3] 运行前提"
@@ -78,6 +87,7 @@ check "已配置 origin 远端" git -C "$PROJECT_DIR" remote get-url origin
 check "origin 指向 SuTang-vain/ai-radar" \
   bash -c "git -C '$PROJECT_DIR' remote get-url origin | grep -q 'SuTang-vain/ai-radar'"
 check ".gitignore 忽略了 logs/" bash -c "git -C '$PROJECT_DIR' check-ignore -q logs/probe.log"
+check ".gitignore 同时覆盖 logs/sessions/" bash -c "git -C '$PROJECT_DIR' check-ignore -q logs/sessions/probe.jsonl"
 check "logs/ 未被跟踪" bash -c "! git -C '$PROJECT_DIR' ls-files --error-unmatch logs/ 2>/dev/null | grep -q ."
 check "git 凭据助手已配置为 gh" \
   bash -c "git config --global --get-regexp '^credential\.https://github\.com\.helper' | grep -q 'gh auth git-credential'"
@@ -93,6 +103,16 @@ echo
 echo "[8] 运行留痕"
 if ls "$PROJECT_DIR"/reports/*.md >/dev/null 2>&1; then
   info "已有报告 $(ls "$PROJECT_DIR"/reports/*.md | wc -l) 份，最新：$(ls -t "$PROJECT_DIR"/reports/*.md | head -1)"
+  latest="$(ls -t "$PROJECT_DIR"/reports/*.md | head -1)"
+  d="$(basename "$latest" .md)"
+  sess="$(ls -t "$PROJECT_DIR"/logs/sessions/*_"ai-radar-$d-"*.jsonl 2>/dev/null | head -1)"
+  if [ -n "$sess" ]; then
+    n=$(grep -o '"name":"web_search"' "$sess" | wc -l)
+    info "最新报告的 session 里记录到真实 web_search $n 次（$(basename "$sess")）"
+    if [ "$n" -ge 2 ]; then ok "最新报告有真实检索取证（≥2 次）"; else bad "最新报告缺少真实检索取证（仅 $n 次）"; fi
+  else
+    info "最新报告没有对应 session 文件（可能产生于 session-dir 改造之前）"
+  fi
 else
   info "尚无报告（还没跑过，或已被保留策略清理）"
 fi

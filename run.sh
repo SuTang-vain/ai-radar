@@ -18,15 +18,20 @@ THINKING="${AI_RADAR_THINKING:-high}"
 RUN_TIMEOUT="${AI_RADAR_TIMEOUT:-1800}"        # 单次尝试上限（秒）
 ATTEMPTS="${AI_RADAR_ATTEMPTS:-2}"
 MIN_REPORT_BYTES=400                            # 低于此字节数视为无效报告
+MIN_SEARCHES="${AI_RADAR_MIN_SEARCHES:-2}"         # 本轮至少要有这么多次真实 web_search
 KEEP_REPORT_DAYS="${AI_RADAR_KEEP_REPORTS:-90}"
 KEEP_LOG_DAYS="${AI_RADAR_KEEP_LOGS:-30}"
 
 LOG_DIR="$PROJECT_DIR/logs"
+SESSION_DIR="$LOG_DIR/sessions"          # session 收进项目内：随日志一起保留/清理，不入库
 REPORT="$PROJECT_DIR/reports/$DATE.md"
 LOG="$LOG_DIR/$DATE.log"
+# 每次调用用独立的 session id：避免重跑同一天时复用旧上下文“凭记忆”交作业
+# （同一调用内的重试仍然复用，保留续跑能力）
+SESSION_ID="ai-radar-$DATE-$(date +%H%M%S)"
 PI_BIN="${AI_RADAR_PI_BIN:-$HOME/.local/bin/pi}"
 
-mkdir -p "$LOG_DIR" "$PROJECT_DIR/reports"
+mkdir -p "$LOG_DIR" "$SESSION_DIR" "$PROJECT_DIR/reports"
 log() { printf '[%s] %s\n' "$(date '+%F %T')" "$*" >>"$LOG"; }
 
 # systemd 服务不读 .bashrc，密钥在这里显式加载
@@ -68,13 +73,24 @@ while [ "$attempt" -lt "$ATTEMPTS" ]; do
   rm -f "$REPORT"   # 清掉旧文件，避免残留报告冒充本次成功
   timeout "$RUN_TIMEOUT" "$PI_BIN" --print --approve \
     --model "$MODEL" --thinking "$THINKING" \
-    --name "ai-radar $DATE" --session-id "ai-radar-$DATE" \
+    --name "ai-radar $DATE" --session-dir "$SESSION_DIR" --session-id "$SESSION_ID" \
     --tools read,write,edit,web_search,fetch_content,get_search_content \
     "$PROMPT" >>"$LOG" 2>&1
   rc=$?
   size=0; [ -f "$REPORT" ] && size=$(wc -c <"$REPORT")
-  log "-- attempt $attempt 结束：exit=$rc report_bytes=$size --"
-  if [ "$rc" -eq 0 ] && [ "$size" -ge "$MIN_REPORT_BYTES" ]; then status="ok"; break; fi
+
+  # 取证：从 session 文件数本轮真实的 web_search 调用次数，防“零检索凭记忆交作业”
+  sess_file="$(ls -t "$SESSION_DIR"/*_"$SESSION_ID".jsonl 2>/dev/null | head -1)"
+  searches=0
+  [ -n "$sess_file" ] && searches=$(grep -o '"name":"web_search"' "$sess_file" | wc -l)
+  log "-- attempt $attempt 结束：exit=$rc report_bytes=$size 真实检索=$searches 次 --"
+
+  if [ "$rc" -eq 0 ] && [ "$size" -ge "$MIN_REPORT_BYTES" ] && [ "$searches" -ge "$MIN_SEARCHES" ]; then
+    status="ok"; break
+  fi
+  if [ "$rc" -eq 0 ] && [ "$searches" -lt "$MIN_SEARCHES" ]; then
+    log "无效：本轮实际检索 $searches 次（需 ≥$MIN_SEARCHES），报告可能凭空生成"
+  fi
   if [ "$attempt" -lt "$ATTEMPTS" ]; then log "本次未产出有效报告，60s 后重试（复用同一 session）"; sleep 60; fi
 done
 
@@ -82,6 +98,7 @@ done
 prune() { find "$1" -maxdepth 1 -type f -name "$2" -mtime +"$3" -delete 2>/dev/null; }
 prune "$PROJECT_DIR/reports" '*.md' "$KEEP_REPORT_DAYS"
 prune "$LOG_DIR" '*.log' "$KEEP_LOG_DAYS"
+prune "$SESSION_DIR" '*.jsonl' "$KEEP_LOG_DAYS"
 
 # 落账到 git（推送失败不改变任务成败：日报才是主要产出）
 push_note=""
