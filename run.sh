@@ -26,8 +26,8 @@ MIN_SEARCHES="${AI_RADAR_MIN_SEARCHES:-2}"      # 本轮至少要有这么多次
 CITATION_STRICT="${AI_RADAR_CITATION_STRICT:-0}"  # 1 = 引用无法溯源即失败重试
 # 报告必须包含的章节标题（| 分隔）；缺一即视为不合规报告，触发重试
 REQUIRED_SECTIONS="${AI_RADAR_REQUIRE:-今日必读|最近一周产品情况|热度榜与风评|一手来源核查|抓取说明}"
-BUDGET_SEARCH="${AI_RADAR_BUDGET_SEARCH:-12}"   # 与 prompt.md 的合计上限一致
-BUDGET_FETCH="${AI_RADAR_BUDGET_FETCH:-8}"
+BUDGET_SEARCH="${AI_RADAR_BUDGET_SEARCH:-12}"   # 与 prompt.md 的合计上限同源（由 run.sh 注入）
+BUDGET_FETCH="${AI_RADAR_BUDGET_FETCH:-12}"
 KEEP_REPORT_DAYS="${AI_RADAR_KEEP_REPORTS:-90}"
 KEEP_LOG_DAYS="${AI_RADAR_KEEP_LOGS:-30}"
 
@@ -74,7 +74,9 @@ headlines() { # N
 norm_url() { sed -E 's#\\/#/#g; s#^https?://##; s#^www\.##; s#[#?].*$##; s#[)\]\}.,;:*]+$##; s#/$##'; }
 
 [ -f "$PROJECT_DIR/prompt.md" ] || { log "FATAL: prompt.md 不存在"; notify "AI Radar 配置错误" "找不到 prompt.md" critical; exit 2; }
-PROMPT="$(sed -e "s|{{WEEK_START}}|$WEEK_START|g" -e "s|{{DATE}}|$DATE|g" "$PROJECT_DIR/prompt.md")"
+PROMPT="$(sed -e "s|{{WEEK_START}}|$WEEK_START|g" -e "s|{{DATE}}|$DATE|g" \
+  -e "s|{{BUDGET_SEARCH}}|$BUDGET_SEARCH|g" -e "s|{{BUDGET_FETCH}}|$BUDGET_FETCH|g" \
+  "$PROJECT_DIR/prompt.md")"
 [ -n "$PROMPT" ] || { log "FATAL: prompt 渲染为空"; exit 2; }
 
 log "===== ai-radar $DATE 开始（model=$MODEL, thinking=$THINKING, attempts=$ATTEMPTS）====="
@@ -156,7 +158,14 @@ prune "$SESSION_DIR" '*.jsonl' "$KEEP_LOG_DAYS"
 if [ "$status" = "ok" ] && [ -n "$sess_file" ]; then
   # 头部：来源通道 + 真实调用量 + 溯源结果，读者一眼知道这批信息的来路
   if ! grep -q '信息来源（运行器写入）' "$REPORT"; then
-    src_note="> **信息来源（运行器写入）**：检索通道 Kimi Code API（失败才降级 exa → duckduckgo），抓取通道 Jina Reader → 直连 HTTP。本轮真实调用：web_search ${searches} 次（显式升级 exa ${exa_upgrades} 次）/ fetch_content ${fetches} 次；引文溯源 $((total_cited - untraceable))/${total_cited} 条可在本轮会话中追溯；来源层级标注：一手 ${tier_first} 条 / 二手 ${tier_second} 条$( [ "$social_cites" -gt 0 ] && printf '；**含社交平台引用 %s 条（仅可作线索，须回溯一手）**' "$social_cites" )。"
+    if [ "$searches" -gt 0 ] && [ "$exa_upgrades" -ge "$searches" ]; then
+      channel="检索通道 Exa（显式指定，${exa_upgrades}/${searches} 次）"
+    elif [ "$exa_upgrades" -gt 0 ]; then
+      channel="检索通道 Exa ${exa_upgrades} 次 + 默认路由 ${searches}−${exa_upgrades} 次（Kimi Code API，失败降级 exa → duckduckgo）"
+    else
+      channel="检索通道 Kimi Code API（默认路由，失败降级 exa → duckduckgo）"
+    fi
+    src_note="> **信息来源（运行器写入）**：${channel}，抓取通道 Jina Reader → 直连 HTTP。本轮真实调用：web_search ${searches} 次 / fetch_content ${fetches} 次；引文溯源 $((total_cited - untraceable))/${total_cited} 条可在本轮会话中追溯；来源层级标注：一手 ${tier_first} 条 / 二手 ${tier_second} 条$( [ "$social_cites" -gt 0 ] && printf '；**含社交平台引用 %s 条（仅可作线索，须回溯一手）**' "$social_cites" )。"
     { head -1 "$REPORT"; printf '\n%s\n' "$src_note"; tail -n +2 "$REPORT"; } >"$REPORT.tmp" && mv "$REPORT.tmp" "$REPORT"
     log "已写入来源披露（exa 升级 ${exa_upgrades} 次 / 溯源 ${total_cited}-${untraceable}/${total_cited}）"
   fi

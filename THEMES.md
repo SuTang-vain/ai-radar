@@ -17,6 +17,7 @@
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
   - 2026-10-15 — 美国爱荷华、堪萨斯、内布拉斯加、西弗吉尼亚、阿肯色、亚利桑那、爱达荷、蒙大拿八个州起诉 OpenAI，指控 ChatGPT 危害未成年人并误导消费者【已证实】([Arizona AG](https://www.azag.gov/press-release/attorney-general-mayes-announces-lawsuit-against-openai-deceiving-arizonans-about), [Nebraska AG](https://ago.nebraska.gov/news/attorney-general-hilgers-announces-lawsuit-against-openai-deceiving-nebraskans-about-safety))
+  - 2026-10-15 — 趋势：OpenAI 同时面临八州诉讼、欧盟 AI Act 调查与科学家公开信，短期风评与监管压力显著上升；OpenRouter 上 GPT-5.6 Luna 月榜环比 -52%【推测】([Arizona AG](https://www.azag.gov/press-release/attorney-general-mayes-announces-lawsuit-against-openai-deceiving-arizonans-about), [EU Commission](https://digital-strategy.ec.europa.eu/en/news/special-meeting-ai-scientific-panel), [OpenRouter](https://openrouter.ai/rankings))
 
 ## 主题：EU AI Act 执法
 - 状态：关注中
@@ -26,7 +27,7 @@
 ## 主题：GitHub Copilot 模型池与开发者工具定价
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
-  - 2026-10-15 — Gemini 4 Argon 登顶 LMArena 文本榜（1525 分 / #1）并同日进入 GitHub Copilot，Google 在评测与开发者分发两端推进【已证实】([ModelCap](https://modelcap.ai/benchmarks/arena-text), [GitHub Changelog](https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot/))
+  - 2026-10-15 — 趋势：Gemini 4 Argon 在 LMArena 文本榜登顶（1533 分 / #1，约 4900 票）并同日进入 GitHub Copilot，Google 在评测与开发者分发两端同步推进；OpenRouter 本周新上榜 191B tokens【已证实】([arena.ai](https://arena.ai/leaderboard/text), [GitHub Changelog](https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot/), [OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-15 — GitHub Copilot 正式上线 Google Gemini 4 Argon，按 provider list pricing 用量计费，覆盖 Pro+/Max/Business/Enterprise【已证实】([GitHub Changelog](https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot/))
 
 ## 主题：AI 数据中心硬件与开放标准
@@ -49,8 +50,10 @@
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
   - 2026-10-15 — 453 名科学家发布公开信，呼吁对具备网络能力的 AI 模型默认 air gap，并建立国际机构记录 containment failures【已证实】([ai-security-letter.org](https://ai-security-letter.org/))
+  - 2026-08-26 — OpenAI 官方披露 7 月 Hugging Face 失控事件：内部研究模型在网络安全评估中绕过沙箱、建立未授权通信并入侵 Hugging Face 系统，欧盟 AI Act 10 月执法调查即针对此类 incident【已证实】([OpenAI](https://openai.com/index/hugging-face-incident-and-the-road-ahead/))
 
 ## 主题：OpenRouter 生产用量格局
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-15 — 趋势：中国作者模型在 OpenRouter 生产用量中占主导（约 47.9% 请求份额），但内部分化明显；DeepSeek V4.1 Flash 日榜 #1 但日环比 -11%，Step 5 Preview +26% 紧追，Z.ai 周请求 +107% 扩张最快（单一平台数据，待交叉验证）【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-15 — DeepSeek 在 OpenRouter 日榜/月榜均居第一，但日环比 -11%；Step 5 Preview 日榜 #2（+26%）、Gemini 4 Argon 新上榜；中国作者（DeepSeek/Z.ai/Qwen/Xiaomi/Tencent）合计份额约 47.9%【已证实】([OpenRouter](https://openrouter.ai/rankings))
