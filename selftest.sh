@@ -71,7 +71,25 @@ check "systemd 服务环境里有图形显示变量" \
   bash -c "systemd-run --user --wait --pipe -q /usr/bin/env 2>/dev/null | grep -qE '^(DISPLAY|WAYLAND_DISPLAY)='"
 echo
 
-echo "[7] 运行留痕"
+echo "[7] 版本管理（GitHub 公开仓库，非 chezmoi）"
+check "项目是 git 仓库" git -C "$PROJECT_DIR" rev-parse --git-dir
+check "已配置 origin 远端" git -C "$PROJECT_DIR" remote get-url origin
+check "origin 指向 SuTang-vain/ai-radar" \
+  bash -c "git -C '$PROJECT_DIR' remote get-url origin | grep -q 'SuTang-vain/ai-radar'"
+check ".gitignore 忽略了 logs/" bash -c "git -C '$PROJECT_DIR' check-ignore -q logs/probe.log"
+check "logs/ 未被跟踪" bash -c "! git -C '$PROJECT_DIR' ls-files --error-unmatch logs/ 2>/dev/null | grep -q ."
+check "git 凭据助手已配置为 gh" \
+  bash -c "git config --global --get-regexp '^credential\.https://github\.com\.helper' | grep -q 'gh auth git-credential'"
+check "gh 在 systemd 服务环境里可用（keyring 已解锁）" \
+  bash -c "systemd-run --user --wait --pipe -q \"\$HOME/.local/bin/gh\" auth status >/dev/null 2>&1"
+check "远端仓库可达" bash -c "timeout 30 gh repo view SuTang-vain/ai-radar >/dev/null 2>&1"
+info "远端：$(git -C "$PROJECT_DIR" remote get-url origin 2>/dev/null || echo '<无>')"
+info "未推送提交：$(git -C "$PROJECT_DIR" rev-list --count origin/main..HEAD 2>/dev/null || echo '?') 个"
+check "service 指定的模型与 run.sh 默认一致" \
+  bash -c "[ \"\$(grep -oP 'AI_RADAR_MODEL:\\-\\K[^}]+' '$PROJECT_DIR/run.sh' | head -1)\" = \"\$(grep -oP 'Environment=AI_RADAR_MODEL=\\K.*' '$UNIT_DIR/ai-radar.service')\" ]"
+echo
+
+echo "[8] 运行留痕"
 if ls "$PROJECT_DIR"/reports/*.md >/dev/null 2>&1; then
   info "已有报告 $(ls "$PROJECT_DIR"/reports/*.md | wc -l) 份，最新：$(ls -t "$PROJECT_DIR"/reports/*.md | head -1)"
 else
