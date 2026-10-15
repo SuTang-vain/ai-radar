@@ -39,7 +39,7 @@ check "session 收在项目内（logs/sessions）" grep -qF 'SESSION_DIR="$LOG_D
 check "每次调用生成独立 session id" grep -qF 'SESSION_ID="ai-radar-$DATE-$(date +%H%M%S)"' "$PROJECT_DIR/run.sh"
 check "run.sh 传了 --session-dir" grep -qF -- '--session-dir "$SESSION_DIR"' "$PROJECT_DIR/run.sh"
 check "存在真实检索次数护栏" grep -qF 'AI_RADAR_MIN_SEARCHES' "$PROJECT_DIR/run.sh"
-check "无效报告会触发重试" grep -qF 'report 可能凭空生成' "$PROJECT_DIR/run.sh"
+check "无效报告会触发重试" grep -qF '报告可能凭空生成' "$PROJECT_DIR/run.sh"
 check "sessions 目录也被保留策略清理" grep -qF "prune \"\$SESSION_DIR\"" "$PROJECT_DIR/run.sh"
 echo
 
@@ -107,7 +107,7 @@ if ls "$PROJECT_DIR"/reports/*.md >/dev/null 2>&1; then
   d="$(basename "$latest" .md)"
   sess="$(ls -t "$PROJECT_DIR"/logs/sessions/*_"ai-radar-$d-"*.jsonl 2>/dev/null | head -1)"
   if [ -n "$sess" ]; then
-    n=$(grep -o '"name":"web_search"' "$sess" | wc -l)
+    n=$(grep -o '"type":"toolCall","id":"[^"]*","name":"web_search"' "$sess" | wc -l)
     info "最新报告的 session 里记录到真实 web_search $n 次（$(basename "$sess")）"
     if [ "$n" -ge 2 ]; then ok "最新报告有真实检索取证（≥2 次）"; else bad "最新报告缺少真实检索取证（仅 $n 次）"; fi
   else

@@ -79,11 +79,14 @@ while [ "$attempt" -lt "$ATTEMPTS" ]; do
   rc=$?
   size=0; [ -f "$REPORT" ] && size=$(wc -c <"$REPORT")
 
-  # 取证：从 session 文件数本轮真实的 web_search 调用次数，防“零检索凭记忆交作业”
+  # 取证：从 session 文件数本轮真实的工具调用（精确匹配 toolCall 条目，避免匹配到文本里的同名字符串）
   sess_file="$(ls -t "$SESSION_DIR"/*_"$SESSION_ID".jsonl 2>/dev/null | head -1)"
-  searches=0
-  [ -n "$sess_file" ] && searches=$(grep -o '"name":"web_search"' "$sess_file" | wc -l)
-  log "-- attempt $attempt 结束：exit=$rc report_bytes=$size 真实检索=$searches 次 --"
+  searches=0; fetches=0
+  if [ -n "$sess_file" ]; then
+    searches=$(grep -o '"type":"toolCall","id":"[^"]*","name":"web_search"' "$sess_file" | wc -l)
+    fetches=$(grep -o '"type":"toolCall","id":"[^"]*","name":"fetch_content"' "$sess_file" | wc -l)
+  fi
+  log "-- attempt $attempt 结束：exit=$rc report_bytes=$size 真实检索=${searches} 次 / 抓取=${fetches} 次 --"
 
   if [ "$rc" -eq 0 ] && [ "$size" -ge "$MIN_REPORT_BYTES" ] && [ "$searches" -ge "$MIN_SEARCHES" ]; then
     status="ok"; break
