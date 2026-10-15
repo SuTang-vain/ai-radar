@@ -62,6 +62,12 @@ systemctl --user disable --now ai-radar.timer   # 停掉定时任务
 4. **推送失败不算任务失败。** 日报是主要产出，git push 失败只记 WARN 并在通知里标注，避免网络抖动触发 critical 通知风暴。`GIT_TERMINAL_PROMPT=0` 保证凭据缺失时立即失败而不是挂死。
 5. **重试复用同一 session。** `--session-id ai-radar-<date>`：第一次失败后重试会接着已有上下文，而不是从零重来。
 
+## 会话记录与排查
+
+每次运行都会在 `~/.pi/agent/sessions/`（按项目 cwd 分组）留一个 pi session 文件，用于重试续跑（`--session-id ai-radar-<date>`）与事后审计（`pi --resume` 或 `/analyze-sessions`）。该目录不在 `~/z` 内、不受 z-clean 影响，会缓慢增长，需要时手动清理 `ai-radar` 相关 session。
+
+排查顺序：`systemctl --user status ai-radar.service` → `logs/<date>.log` 尾部 → `journalctl --user -u ai-radar.service`。常见失败：密钥文件缺失（抓取降级）、keyring 未解锁（push 失败但报告仍在）、kimi 套餐额度耗尽（退出码非 0，60s 后自动重试一次）。
+
 ## 这个仓库是公开的
 
 日报内容（AI 行业公开信息 + 来源链接）会公开可见，`logs/` 不推送。历史提交无法撤回 —— 推送前如不想公开发布某天内容，先 `git reset` / 删除报告文件。

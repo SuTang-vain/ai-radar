@@ -38,7 +38,8 @@ echo "[3] 运行前提"
 check "pi 可执行" test -x "${AI_RADAR_PI_BIN:-$HOME/.local/bin/pi}"
 MODEL="$(grep -oP 'AI_RADAR_MODEL:-\K[^}]+' "$PROJECT_DIR/run.sh" | head -1)"
 info "run.sh 默认模型：${MODEL:-<未解析到>}"
-check "模型在 pi 模型中可见（$MODEL）" bash -c "pi --list-models 2>/dev/null | grep -qF '$MODEL'"
+check "模型在 pi 模型中可见（$MODEL）" \
+  bash -c "pi --list-models 2>/dev/null | awk '{print \$1\"/\"\$2}' | grep -qxF '$MODEL'"
 check "密钥文件 ~/.config/pi-secrets.env 存在" test -r "$HOME/.config/pi-secrets.env"
 check "密钥文件含 EXA_API_KEY" grep -q 'EXA_API_KEY=' "$HOME/.config/pi-secrets.env"
 check "密钥文件含 JINA_API_KEY" grep -q 'JINA_API_KEY=' "$HOME/.config/pi-secrets.env"
@@ -59,7 +60,7 @@ echo
 echo "[5] 与 ~/z 清理策略的相容性（最容易被踩的坑）"
 check "z-clean.service 已排除本项目路径" grep -qF "$PROJECT_DIR" "$UNIT_DIR/z-clean.service"
 check "z-clean.service 未混用 -prune 与 -delete（GNU find 不兼容）" \
-  bash -c "! grep -q 'prune' '$UNIT_DIR/z-clean.service'"
+  bash -c "! grep '^ExecStart=' '$UNIT_DIR/z-clean.service' | grep -q prune"
 info "z-clean 现有规则：$(grep -oP '^ExecStart=.*' "$UNIT_DIR/z-clean.service" | head -1)"
 echo
 
