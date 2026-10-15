@@ -83,7 +83,7 @@ log "===== ai-radar $DATE 开始（model=$MODEL, thinking=$THINKING, attempts=$A
 
 status="fail"; attempt=0
 missing_sections=""; searches=0; fetches=0; exa_upgrades=0
-social_cites=0; tier_first=0; tier_second=0
+social_cites=0; tier_first=0; tier_second=0; fh_total=0; fh_verified=0; fh_unverified=0
 total_cited=0; untraceable=0; untraceable_list=""; sess_file=""
 while [ "$attempt" -lt "$ATTEMPTS" ]; do
   attempt=$((attempt + 1))
@@ -109,6 +109,7 @@ while [ "$attempt" -lt "$ATTEMPTS" ]; do
   # (b) 取证：从 session 精确数真实工具调用（宽松 grep 会被文本里的同名字符串抬高）
   sess_file="$(ls -t "$SESSION_DIR"/*_"$SESSION_ID".jsonl 2>/dev/null | head -1)"
   searches=0; fetches=0; exa_upgrades=0; social_cites=0; tier_first=0; tier_second=0
+  fh_total=0; fh_verified=0; fh_unverified=0; fh_unverified_list=""
   if [ -n "$sess_file" ]; then
     searches=$(grep -o '"type":"toolCall","id":"[^"]*","name":"web_search"' "$sess_file" | wc -l)
     fetches=$(grep -o '"type":"toolCall","id":"[^"]*","name":"fetch_content"' "$sess_file" | wc -l)
@@ -131,7 +132,28 @@ while [ "$attempt" -lt "$ATTEMPTS" ]; do
     rm -f "$_pool" "$_cited"
   fi
 
-  log "-- attempt $attempt 结束：exit=$rc report_bytes=$size 真实检索=${searches} 次（exa 升级 ${exa_upgrades} 次）/ 抓取=${fetches} 次 / 引用溯源 $((total_cited - untraceable))/$total_cited / 来源层级 一手${tier_first} 二手${tier_second} 社媒引用${social_cites} --"
+  # (d) 一手取证：标了【一手】的断言行，其引用 URL 必须在本轮真的被抓取过（只读搜索摘要不算溯源）
+  if [ -n "$sess_file" ] && [ -f "$REPORT" ]; then
+    _fpool="$(mktemp)"
+    grep -o '"name":"fetch_content","arguments":{[^}]*}' "$sess_file" | grep -oE 'https?://[^"]+' | norm_url | LC_ALL=C sort -u >"$_fpool"
+    while IFS= read -r _line; do
+      _urls="$(printf '%s' "$_line" | grep -oE '\]\(https?://[^)]+\)' | sed -E 's#^\]\(##; s#\)$##')"
+      [ -n "$_urls" ] || continue
+      fh_total=$((fh_total + 1))
+      _hit=0
+      while IFS= read -r _u; do
+        [ -n "$_u" ] || continue
+        if grep -qxF "$(printf '%s' "$_u" | norm_url)" "$_fpool"; then _hit=1; break; fi
+      done <<< "$_urls"
+      if [ "$_hit" -eq 1 ]; then fh_verified=$((fh_verified + 1)); else
+        fh_unverified_list="$fh_unverified_list$(printf '%s' "$_line" | cut -c1-70) ｜"
+      fi
+    done < <(grep -E '^- .*【一手】' "$REPORT")
+    fh_unverified=$((fh_total - fh_verified))
+    rm -f "$_fpool"
+  fi
+
+  log "-- attempt $attempt 结束：exit=$rc report_bytes=$size 真实检索=${searches} 次（exa 升级 ${exa_upgrades} 次）/ 抓取=${fetches} 次 / 引用溯源 $((total_cited - untraceable))/$total_cited / 来源层级 一手${tier_first} 二手${tier_second} 社媒引用${social_cites} / 一手取证 ${fh_verified}/${fh_total} --"
 
   ok=1
   [ "$rc" -eq 0 ] || ok=0
@@ -145,6 +167,7 @@ while [ "$attempt" -lt "$ATTEMPTS" ]; do
   [ -z "$missing_sections" ] || log "无效：报告缺少必备章节：$missing_sections"
   [ "$searches" -ge "$MIN_SEARCHES" ] || log "无效：本轮实际检索 $searches 次（需 ≥$MIN_SEARCHES），报告可能凭空生成"
   [ "$untraceable" -gt 0 ] && log "WARN: $untraceable 条引用无法在本轮会话中溯源：$untraceable_list"
+  [ "$fh_unverified" -gt 0 ] && log "WARN: $fh_unverified 条【一手】断言的引用未被本轮抓取（疑为搜索摘要，应降级为【二手】）：$fh_unverified_list"
   if [ "$attempt" -lt "$ATTEMPTS" ]; then log "本次未产出有效报告，60s 后重试（复用同一 session）"; sleep 60; fi
 done
 
@@ -165,7 +188,7 @@ if [ "$status" = "ok" ] && [ -n "$sess_file" ]; then
     else
       channel="检索通道 Kimi Code API（默认路由，失败降级 exa → duckduckgo）"
     fi
-    src_note="> **信息来源（运行器写入）**：${channel}，抓取通道 Jina Reader → 直连 HTTP。本轮真实调用：web_search ${searches} 次 / fetch_content ${fetches} 次；引文溯源 $((total_cited - untraceable))/${total_cited} 条可在本轮会话中追溯；来源层级标注：一手 ${tier_first} 条 / 二手 ${tier_second} 条$( [ "$social_cites" -gt 0 ] && printf '；**含社交平台引用 %s 条（仅可作线索，须回溯一手）**' "$social_cites" )。"
+    src_note="> **信息来源（运行器写入）**：${channel}，抓取通道 Jina Reader → 直连 HTTP。本轮真实调用：web_search ${searches} 次 / fetch_content ${fetches} 次；引文溯源 $((total_cited - untraceable))/${total_cited} 条可在本轮会话中追溯；来源层级标注：一手 ${tier_first} 条 / 二手 ${tier_second} 条；一手取证：${fh_verified}/${fh_total} 条【一手】断言的引用确为本轮抓取过$( [ "$fh_unverified" -gt 0 ] && printf '，**其中 %s 条仅凭搜索摘要（应降级为【二手】）**' "$fh_unverified" )。"
     { head -1 "$REPORT"; printf '\n%s\n' "$src_note"; tail -n +2 "$REPORT"; } >"$REPORT.tmp" && mv "$REPORT.tmp" "$REPORT"
     log "已写入来源披露（exa 升级 ${exa_upgrades} 次 / 溯源 ${total_cited}-${untraceable}/${total_cited}）"
   fi

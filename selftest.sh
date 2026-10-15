@@ -29,7 +29,7 @@ check "logs/ 可写" test -w "$PROJECT_DIR/logs"
 echo
 
 echo "[2] 提示词契约（prompt.md 必须约束住产出路径）"
-for token in '{{DATE}}' '{{WEEK_START}}' 'reports/{{DATE}}.md' 'INDEX.md' 'THEMES.md' 'web_search' '【已证实】' '本轮实际' '最近一周产品情况' '热度榜与风评' '趋势解读' '至少覆盖 2 个不同来源' 'provider: "exa"' '【一手】' '【社媒线索】' '一手来源核查' '{{BUDGET_SEARCH}}' '{{BUDGET_FETCH}}'; do
+for token in '{{DATE}}' '{{WEEK_START}}' 'reports/{{DATE}}.md' 'INDEX.md' 'THEMES.md' 'web_search' '【已证实】' '本轮实际' '最近一周产品情况' '热度榜与风评' '趋势解读' '至少覆盖 2 个不同来源' 'provider: "exa"' '【一手】' '【社媒线索】' '一手来源核查' '{{BUDGET_SEARCH}}' '{{BUDGET_FETCH}}' 'markdown 链接'; do
   check "prompt.md 含 $token" grep -qF -- "$token" "$PROJECT_DIR/prompt.md"
 done
 echo
@@ -55,6 +55,8 @@ check "必备章节含《一手来源核查》" grep -qF '一手来源核查' "$
 check "预算由 run.sh 注入提示词（单一事实源）" grep -qF '{{BUDGET_FETCH}}' "$PROJECT_DIR/run.sh"
 check "抓取预算默认 12" grep -qF 'AI_RADAR_BUDGET_FETCH:-12' "$PROJECT_DIR/run.sh"
 check "头部披露反映真实通道构成" grep -qF '检索通道 Exa' "$PROJECT_DIR/run.sh"
+check "一手取证已机器化" grep -qF '一手取证：' "$PROJECT_DIR/run.sh"
+check "一手断言未达标会告警" grep -qF '条【一手】断言的引用未被本轮抓取' "$PROJECT_DIR/run.sh"
 check "提示词渲染无残留占位符" bash -c "sed -e 's|{{WEEK_START}}|x|g' -e 's|{{DATE}}|x|g' -e 's|{{BUDGET_SEARCH}}|x|g' -e 's|{{BUDGET_FETCH}}|x|g' '$PROJECT_DIR/prompt.md' | grep -q '{{' && exit 1 || exit 0"
 check "预算上限与提示词口径同源可配" grep -qF 'AI_RADAR_BUDGET_FETCH' "$PROJECT_DIR/run.sh"
 check "无效报告会触发重试" grep -qF '报告可能凭空生成' "$PROJECT_DIR/run.sh"
@@ -139,6 +141,7 @@ if ls "$PROJECT_DIR"/reports/*.md >/dev/null 2>&1; then
   if grep -qE '^\|.*上次记录|^\| 榜单' "$latest"; then ok "含《热度榜与风评》可比快照表"; else info "未找到快照表（首日无往期记录时属正常）"; fi
   if grep -qF '运行器取证' "$latest"; then ok "报告含运行器取证的真实调用次数"; else bad "报告缺少运行器取证行"; fi
   if grep -qF '信息来源（运行器写入）' "$latest"; then ok "报告头部含来源通道披露"; else bad "报告头部缺少来源披露"; fi
+  if grep -qF '一手取证' "$latest"; then ok "报告头部含一手取证结论"; else info "报告头部未含一手取证结论（旧版本报告）"; fi
 else
   info "尚无报告（还没跑过，或已被保留策略清理）"
 fi

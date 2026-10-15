@@ -27,7 +27,7 @@
 ## 主题：GitHub Copilot 模型池与开发者工具定价
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
-  - 2026-10-15 — 趋势：Gemini 4 Argon 在 LMArena 文本榜登顶（1533 分 / #1，约 4900 票）并同日进入 GitHub Copilot，Google 在评测与开发者分发两端同步推进；OpenRouter 本周新上榜 191B tokens【已证实】([arena.ai](https://arena.ai/leaderboard/text), [GitHub Changelog](https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot/), [OpenRouter](https://openrouter.ai/rankings))
+  - 2026-10-15 — 趋势：Gemini 4 Argon 在 LMArena 文本榜登顶（1533.239 Elo / #1，4903 票，仍 Preliminary）并同日进入 GitHub Copilot，Google 在评测与开发者分发两端同步推进；OpenRouter 本周新上榜 191B tokens【已证实】([AI Model Index](https://ai-model-psi-bice.vercel.app/news/lmarena-oct-13-refresh), [GitHub Changelog](https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot/), [OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-15 — GitHub Copilot 正式上线 Google Gemini 4 Argon，按 provider list pricing 用量计费，覆盖 Pro+/Max/Business/Enterprise【已证实】([GitHub Changelog](https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot/))
 
 ## 主题：AI 数据中心硬件与开放标准
@@ -55,5 +55,5 @@
 ## 主题：OpenRouter 生产用量格局
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
-  - 2026-10-15 — 趋势：中国作者模型在 OpenRouter 生产用量中占主导（约 47.9% 请求份额），但内部分化明显；DeepSeek V4.1 Flash 日榜 #1 但日环比 -11%，Step 5 Preview +26% 紧追，Z.ai 周请求 +107% 扩张最快（单一平台数据，待交叉验证）【已证实】([OpenRouter](https://openrouter.ai/rankings))
+  - 2026-10-15 — 趋势：中国作者模型在 OpenRouter 周请求份额中合计约 47.9%（DeepSeek 24.5%、Z.ai 13.4%、Qwen 5.4%、Xiaomi 2.9%、Tencent 1.7%），但内部分化明显；DeepSeek V4.1 Flash 日榜 #1 但日环比 -11%，Step 5 Preview 日榜 #2 且 +26%，Z.ai 周请求 +107% 扩张最快（单一平台数据，待交叉验证）【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-15 — DeepSeek 在 OpenRouter 日榜/月榜均居第一，但日环比 -11%；Step 5 Preview 日榜 #2（+26%）、Gemini 4 Argon 新上榜；中国作者（DeepSeek/Z.ai/Qwen/Xiaomi/Tencent）合计份额约 47.9%【已证实】([OpenRouter](https://openrouter.ai/rankings))
