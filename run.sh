@@ -13,12 +13,15 @@ PROJECT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 cd "$PROJECT_DIR" || exit 1
 
 DATE="${1:-$(date +%F)}"
+WEEK_START="$(date -d "$DATE -6 days" +%F 2>/dev/null || date -d '-6 days' +%F)"   # 滚动 7 天窗口起点
 MODEL="${AI_RADAR_MODEL:-kimi-coding/kimi-for-coding-highspeed}"
 THINKING="${AI_RADAR_THINKING:-high}"
 RUN_TIMEOUT="${AI_RADAR_TIMEOUT:-1800}"        # 单次尝试上限（秒）
 ATTEMPTS="${AI_RADAR_ATTEMPTS:-2}"
 MIN_REPORT_BYTES=400                            # 低于此字节数视为无效报告
 MIN_SEARCHES="${AI_RADAR_MIN_SEARCHES:-2}"         # 本轮至少要有这么多次真实 web_search
+# 报告必须包含的章节标题（| 分隔）；缺一即视为不合规报告，触发重试
+REQUIRED_SECTIONS="${AI_RADAR_REQUIRE:-今日必读|最近一周产品情况|热度榜与风评|抓取说明}"
 KEEP_REPORT_DAYS="${AI_RADAR_KEEP_REPORTS:-90}"
 KEEP_LOG_DAYS="${AI_RADAR_KEEP_LOGS:-30}"
 
@@ -61,7 +64,7 @@ headlines() { # N
 }
 
 [ -f "$PROJECT_DIR/prompt.md" ] || { log "FATAL: prompt.md 不存在"; notify "AI Radar 配置错误" "找不到 prompt.md" critical; exit 2; }
-PROMPT="$(sed "s/{{DATE}}/$DATE/g" "$PROJECT_DIR/prompt.md")"
+PROMPT="$(sed -e "s|{{WEEK_START}}|$WEEK_START|g" -e "s|{{DATE}}|$DATE|g" "$PROJECT_DIR/prompt.md")"
 [ -n "$PROMPT" ] || { log "FATAL: prompt 渲染为空"; exit 2; }
 
 log "===== ai-radar $DATE 开始（model=$MODEL, thinking=$THINKING, attempts=$ATTEMPTS）====="
@@ -79,6 +82,15 @@ while [ "$attempt" -lt "$ATTEMPTS" ]; do
   rc=$?
   size=0; [ -f "$REPORT" ] && size=$(wc -c <"$REPORT")
 
+  # 结构校验：必备章节标题是否齐全（提示词里已写明，缺失即不合规）
+  missing=""
+  if [ -f "$REPORT" ]; then
+    IFS='|' read -r -a _want <<< "$REQUIRED_SECTIONS"
+    for _token in "${_want[@]}"; do
+      grep -qF -- "$_token" "$REPORT" || missing="$missing$_token "
+    done
+  fi
+
   # 取证：从 session 文件数本轮真实的工具调用（精确匹配 toolCall 条目，避免匹配到文本里的同名字符串）
   sess_file="$(ls -t "$SESSION_DIR"/*_"$SESSION_ID".jsonl 2>/dev/null | head -1)"
   searches=0; fetches=0
@@ -87,8 +99,9 @@ while [ "$attempt" -lt "$ATTEMPTS" ]; do
     fetches=$(grep -o '"type":"toolCall","id":"[^"]*","name":"fetch_content"' "$sess_file" | wc -l)
   fi
   log "-- attempt $attempt 结束：exit=$rc report_bytes=$size 真实检索=${searches} 次 / 抓取=${fetches} 次 --"
+  [ -n "$missing" ] && log "无效：报告缺少必备章节：$missing"
 
-  if [ "$rc" -eq 0 ] && [ "$size" -ge "$MIN_REPORT_BYTES" ] && [ "$searches" -ge "$MIN_SEARCHES" ]; then
+  if [ "$rc" -eq 0 ] && [ "$size" -ge "$MIN_REPORT_BYTES" ] && [ "$searches" -ge "$MIN_SEARCHES" ] && [ -z "$missing" ]; then
     status="ok"; break
   fi
   if [ "$rc" -eq 0 ] && [ "$searches" -lt "$MIN_SEARCHES" ]; then

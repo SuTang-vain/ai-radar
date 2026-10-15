@@ -29,7 +29,7 @@ check "logs/ 可写" test -w "$PROJECT_DIR/logs"
 echo
 
 echo "[2] 提示词契约（prompt.md 必须约束住产出路径）"
-for token in '{{DATE}}' 'reports/{{DATE}}.md' 'INDEX.md' 'THEMES.md' 'web_search' '【已证实】' '本轮实际'; do
+for token in '{{DATE}}' '{{WEEK_START}}' 'reports/{{DATE}}.md' 'INDEX.md' 'THEMES.md' 'web_search' '【已证实】' '本轮实际' '最近一周产品情况' '热度榜与风评' '趋势解读'; do
   check "prompt.md 含 $token" grep -qF -- "$token" "$PROJECT_DIR/prompt.md"
 done
 echo
@@ -39,6 +39,9 @@ check "session 收在项目内（logs/sessions）" grep -qF 'SESSION_DIR="$LOG_D
 check "每次调用生成独立 session id" grep -qF 'SESSION_ID="ai-radar-$DATE-$(date +%H%M%S)"' "$PROJECT_DIR/run.sh"
 check "run.sh 传了 --session-dir" grep -qF -- '--session-dir "$SESSION_DIR"' "$PROJECT_DIR/run.sh"
 check "存在真实检索次数护栏" grep -qF 'AI_RADAR_MIN_SEARCHES' "$PROJECT_DIR/run.sh"
+check "窗口起点 {{WEEK_START}} 会被渲染" grep -qF '{{WEEK_START}}' "$PROJECT_DIR/run.sh"
+check "周度窗口为滚动 7 天" grep -qF 'date -d "$DATE -6 days"' "$PROJECT_DIR/run.sh"
+check "存在报告必备章节校验" grep -qF 'AI_RADAR_REQUIRE' "$PROJECT_DIR/run.sh"
 check "无效报告会触发重试" grep -qF '报告可能凭空生成' "$PROJECT_DIR/run.sh"
 check "sessions 目录也被保留策略清理" grep -qF "prune \"\$SESSION_DIR\"" "$PROJECT_DIR/run.sh"
 echo
@@ -113,6 +116,12 @@ if ls "$PROJECT_DIR"/reports/*.md >/dev/null 2>&1; then
   else
     info "最新报告没有对应 session 文件（可能产生于 session-dir 改造之前）"
   fi
+  # 对产物本身做结构校验：必备章节是否真的写进了报告
+  miss=""
+  for t in 今日必读 最近一周产品情况 热度榜与风评 抓取说明; do grep -qF -- "$t" "$latest" || miss="$miss$t "; done
+  if [ -z "$miss" ]; then ok "最新报告包含四个必备章节"; else bad "最新报告缺少章节：$miss"; fi
+  check "周度清单写明了滚动窗口区间" grep -qE '^## 最近一周产品情况（[0-9]{4}-[0-9]{2}-[0-9]{2} ~ [0-9]{4}-[0-9]{2}-[0-9]{2}）' "$latest"
+  if grep -qE '^\|.*上次记录|^\| 榜单' "$latest"; then ok "含《热度榜与风评》可比快照表"; else info "未找到快照表（首日无往期记录时属正常）"; fi
 else
   info "尚无报告（还没跑过，或已被保留策略清理）"
 fi

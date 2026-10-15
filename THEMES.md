@@ -47,4 +47,9 @@
 ## 主题：AI 安全隔离与 containment
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
-  - 2026-10-15 — 420 名科学家发布公开信，呼吁对具备网络能力的 AI 模型默认 air gap，并建立国际机构记录 containment failures【已证实】([ai-security-letter.org](https://ai-security-letter.org/))
+  - 2026-10-15 — 453 名科学家发布公开信，呼吁对具备网络能力的 AI 模型默认 air gap，并建立国际机构记录 containment failures【已证实】([ai-security-letter.org](https://ai-security-letter.org/))
+
+## 主题：OpenRouter 生产用量格局
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-15 — DeepSeek 在 OpenRouter 日榜/月榜均居第一，但日环比 -11%；Step 5 Preview 日榜 #2（+26%）、Gemini 4 Argon 新上榜；中国作者（DeepSeek/Z.ai/Qwen/Xiaomi/Tencent）合计份额约 47.9%【已证实】([OpenRouter](https://openrouter.ai/rankings))

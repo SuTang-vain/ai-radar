@@ -6,12 +6,24 @@
 
 | 文件 | 内容 |
 |---|---|
-| `reports/YYYY-MM-DD.md` | 当日简报：今日必读 3–5 条 + 分领域动态 + 早期信号 + 抓取说明 |
+| `reports/YYYY-MM-DD.md` | 当日简报：今日必读 3–5 条 + 分领域动态 + 早期信号 + 尾部《最近一周产品情况》（滚动 7 天 + 热度榜可比快照 + 趋势解读）+ 抓取说明 |
 | `INDEX.md` | 所有日报索引（最新在最上） |
 | `THEMES.md` | 跨天主题主线（同一主题的演进合并成时间线，最多 12 条/主题） |
 | `logs/YYYY-MM-DD.log` | 完整运行日志（**不入库**，`.gitignore` 忽略；保留 30 天） |
 
-质量约定（写在 `prompt.md` 里，agent 必须遵守）：每条必须有真实来源 URL；断言打【已证实】/【厂商宣称】/【推测】标签；先读最近两份报告做去重基线；检索预算 ≤8 次 `web_search` + ≤6 次 `fetch_content`；宁少勿凑。
+质量约定（写在 `prompt.md` 里，agent 必须遵守）：每条必须有真实来源 URL；断言打【已证实】/【厂商宣称】/【推测】标签；先读最近两份报告做去重基线；检索预算主体 ≤8 次 `web_search` + ≤6 次 `fetch_content`，周度趋势额外 ≤4 + ≤2；宁少勿凑。
+
+## 尾部那一节：最近一周产品情况（趋势向）
+
+日报最后一块是**滚动 7 天窗口**（`{{WEEK_START}} ~ {{DATE}}`）的产品情况，按领域分组，共四块：领域要点 → 《热度榜与风评》 → 《趋势解读》 → 抓取说明。
+
+为什么这样设计：你要求的不是“再列一遍产品”，而是**热度变化趋势与排名/风评的解读**。趋势判断必须有可对比的基线，否则模型只能凭印象编造“上升”“下滑”。因此：
+
+1. **《热度榜与风评》是一张可比快照表**：列 `榜单 / 主体 / 当前 / 上次记录 / 变化 / 来源`。「上次记录」必须写明取自哪天哪个来源，保证两列可比、可被你自己验伪。
+2. **趋势解读只能引用本表与领域要点的具体行**，并打标签；查不到数字必须写「未取到」，禁止用印象替换。
+3. **每天重新检索**（赖在本地日报上会错过窗口内新变化）：榜单候选来源在 `prompt.md` 里给了 LMArena、Artificial Analysis、OpenRouter 用量榜、GitHub Trending、HF trending、应用商店排名、Product Hunt、HN、r/LocalLLaMA、G2 等，要求至少跨 3 个来源——单一榜单容易被厂商口径污染。
+
+项目刚开始的几天，本地没有历史报告可对比，「上次记录」列会写「无往期记录」；第 7 天之后就能真正横向比对一周差距。
 
 ## 组成
 
@@ -64,7 +76,9 @@ systemctl --user disable --now ai-radar.timer   # 停掉定时任务
 
 ## 会话记录与排查
 
-每次运行都会在 `~/.pi/agent/sessions/`（按项目 cwd 分组）留一个 pi session 文件，用于重试续跑（`--session-id ai-radar-<date>`）与事后审计（`pi --resume` 或 `/analyze-sessions`）。该目录不在 `~/z` 内、不受 z-clean 影响，会缓慢增长，需要时手动清理 `ai-radar` 相关 session。
+每次运行都会在 `logs/sessions/`（随日志一起保留 30 天、不入库）留一个 pi session 文件。session id 是 `ai-radar-<date>-<HHMMSS>`：**每次调用独立**，同一调用内的重试才复用。
+
+这不是洁癖，是踩过的坑：早期用 `ai-radar-<date>` 做跨调用复用，重跑同一天时模型直接沿用旧上下文，**35 秒交出零检索的报告**，连《抓取说明》里的次数都是照抄上一轮。现在 `run.sh` 从 session 文件里精确数 `"type":"toolCall",...,"name":"web_search"` 的条数（宽松 grep 会多算，被文本里的同名字符串抬高），少于 `AI_RADAR_MIN_SEARCHES`（默认 2）即判无效报告并重试；报告还须包含四个必备章节标题，缺一同样重试。要审计任意一天的真实调用次数，直接对 `logs/sessions/*_ai-radar-<date>-*.jsonl` 做同样计数即可。
 
 排查顺序：`systemctl --user status ai-radar.service` → `logs/<date>.log` 尾部 → `journalctl --user -u ai-radar.service`。常见失败：密钥文件缺失（抓取降级）、keyring 未解锁（push 失败但报告仍在）、kimi 套餐额度耗尽（退出码非 0，60s 后自动重试一次）。
 
