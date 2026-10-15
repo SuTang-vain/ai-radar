@@ -1,0 +1,6 @@
+# 运行日志：含完整 pi 输出，仅本地保留
+logs/
+# 临时/探测文件
+*.tmp
+.keep-probe
+.exclusion-probe/
