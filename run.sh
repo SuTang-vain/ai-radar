@@ -4,8 +4,11 @@
 #   ./run.sh              # 跑今天
 #   ./run.sh 2026-10-01   # 回填某天（报告会写到 reports/2026-10-01.md）
 #
-# 可用环境变量覆盖：AI_RADAR_MODEL / AI_RADAR_THINKING / AI_RADAR_TIMEOUT
-#                  AI_RADAR_ATTEMPTS / AI_RADAR_KEEP_REPORTS / AI_RADAR_KEEP_LOGS
+# 可用环境变量覆盖：
+#   AI_RADAR_MODEL / AI_RADAR_THINKING / AI_RADAR_TIMEOUT / AI_RADAR_ATTEMPTS
+#   AI_RADAR_MIN_SEARCHES / AI_RADAR_REQUIRE / AI_RADAR_BUDGET_SEARCH / AI_RADAR_BUDGET_FETCH
+#   AI_RADAR_CITATION_STRICT=1   # 引用无法溯源时判为无效报告（默认 0：只披露+告警）
+#   AI_RADAR_KEEP_REPORTS / AI_RADAR_KEEP_LOGS
 set -uo pipefail
 export GIT_TERMINAL_PROMPT=0   # 凭据缺失时立即失败，别在无人值守时挂死等输入
 
@@ -19,10 +22,11 @@ THINKING="${AI_RADAR_THINKING:-high}"
 RUN_TIMEOUT="${AI_RADAR_TIMEOUT:-1800}"        # 单次尝试上限（秒）
 ATTEMPTS="${AI_RADAR_ATTEMPTS:-2}"
 MIN_REPORT_BYTES=400                            # 低于此字节数视为无效报告
-MIN_SEARCHES="${AI_RADAR_MIN_SEARCHES:-2}"         # 本轮至少要有这么多次真实 web_search
+MIN_SEARCHES="${AI_RADAR_MIN_SEARCHES:-2}"      # 本轮至少要有这么多次真实 web_search
+CITATION_STRICT="${AI_RADAR_CITATION_STRICT:-0}"  # 1 = 引用无法溯源即失败重试
 # 报告必须包含的章节标题（| 分隔）；缺一即视为不合规报告，触发重试
-REQUIRED_SECTIONS="${AI_RADAR_REQUIRE:-今日必读|最近一周产品情况|热度榜与风评|抓取说明}"
-BUDGET_SEARCH="${AI_RADAR_BUDGET_SEARCH:-12}"       # 与 prompt.md 的合计上限一致
+REQUIRED_SECTIONS="${AI_RADAR_REQUIRE:-今日必读|最近一周产品情况|热度榜与风评|一手来源核查|抓取说明}"
+BUDGET_SEARCH="${AI_RADAR_BUDGET_SEARCH:-12}"   # 与 prompt.md 的合计上限一致
 BUDGET_FETCH="${AI_RADAR_BUDGET_FETCH:-8}"
 KEEP_REPORT_DAYS="${AI_RADAR_KEEP_REPORTS:-90}"
 KEEP_LOG_DAYS="${AI_RADAR_KEEP_LOGS:-30}"
@@ -65,6 +69,10 @@ headlines() { # N
     }' "$REPORT" 2>/dev/null
 }
 
+# URL 归一化：两侧用同一把尺子——去转义、协议、www、锚点/查询、末尾标点与斜杠
+# （会话文本里的 URL 常带 markdown 的 `))` 尾巴，不剥掉就会全部比对失败）
+norm_url() { sed -E 's#\\/#/#g; s#^https?://##; s#^www\.##; s#[#?].*$##; s#[)\]\}.,;:*]+$##; s#/$##'; }
+
 [ -f "$PROJECT_DIR/prompt.md" ] || { log "FATAL: prompt.md 不存在"; notify "AI Radar 配置错误" "找不到 prompt.md" critical; exit 2; }
 PROMPT="$(sed -e "s|{{WEEK_START}}|$WEEK_START|g" -e "s|{{DATE}}|$DATE|g" "$PROJECT_DIR/prompt.md")"
 [ -n "$PROMPT" ] || { log "FATAL: prompt 渲染为空"; exit 2; }
@@ -72,6 +80,9 @@ PROMPT="$(sed -e "s|{{WEEK_START}}|$WEEK_START|g" -e "s|{{DATE}}|$DATE|g" "$PROJ
 log "===== ai-radar $DATE 开始（model=$MODEL, thinking=$THINKING, attempts=$ATTEMPTS）====="
 
 status="fail"; attempt=0
+missing_sections=""; searches=0; fetches=0; exa_upgrades=0
+social_cites=0; tier_first=0; tier_second=0
+total_cited=0; untraceable=0; untraceable_list=""; sess_file=""
 while [ "$attempt" -lt "$ATTEMPTS" ]; do
   attempt=$((attempt + 1))
   log "-- attempt $attempt/$ATTEMPTS --"
@@ -84,31 +95,54 @@ while [ "$attempt" -lt "$ATTEMPTS" ]; do
   rc=$?
   size=0; [ -f "$REPORT" ] && size=$(wc -c <"$REPORT")
 
-  # 结构校验：必备章节标题是否齐全（提示词里已写明，缺失即不合规）
-  missing=""
+  # (a) 结构校验：必备章节标题是否齐全（提示词里已写明，缺失即不合规）
+  missing_sections=""
   if [ -f "$REPORT" ]; then
     IFS='|' read -r -a _want <<< "$REQUIRED_SECTIONS"
     for _token in "${_want[@]}"; do
-      grep -qF -- "$_token" "$REPORT" || missing="$missing$_token "
+      grep -qF -- "$_token" "$REPORT" || missing_sections="$missing_sections$_token "
     done
   fi
 
-  # 取证：从 session 文件数本轮真实的工具调用（精确匹配 toolCall 条目，避免匹配到文本里的同名字符串）
+  # (b) 取证：从 session 精确数真实工具调用（宽松 grep 会被文本里的同名字符串抬高）
   sess_file="$(ls -t "$SESSION_DIR"/*_"$SESSION_ID".jsonl 2>/dev/null | head -1)"
-  searches=0; fetches=0
+  searches=0; fetches=0; exa_upgrades=0; social_cites=0; tier_first=0; tier_second=0
   if [ -n "$sess_file" ]; then
     searches=$(grep -o '"type":"toolCall","id":"[^"]*","name":"web_search"' "$sess_file" | wc -l)
     fetches=$(grep -o '"type":"toolCall","id":"[^"]*","name":"fetch_content"' "$sess_file" | wc -l)
+    exa_upgrades=$(grep -o '"name":"web_search","arguments":{[^}]*}' "$sess_file" | grep -c '"provider":"exa"')
+    social_cites=$(grep -oE '\]\(https?://(www\.)?(x\.com|twitter\.com|reddit\.com|news\.ycombinator\.com|weibo\.com|zhihu\.com)/[^)]*' "$REPORT" 2>/dev/null | wc -l)
+    tier_first=$(grep -o '【一手】' "$REPORT" 2>/dev/null | wc -l)
+    tier_second=$(grep -o '【二手】' "$REPORT" 2>/dev/null | wc -l)
   fi
-  log "-- attempt $attempt 结束：exit=$rc report_bytes=$size 真实检索=${searches} 次 / 抓取=${fetches} 次 --"
-  [ -n "$missing" ] && log "无效：报告缺少必备章节：$missing"
 
-  if [ "$rc" -eq 0 ] && [ "$size" -ge "$MIN_REPORT_BYTES" ] && [ "$searches" -ge "$MIN_SEARCHES" ] && [ -z "$missing" ]; then
-    status="ok"; break
+  # (c) 引文溯源：报告里每条引用 URL 必须在本轮 session 出现过（抓取过或出现在检索结果里）
+  total_cited=0; untraceable=0; untraceable_list=""
+  if [ -n "$sess_file" ] && [ -f "$REPORT" ]; then
+    _pool="$(mktemp)"; _cited="$(mktemp)"
+    grep -oE 'https?://[^"\\ )]+' "$sess_file" | norm_url | LC_ALL=C sort -u >"$_pool"
+    grep -oE '\]\(https?://[^)]+\)' "$REPORT" | sed -E 's#^\]\(##; s#\)$##' | norm_url | LC_ALL=C sort -u >"$_cited"
+    total_cited=$(wc -l <"$_cited")
+    _missing="$(LC_ALL=C comm -23 "$_cited" "$_pool")"
+    untraceable=$(printf '%s' "$_missing" | grep -c . )
+    untraceable_list="$(printf '%s' "$_missing" | grep . | head -5 | tr '\n' ' ')"
+    rm -f "$_pool" "$_cited"
   fi
-  if [ "$rc" -eq 0 ] && [ "$searches" -lt "$MIN_SEARCHES" ]; then
-    log "无效：本轮实际检索 $searches 次（需 ≥$MIN_SEARCHES），报告可能凭空生成"
-  fi
+
+  log "-- attempt $attempt 结束：exit=$rc report_bytes=$size 真实检索=${searches} 次（exa 升级 ${exa_upgrades} 次）/ 抓取=${fetches} 次 / 引用溯源 $((total_cited - untraceable))/$total_cited / 来源层级 一手${tier_first} 二手${tier_second} 社媒引用${social_cites} --"
+
+  ok=1
+  [ "$rc" -eq 0 ] || ok=0
+  [ "$size" -ge "$MIN_REPORT_BYTES" ] || ok=0
+  [ "$searches" -ge "$MIN_SEARCHES" ] || ok=0
+  [ -z "$missing_sections" ] || ok=0
+  { [ "$CITATION_STRICT" != "1" ] || [ "$untraceable" -eq 0 ]; } || ok=0
+
+  if [ "$ok" -eq 1 ]; then status="ok"; break; fi
+
+  [ -z "$missing_sections" ] || log "无效：报告缺少必备章节：$missing_sections"
+  [ "$searches" -ge "$MIN_SEARCHES" ] || log "无效：本轮实际检索 $searches 次（需 ≥$MIN_SEARCHES），报告可能凭空生成"
+  [ "$untraceable" -gt 0 ] && log "WARN: $untraceable 条引用无法在本轮会话中溯源：$untraceable_list"
   if [ "$attempt" -lt "$ATTEMPTS" ]; then log "本次未产出有效报告，60s 后重试（复用同一 session）"; sleep 60; fi
 done
 
@@ -118,8 +152,15 @@ prune "$PROJECT_DIR/reports" '*.md' "$KEEP_REPORT_DAYS"
 prune "$LOG_DIR" '*.log' "$KEEP_LOG_DAYS"
 prune "$SESSION_DIR" '*.jsonl' "$KEEP_LOG_DAYS"
 
-# 把运行器取证写进报告：模型自述的次数实测会少报（曾把 9 次抓取写成 8 次）
-if [ "$status" = "ok" ] && [ -n "${sess_file:-}" ]; then
+# 运行器举证与来源披露：把可验证的事实写进报告本身
+if [ "$status" = "ok" ] && [ -n "$sess_file" ]; then
+  # 头部：来源通道 + 真实调用量 + 溯源结果，读者一眼知道这批信息的来路
+  if ! grep -q '信息来源（运行器写入）' "$REPORT"; then
+    src_note="> **信息来源（运行器写入）**：检索通道 Kimi Code API（失败才降级 exa → duckduckgo），抓取通道 Jina Reader → 直连 HTTP。本轮真实调用：web_search ${searches} 次（显式升级 exa ${exa_upgrades} 次）/ fetch_content ${fetches} 次；引文溯源 $((total_cited - untraceable))/${total_cited} 条可在本轮会话中追溯；来源层级标注：一手 ${tier_first} 条 / 二手 ${tier_second} 条$( [ "$social_cites" -gt 0 ] && printf '；**含社交平台引用 %s 条（仅可作线索，须回溯一手）**' "$social_cites" )。"
+    { head -1 "$REPORT"; printf '\n%s\n' "$src_note"; tail -n +2 "$REPORT"; } >"$REPORT.tmp" && mv "$REPORT.tmp" "$REPORT"
+    log "已写入来源披露（exa 升级 ${exa_upgrades} 次 / 溯源 ${total_cited}-${untraceable}/${total_cited}）"
+  fi
+  # 尾部：取证行（模型自述实测会少报：曾把 9 次抓取写成 8 次）
   if ! grep -q '运行器取证' "$REPORT"; then
     printf -- '- 运行器取证（run.sh 解析 session 的 toolCall，非模型自述）：web_search %s 次 / fetch_content %s 次（预算上限 %s / %s）\n' \
       "$searches" "$fetches" "$BUDGET_SEARCH" "$BUDGET_FETCH" >>"$REPORT"
@@ -127,6 +168,8 @@ if [ "$status" = "ok" ] && [ -n "${sess_file:-}" ]; then
   fi
   [ "$searches" -gt "$BUDGET_SEARCH" ] && log "WARN: 超出检索预算（$searches > $BUDGET_SEARCH）"
   [ "$fetches" -gt "$BUDGET_FETCH" ] && log "WARN: 超出抓取预算（$fetches > $BUDGET_FETCH）"
+  [ "$untraceable" -gt 0 ] && log "WARN: 存在无法溯源的引用，已在报告头部标明"
+  [ "$social_cites" -gt 0 ] && log "WARN: 报告含 $social_cites 条社交平台引用（只能作线索，须回溯一手来源）"
 fi
 
 # 落账到 git（推送失败不改变任务成败：日报才是主要产出）
@@ -155,7 +198,7 @@ if [ "$status" = "ok" ]; then
   [ -n "$body" ] || body="报告已生成：reports/$DATE.md"
   [ -n "$push_note" ] && body="$body"$'\n'"$push_note"
   notify "AI Radar $DATE · $(printf '%s\n' "$body" | grep -c '^•') 条必读" "$body" normal
-  log "===== 成功：$REPORT（$(wc -c <"$REPORT") 字节）====="
+  log "===== 成功：$REPORT（$(wc -c <"$REPORT") 字节，检索 $searches / 抓取 $fetches）====="
   exit 0
 fi
 

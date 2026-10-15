@@ -29,7 +29,7 @@ check "logs/ 可写" test -w "$PROJECT_DIR/logs"
 echo
 
 echo "[2] 提示词契约（prompt.md 必须约束住产出路径）"
-for token in '{{DATE}}' '{{WEEK_START}}' 'reports/{{DATE}}.md' 'INDEX.md' 'THEMES.md' 'web_search' '【已证实】' '本轮实际' '最近一周产品情况' '热度榜与风评' '趋势解读' '至少覆盖 2 个不同来源'; do
+for token in '{{DATE}}' '{{WEEK_START}}' 'reports/{{DATE}}.md' 'INDEX.md' 'THEMES.md' 'web_search' '【已证实】' '本轮实际' '最近一周产品情况' '热度榜与风评' '趋势解读' '至少覆盖 2 个不同来源' 'provider: "exa"' '【一手】' '【社媒线索】' '一手来源核查'; do
   check "prompt.md 含 $token" grep -qF -- "$token" "$PROJECT_DIR/prompt.md"
 done
 echo
@@ -44,6 +44,14 @@ check "周度窗口为滚动 7 天" grep -qF 'date -d "$DATE -6 days"' "$PROJECT
 check "存在报告必备章节校验" grep -qF 'AI_RADAR_REQUIRE' "$PROJECT_DIR/run.sh"
 check "真实调用次数会追写进报告（运行器取证）" grep -qF '运行器取证' "$PROJECT_DIR/run.sh"
 check "超预算会告警" grep -qF '超出抓取预算' "$PROJECT_DIR/run.sh"
+check "引文溯源已机器化" grep -qF '引文溯源' "$PROJECT_DIR/run.sh"
+check "URL 归一化函数存在" grep -qF 'norm_url()' "$PROJECT_DIR/run.sh"
+check "溯源严格模式可开关" grep -qF 'AI_RADAR_CITATION_STRICT' "$PROJECT_DIR/run.sh"
+check "报告头部会写入来源披露" grep -qF '信息来源（运行器写入）' "$PROJECT_DIR/run.sh"
+check "会统计 exa 升级次数" grep -qF 'exa_upgrades' "$PROJECT_DIR/run.sh"
+check "会检测社交平台引用" grep -qF 'social_cites' "$PROJECT_DIR/run.sh"
+check "会统计来源层级标注数" grep -qF 'tier_first' "$PROJECT_DIR/run.sh"
+check "必备章节含《一手来源核查》" grep -qF '一手来源核查' "$PROJECT_DIR/run.sh"
 check "预算上限与提示词口径同源可配" grep -qF 'AI_RADAR_BUDGET_FETCH' "$PROJECT_DIR/run.sh"
 check "无效报告会触发重试" grep -qF '报告可能凭空生成' "$PROJECT_DIR/run.sh"
 check "sessions 目录也被保留策略清理" grep -qF "prune \"\$SESSION_DIR\"" "$PROJECT_DIR/run.sh"
@@ -121,11 +129,12 @@ if ls "$PROJECT_DIR"/reports/*.md >/dev/null 2>&1; then
   fi
   # 对产物本身做结构校验：必备章节是否真的写进了报告
   miss=""
-  for t in 今日必读 最近一周产品情况 热度榜与风评 抓取说明; do grep -qF -- "$t" "$latest" || miss="$miss$t "; done
-  if [ -z "$miss" ]; then ok "最新报告包含四个必备章节"; else bad "最新报告缺少章节：$miss"; fi
+  for t in 今日必读 最近一周产品情况 热度榜与风评 一手来源核查 抓取说明; do grep -qF -- "$t" "$latest" || miss="$miss$t "; done
+  if [ -z "$miss" ]; then ok "最新报告包含五个必备章节"; else bad "最新报告缺少章节：$miss"; fi
   check "周度清单写明了滚动窗口区间" grep -qE '^## 最近一周产品情况（[0-9]{4}-[0-9]{2}-[0-9]{2} ~ [0-9]{4}-[0-9]{2}-[0-9]{2}）' "$latest"
   if grep -qE '^\|.*上次记录|^\| 榜单' "$latest"; then ok "含《热度榜与风评》可比快照表"; else info "未找到快照表（首日无往期记录时属正常）"; fi
   if grep -qF '运行器取证' "$latest"; then ok "报告含运行器取证的真实调用次数"; else bad "报告缺少运行器取证行"; fi
+  if grep -qF '信息来源（运行器写入）' "$latest"; then ok "报告头部含来源通道披露"; else bad "报告头部缺少来源披露"; fi
 else
   info "尚无报告（还没跑过，或已被保留策略清理）"
 fi
