@@ -80,6 +80,8 @@ systemctl --user disable --now ai-radar.timer   # 停掉定时任务
 
 这不是洁癖，是踩过的坑：早期用 `ai-radar-<date>` 做跨调用复用，重跑同一天时模型直接沿用旧上下文，**35 秒交出零检索的报告**，连《抓取说明》里的次数都是照抄上一轮。现在 `run.sh` 从 session 文件里精确数 `"type":"toolCall",...,"name":"web_search"` 的条数（宽松 grep 会多算，被文本里的同名字符串抬高），少于 `AI_RADAR_MIN_SEARCHES`（默认 2）即判无效报告并重试；报告还须包含四个必备章节标题，缺一同样重试。要审计任意一天的真实调用次数，直接对 `logs/sessions/*_ai-radar-<date>-*.jsonl` 做同样计数即可。
 
+**运行器取证**：验证通过后 `run.sh` 会把实测次数追写到日报《抓取说明》里（形如 `- 运行器取证（...）：web_search 8 次 / fetch_content 9 次`），超出预算（默认 12 检索 / 8 抓取）会记 WARN。这条行已经抓到过一次真实偏差：模型自述 8 次抓取，实际是 9 次 —— 所以报告里自述与取证两行并存，不一致直接可见。
+
 排查顺序：`systemctl --user status ai-radar.service` → `logs/<date>.log` 尾部 → `journalctl --user -u ai-radar.service`。常见失败：密钥文件缺失（抓取降级）、keyring 未解锁（push 失败但报告仍在）、kimi 套餐额度耗尽（退出码非 0，60s 后自动重试一次）。
 
 ## 这个仓库是公开的

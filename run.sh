@@ -22,6 +22,8 @@ MIN_REPORT_BYTES=400                            # 低于此字节数视为无效
 MIN_SEARCHES="${AI_RADAR_MIN_SEARCHES:-2}"         # 本轮至少要有这么多次真实 web_search
 # 报告必须包含的章节标题（| 分隔）；缺一即视为不合规报告，触发重试
 REQUIRED_SECTIONS="${AI_RADAR_REQUIRE:-今日必读|最近一周产品情况|热度榜与风评|抓取说明}"
+BUDGET_SEARCH="${AI_RADAR_BUDGET_SEARCH:-12}"       # 与 prompt.md 的合计上限一致
+BUDGET_FETCH="${AI_RADAR_BUDGET_FETCH:-8}"
 KEEP_REPORT_DAYS="${AI_RADAR_KEEP_REPORTS:-90}"
 KEEP_LOG_DAYS="${AI_RADAR_KEEP_LOGS:-30}"
 
@@ -115,6 +117,17 @@ prune() { find "$1" -maxdepth 1 -type f -name "$2" -mtime +"$3" -delete 2>/dev/n
 prune "$PROJECT_DIR/reports" '*.md' "$KEEP_REPORT_DAYS"
 prune "$LOG_DIR" '*.log' "$KEEP_LOG_DAYS"
 prune "$SESSION_DIR" '*.jsonl' "$KEEP_LOG_DAYS"
+
+# 把运行器取证写进报告：模型自述的次数实测会少报（曾把 9 次抓取写成 8 次）
+if [ "$status" = "ok" ] && [ -n "${sess_file:-}" ]; then
+  if ! grep -q '运行器取证' "$REPORT"; then
+    printf -- '- 运行器取证（run.sh 解析 session 的 toolCall，非模型自述）：web_search %s 次 / fetch_content %s 次（预算上限 %s / %s）\n' \
+      "$searches" "$fetches" "$BUDGET_SEARCH" "$BUDGET_FETCH" >>"$REPORT"
+    log "已追加运行器取证：检索 $searches / 抓取 $fetches"
+  fi
+  [ "$searches" -gt "$BUDGET_SEARCH" ] && log "WARN: 超出检索预算（$searches > $BUDGET_SEARCH）"
+  [ "$fetches" -gt "$BUDGET_FETCH" ] && log "WARN: 超出抓取预算（$fetches > $BUDGET_FETCH）"
+fi
 
 # 落账到 git（推送失败不改变任务成败：日报才是主要产出）
 push_note=""
