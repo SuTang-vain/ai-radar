@@ -13,6 +13,31 @@
 
 ---
 
+## 主题：Meta 开放权重模型
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-16 — Meta 发布 Muse Spark Open，816B 总参数 / 42B 激活、1M 上下文、原生多模态，可在两台 Apple M5 Ultra Mac Studio 桌面运行，权重上架 Hugging Face/Google Cloud Model Garden/Microsoft Foundry 等，API 接入 OpenRouter/Together/Fireworks 等；许可为 Muse Model License（有限商业条款）【已证实】([Meta AI Research](https://research.meta.ai/blog/muse-spark-open))
+
+## 主题：Ant Ling 与中国开源模型
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-16 — Ant Group 的 inclusionAI 开源 Ling-3.1-flash，560B/25B MoE、1M 上下文、MIT 许可，量化后可在 4 卡 GB300/Hopper 配置 serve；同日发布基于开源 coding agent Pi 的 LingCode（尚未开源）【已证实】([Hugging Face](https://huggingface.co/inclusionAI/Ling-3.1-flash))
+
+## 主题：Cognition Devin 与 AI SRE
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-16 — Cognition 宣布 Devin Oncall GA，扩展至生产告警与 incident response，支持 Datadog/Dynatrace/Sentry/PagerDuty/Slack/Teams 触发器，官方称在 SREGym-Lite 达 100% end-to-end 成功率【已证实】([Cognition Blog](https://devin.ai/blog/introducing-devin-oncall))
+
+## 主题：OpenAI Rosalind 生命科学
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-16 — OpenAI 推出 Rosalind Academic Plan，向符合条件的美国大学实验室提供最多 30 个免费 Business Standard 席位（最长 12 个月）及 GPT-Rosalind 访问，不含 API【厂商宣称】([OpenAI](https://openai.com/index/introducing-the-rosalind-academic-plan))
+
+## 主题：决策模型与 AI Gateway
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-16 — Liquid AI 发布 d1-ultra 并上架 Vercel AI Gateway，32K 上下文多模态决策模型，按输入 token $0.042/M 计费、无输出费用；OpenRouter 决策请求榜上 TypeSafe 占 92.4%，但 Cloudflare/OpenAI/Perplexity 等新入局者周环比 >999%【已证实】([Liquid AI](https://www.liquid.ai/blog/d1-ultra), [Vercel](https://vercel.com/changelog/liquid-ais-d1-ultra-now-available-on-ai-gateway), [OpenRouter](https://openrouter.ai/rankings/decisions))
+
 ## 主题：OpenAI 监管与诉讼
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
@@ -27,14 +52,21 @@
 ## 主题：GitHub Copilot 模型池与开发者工具定价
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-16 — 趋势：LMArena 文本榜显示 Gemini 4 Argon (high) 仍居 #1，但分数从 1533.239 降至 1524±9 Elo，与 #2 Muse Wonder Max（1509±11）、#3 Claude Opus 5.5 (high)（1508±7）置信区间重叠，领先优势未 statistically 拉开；Artificial Analysis Intelligence Index 则显示 Claude Opus 5.5 (max) 以 57.6 分居首，Gemini 4 Argon (high) 仅列第 9（52.6 分）【推测】([arena.ai](https://arena.ai/leaderboard/chat/text), [BenchLeader](https://www.benchleader.com/benchmarks/aa_intelligence_index))
   - 2026-10-15 — 趋势：Gemini 4 Argon 在 LMArena 文本榜登顶（1533.239 Elo / #1，4903 票，仍 Preliminary）并同日进入 GitHub Copilot，Google 在评测与开发者分发两端同步推进；OpenRouter 本周新上榜 191B tokens【已证实】([AI Model Index](https://ai-model-psi-bice.vercel.app/news/lmarena-oct-13-refresh), [GitHub Changelog](https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot/), [OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-15 — GitHub Copilot 正式上线 Google Gemini 4 Argon，按 provider list pricing 用量计费，覆盖 Pro+/Max/Business/Enterprise【已证实】([GitHub Changelog](https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot/))
 
 ## 主题：AI 数据中心硬件与开放标准
 - 状态：长期跟踪
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-16 — CoreWeave 信用压力升至 distressed 区间：五年期 CDS 约 1,038 bps（一度突破 1,140），2031 债券收益率 15.78%；公司债务与义务超 510 亿美元，CEO 称市场“非理性”，Deutsche Bank 估计 backlog 超 1,000 亿美元；Oracle CDS 本周同步上涨约 10%【已证实】([CNBC](https://www.cnbc.com/2026/10/15/coreweave-credit-default-swaps-hit-distress-levels-as-investors-sour-on-ai-debt.html))
   - 2026-10-15 — NVIDIA 在 OCP 峰会贡献 Vera Rubin 机架设计、更新 MGX 1.2，与 Cisco 推出 USFP 光模块标准，并开源 DSX OS 组件【已证实】([NVIDIA Blog](https://blogs.nvidia.com/blog/ocp-global-summit-vera-rubin-scale-ai-factories/))
   - 2026-10-15 — Salience Labs 完成 1.25 亿美元 B 轮融资，加速 AI 数据中心光交换芯片部署【厂商宣称】([Salience Labs](https://www.saliencelabs.ai/salience-labs-125-million-series-b-funding/))
+
+## 主题：Anthropic 开发者基础设施
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-16 — Anthropic 披露内部 VCS Scion（7 人 5 个月内从 git 迁移，9 月日均合并超 30,000 次）并宣布 Claude Code Review GA、Claude Platform OpenTelemetry traces public beta；三连发显示其正把模型能力转化为工程组织基础设施【已证实】([Anthropic Engineering](https://www.anthropic.com/engineering/redesigning-source-control), [Claude Code Review](https://claude.com/resources/articles/code-review-is-now-generally-available), [Claude OTel](https://claude.com/resources/articles/agent-observability-on-the-claude-platform))
 
 ## 主题：Anthropic 选举安全
 - 状态：关注中
@@ -55,5 +87,6 @@
 ## 主题：OpenRouter 生产用量格局
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-16 — 趋势：DeepSeek V4.1 Flash 日榜 #1 反弹至 5.17T tokens（+15%），GLM 5.3 Flash 日榜 #2（1.84T，+2%），Step 5 Preview 从 10-14 的日榜 #2（3.74T，+26%）跌至 10-15 的 #5（1.33T，-65%），周榜仍 #2（19.5T，>999%）；OpenRouter 周 token 榜前十中中国作者仍占多数（单一平台数据，待交叉验证）【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-15 — 趋势：中国作者模型在 OpenRouter 周请求份额中合计约 47.9%（DeepSeek 24.5%、Z.ai 13.4%、Qwen 5.4%、Xiaomi 2.9%、Tencent 1.7%），但内部分化明显；DeepSeek V4.1 Flash 日榜 #1 但日环比 -11%，Step 5 Preview 日榜 #2 且 +26%，Z.ai 周请求 +107% 扩张最快（单一平台数据，待交叉验证）【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-15 — DeepSeek 在 OpenRouter 日榜/月榜均居第一，但日环比 -11%；Step 5 Preview 日榜 #2（+26%）、Gemini 4 Argon 新上榜；中国作者（DeepSeek/Z.ai/Qwen/Xiaomi/Tencent）合计份额约 47.9%【已证实】([OpenRouter](https://openrouter.ai/rankings))
