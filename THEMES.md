@@ -75,6 +75,7 @@
 ## 主题：GitHub Copilot 模型池与开发者工具定价
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-19 — 趋势：LMArena 文本榜 10-18 第三方快照显示 Gemini 4 Argon (high) 仍以 1524 Elo 居首，与 10-18 报告的 1525±9 基本持平；Artificial Analysis Intelligence Index 此前显示 Claude Opus 5.5 (max) 以 57.6 分居首、Gemini 4 Argon 列第 9（52.6 分），两榜口径分化依旧；未抓取 LMArena/Artificial Analysis 官方页，数据来自第三方聚合【推测】([BenchLeader](https://www.benchleader.com/benchmarks/lmarena_text))
   - 2026-10-18 — GitHub 宣布 2026-11-16 将在所有 Copilot 体验中移除 Claude Opus 4.8、Claude Opus 5 与 GPT-5.6 Terra；Opus 4.8 仍对按年 individual 订阅保留，替代方案为 Opus 5.5 与 GPT-6.1 Sol / GPT-6 Luna【已证实】([GitHub Changelog](https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november/))
   - 2026-10-16 — 趋势：LMArena 文本榜显示 Gemini 4 Argon (high) 以 1524±9 Elo 仍居 #1，但与 Muse Wonder Max（1509±11）、Claude Opus 5.5 (high)（1508±7）置信区间重叠且仍 Preliminary；Artificial Analysis Intelligence Index 则显示 Claude Opus 5.5 (max) 以 57.6 分居首，Gemini 4 Argon (high) 列第 6（52.6 分），两榜口径分化依旧【推测】([BenchLeader](https://www.benchleader.com/benchmarks/lmarena_text), [ModelCap/Artificial Analysis](https://modelcap.ai/benchmarks/aa-intelligence-index))
   - 2026-10-16 — 趋势：LMArena 文本榜显示 Gemini 4 Argon (high) 仍居 #1，但分数从 1533.239 降至 1524±9 Elo，与 #2 Muse Wonder Max（1509±11）、#3 Claude Opus 5.5 (high)（1508±7）置信区间重叠，领先优势未 statistically 拉开；Artificial Analysis Intelligence Index 则显示 Claude Opus 5.5 (max) 以 57.6 分居首，Gemini 4 Argon (high) 仅列第 9（52.6 分）【推测】([arena.ai](https://arena.ai/leaderboard/chat/text), [BenchLeader](https://www.benchleader.com/benchmarks/aa_intelligence_index))
@@ -123,6 +124,7 @@
 ## 主题：OpenRouter 生产用量格局
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-19 — 趋势：OpenRouter 最新完整日榜仍为 10-17 数据，DeepSeek V4.1 Flash #1（4.09T，-25%）未变；GPT-6 Luna 以 660B 列日榜 #7，日环比 -33%，显示新模型开始放量但生产迁移仍处早期；GPT-5.6 Luna 月榜 -59%，代际切换迹象明显；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-18 — 趋势：DeepSeek V4.1 Flash 日榜 #1（4.09T，-25%）但仍领先；Step 5 Preview 周榜 #2（13.9T，+119%）增速较 10-16 的 +430% 明显放缓；DeepSeek V4.1-Flash-1017 新上榜即登顶“New & Trending”周榜（683B）；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-16 — 趋势：DeepSeek V4.1 Flash 日榜 #1（5.41T，+5%）且周榜 #1（36.8T，-2%）；GLM 5.3 Flash 日榜 #2（1.74T，-5%）；Step 5 Preview 周榜仍 #2（17.1T，+430%）但已跌出日榜前十；Gemini 4 Argon 在 OpenRouter“New & Trending”周榜登顶（506B），Nemotron 3.5 Super VL free 列第二（343B）；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-16 — 趋势：DeepSeek V4.1 Flash 日榜 #1 反弹至 5.17T tokens（+15%），GLM 5.3 Flash 日榜 #2（1.84T，+2%），Step 5 Preview 从 10-14 的日榜 #2（3.74T，+26%）跌至 10-15 的 #5（1.33T，-65%），周榜仍 #2（19.5T，>999%）；OpenRouter 周 token 榜前十中中国作者仍占多数（单一平台数据，待交叉验证）【已证实】([OpenRouter](https://openrouter.ai/rankings))
@@ -143,3 +145,38 @@
 - 时间线（最新在最上，最多 12 条）：
   - 2026-10-18 — DeepSeek 发布 V4.1-Flash-1017（763B/1M 上下文，MIT 权重），自评 DeepSWE 77.0、Terminal-Bench 4.0 42.3；同日开放 Search/Fetch API，$0.75/1,000 成功请求，11-01 起计费，通过 Claude Code/Codex/DeepSeek Harness 的 server-side 调用在 11-01 前免费【已证实】([Hugging Face](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017), [DeepSeek API Docs](https://api-docs.deepseek.com/guides/search/))
   - 2026-10-16 — 趋势：DeepSeek V4.1 Flash 在 OpenRouter 日榜/周榜均居 #1，中国作者模型在 OpenRouter 周请求份额合计约 47.9%；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
+
+---
+
+## 主题：OpenAI GPT-6 与 Intelligent UI
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-19 — OpenAI 宣布 GPT-6 开始面向 ChatGPT Plus/Pro/Business/Enterprise 全球 rollout，Free/Go 次日覆盖；付费层由 GPT-6 Sol 驱动，免费层由 GPT-6 Luna 驱动；Intelligent UI 支持在对话中生成可交互组件（图表、表单、按钮、小游戏），并支持边想边答的流式响应；官方称对需要 web search 的问题 GPT-6 Instant 比 GPT-5.6 Instant 早 44% 开始输出【已证实】([OpenAI](https://openai.com/index/gpt-6-for-everyone))
+
+---
+
+## 主题：OpenAI 数学与形式化证明
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-15 — OpenAI 公布由内部 frontier 模型产出的数学结果，并在 GitHub 仓库发布多项证明的 Lean 形式化版本；同时向 Simons Foundation 捐赠 500 万美元用于帮助数学家审查、理解并基于 AI 结果做进一步研究；产生结果的模型尚未公开发布或进入 API【已证实】([OpenAI](https://openai.com/index/sharing-ai-progress-in-mathematics))
+
+---
+
+## 主题：Anthropic 治理与公共利益承诺
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-18 — Anthropic 宣布设立 Anthropic Public Benefit Fund（全资子公司 LLC），先划拨 5% 股份，并可在公司估值每增长 50% 时追加 2%；基金用途包括向传统非营利组织大额捐赠或对特定人群直接分配；加上创始人与员工既有股权捐赠承诺，约 20% 公司股份将用于公共利益；治理细节与估值基准将在未来数月披露【已证实】([Anthropic](https://www.anthropic.com/news/public-benefit-fund))
+
+---
+
+## 主题：AI agent 与网站可及性
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-18 — The Verge 报道 Yelp、Delta、JPMorgan Chase、Charles Schwab、Cars.com、Amtrak 等已阻止或限制 Meta Muse、xAI Grok、OpenAI Dots、Instinct 等 agent 访问或执行交易；Amazon 与 Perplexity 的 agent 购物诉讼仍在持续，上诉法院 8 月推翻禁制令后 Amazon 已提交修正诉状；Cloudflare 反 bot 机制也加剧了 agent 被拦截【已证实/二手】([The Verge](https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web))
+
+---
+
+## 主题：Character.AI 破产与人才/资产去向
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-18 — TechCrunch 援引法庭文件称，Disney 同意向至少 60 名 Character.AI 员工发出聘用邀约（年补偿约 6,000 万美元），且“绝大多数”已接受；Character.AI 本周已申请破产，Disney 此前同意以 2,000 万美元收购部分资产；该 bid 为 stalking-horse，其他竞购方仍可能出价；未获 Disney 官方确认【二手】([TechCrunch](https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/))
