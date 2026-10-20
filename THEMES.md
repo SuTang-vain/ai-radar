@@ -85,6 +85,7 @@
 ## 主题：AI 数据中心硬件与开放标准
 - 状态：长期跟踪
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-19 — NVIDIA 宣布在 Jülich JUPITER 超算完成 104-qubit 容错量子计算模拟，使用 8,192 颗 GH200，验证 magic-state cultivation 方法可在真实噪声下将所需物理量子比特减少约 90%【厂商宣称】([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/nvidia-runs-record-simulation-of-fault-tolerant-quantum-computing-at-julich-supercomputing-centre))
   - 2026-10-18 — FT 报道称 Anthropic 的 Project North Star 计划采购约 1.5 GW Google TPU，融资包约 600 亿美元，Blackstone 拟投 90 亿美元次级债（票面利率约 10%），另有约 420 亿美元由 Broadcom 担保的优先债；尚未获 Anthropic 官方确认【厂商宣称/二手】([Investing.com / FT](https://ng.investing.com/news/company-news/anthropic-offers-blackstone-over-10-yield-in-60b-ai-chip-financing--ft-reports-2741441))
   - 2026-10-16 — CoreWeave 信用压力升至 distressed 区间：五年期 CDS 约 1,038 bps（一度突破 1,140），2031 债券收益率 15.78%；公司债务与义务超 510 亿美元，CEO 称市场“非理性”，Deutsche Bank 估计 backlog 超 1,000 亿美元；Oracle CDS 本周同步上涨约 10%【已证实】([CNBC](https://www.cnbc.com/2026/10/15/coreweave-credit-default-swaps-hit-distress-levels-as-investors-sour-on-ai-debt.html))
   - 2026-10-15 — NVIDIA 在 OCP 峰会贡献 Vera Rubin 机架设计、更新 MGX 1.2，与 Cisco 推出 USFP 光模块标准，并开源 DSX OS 组件【已证实】([NVIDIA Blog](https://blogs.nvidia.com/blog/ocp-global-summit-vera-rubin-scale-ai-factories/))
@@ -180,3 +181,45 @@
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
   - 2026-10-18 — TechCrunch 援引法庭文件称，Disney 同意向至少 60 名 Character.AI 员工发出聘用邀约（年补偿约 6,000 万美元），且“绝大多数”已接受；Character.AI 本周已申请破产，Disney 此前同意以 2,000 万美元收购部分资产；该 bid 为 stalking-horse，其他竞购方仍可能出价；未获 Disney 官方确认【二手】([TechCrunch](https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/))
+
+---
+
+## 主题：美国对华 AI 限制与 DeepSeek 合规风险
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-20 — DHS 发布《Exclusion and Removal Order #2026-01》，命令联邦民用行政分支机构排除、移除 Hangzhou DeepSeek AI 及其关联实体的产品，以及使用 DeepSeek 实现的第三方产品；命令 7-24 签署、10-20 发布，机构可在 60 天内申请例外【已证实】([Federal Register](https://public-inspection.federalregister.gov/2026-21447.pdf))
+
+---
+
+## 主题：Agentic commerce 与支付基础设施
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-19 — Stripe Link 目前为约 200 个 AI agent/assistant 提供支付能力，较 9 月的约 70 个接近翻倍；涉及 Muse、Grok Bot、Instinct、Skydive、Town 等，Stripe 高管称 agent 交易量已“very material”【厂商宣称/二手】([Upstarts Media](https://www.upstartsmedia.com/p/data-stripe-link-how-ai-assistants-spend))
+
+---
+
+## 主题：AI coding agent 安全与 API 密钥风险
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-19 — OpenCode 披露 Console 一个即将退役的托管系统遭入侵，约 1.4% 用户（含外部 provider API key 的工作区）受影响；用户报告 Anthropic、OpenAI、Google 账户出现未授权消费，Anthropic/Google 已封禁疑似暴露密钥，OpenCode 正在退款；事件再次凸显 agent 工具集中托管密钥的风险【已证实/二手】([TechCrunch](https://techcrunch.com/2026/10/19/hackers-hit-ai-coding-tool-opencode-running-up-charges-on-users-ai-accounts/))
+
+---
+
+## 主题：NVIDIA Vera CPU 与 AI agent 计算平台
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-19 — Modal 宣布采用 NVIDIA Vera CPU 运行 Modal Sandboxes，自测在并发容器负载下吞吐量可达同等 x86（Intel GNR）的约 2 倍；Modal 强调不会放弃 Intel/AMD，将采用混合机队【厂商宣称】([Modal Blog](https://modal.com/blog/nvidia-vera-sandboxes))
+
+---
+
+## 主题：英国 AI 金融监管
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-19 — 英国 FCA 发布金融业 AI 良好与不良实践指南，明确现有 PRIN、Consumer Duty、SMCR、运营韧性框架已适用于 AI，强调消费者责任、治理问责、人类 oversight 与运营韧性；FCA 表示不会为 AI 单独立法【已证实】([FCA](https://www.fca.org.uk/publications/good-poor-practice/ai-financial-services))
+
+---
+
+## 主题：个人 AI Agent 助手竞争
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-19 — Replika 创始人 Eugenia Kuyda 的 Wabi 正式向所有用户开放 iOS、Android、Mac，定位为“多人 personal AI assistant”，以 messenger 形态支持多个 agentic thread 与 on-demand mini app，目前免费【已证实/二手】([TechCrunch](https://techcrunch.com/2026/10/19/replikas-founder-built-the-ai-assistant-she-pitched-at-disrupt-12-years-ago/))
