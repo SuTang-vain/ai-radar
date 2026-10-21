@@ -39,6 +39,11 @@
 - 时间线（最新在最上，最多 12 条）：
   - 2026-10-16 — Meta 发布 Muse Spark Open，816B 总参数 / 42B 激活、1M 上下文、原生多模态，可在两台 Apple M5 Ultra Mac Studio 桌面运行，权重上架 Hugging Face/Google Cloud Model Garden/Microsoft Foundry 等，API 接入 OpenRouter/Together/Fireworks 等；许可为 Muse Model License（有限商业条款）【已证实】([Meta AI Research](https://research.meta.ai/blog/muse-spark-open))
 
+## 主题：Meta Muse 隐私与安全
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-20 — 安全公司 Claroc 披露 Muse 对话分享链接因把标题写入子域名，导致通过 passive DNS 可公开枚举 6,800 条链接，样本含收入审查、贷款申请、员工日历、银行欺诈告警等；Meta 已暂停该分享功能【已证实/二手】([The Verge](https://www.theverge.com/tech/1014627/meta-muse-ai-sharing-ai-chats), [Ars Technica](https://arstechnica.com/security/2026/10/meta-muse-exposes-users-personal-and-business-secrets-when-they-share-conversations/))
+
 ## 主题：Ant Ling 与中国开源模型
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
@@ -52,12 +57,18 @@
 ## 主题：OpenAI Rosalind 生命科学
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-20 — OpenAI 宣布收购 Orchestra Bio，将其团队与技术并入 Rosalind，目标是为 biopharma 团队构建可协调药物研发全流程的 agent【已证实】([OpenAI](https://openai.com/index/openai-to-acquire-orchestra-bio/))
   - 2026-10-16 — OpenAI 推出 Rosalind Academic Plan，向符合条件的美国大学实验室提供最多 30 个免费 Business Standard 席位（最长 12 个月）及 GPT-Rosalind 访问，不含 API【厂商宣称】([OpenAI](https://openai.com/index/introducing-the-rosalind-academic-plan))
 
 ## 主题：决策模型与 AI Gateway
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
   - 2026-10-16 — Liquid AI 发布 d1-ultra 并上架 Vercel AI Gateway，32K 上下文多模态决策模型，按输入 token $0.042/M 计费、无输出费用；OpenRouter 决策请求榜上 TypeSafe 占 92.4%，但 Cloudflare/OpenAI/Perplexity 等新入局者周环比 >999%【已证实】([Liquid AI](https://www.liquid.ai/blog/d1-ultra), [Vercel](https://vercel.com/changelog/liquid-ais-d1-ultra-now-available-on-ai-gateway), [OpenRouter](https://openrouter.ai/rankings/decisions))
+
+## 主题：Google Gemini 行业垂直方案与政企落地
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-20 — Google Public Sector 推出 Gemini for Government Services 预览，面向美国各级政府的 agentic 解决方案，已获密苏里州与 HHS 选用，提供政策解读、采购合规、FOIA 脱敏、公民材料验证等预置技能，并集成 Workspace/SharePoint/Salesforce/ServiceNow/Oracle Fusion 等系统【已证实】([Google Cloud Press Corner](https://www.googlecloudpresscorner.com/2026-10-20-Google-Public-Sector-Launches-Gemini-for-Government-Services))
 
 ## 主题：OpenAI 监管、诉讼与模型生命周期
 - 状态：关注中
@@ -75,6 +86,7 @@
 ## 主题：GitHub Copilot 模型池与开发者工具定价
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-21 — 趋势：BenchLeader 第三方快照显示 LMArena 文本榜 Gemini 4 Argon (high) 仍以 1524 Elo 居首，Muse Wonder (max) #2（1509）、Claude Opus 5.5 (high) #3（1508），与 10-19/10-20 基本持平；未抓取 LMArena/Artificial Analysis 官方页，数据来自第三方聚合【推测】([BenchLeader](https://www.benchleader.com/benchmarks/lmarena_text))
   - 2026-10-19 — 趋势：LMArena 文本榜 10-18 第三方快照显示 Gemini 4 Argon (high) 仍以 1524 Elo 居首，与 10-18 报告的 1525±9 基本持平；Artificial Analysis Intelligence Index 此前显示 Claude Opus 5.5 (max) 以 57.6 分居首、Gemini 4 Argon 列第 9（52.6 分），两榜口径分化依旧；未抓取 LMArena/Artificial Analysis 官方页，数据来自第三方聚合【推测】([BenchLeader](https://www.benchleader.com/benchmarks/lmarena_text))
   - 2026-10-18 — GitHub 宣布 2026-11-16 将在所有 Copilot 体验中移除 Claude Opus 4.8、Claude Opus 5 与 GPT-5.6 Terra；Opus 4.8 仍对按年 individual 订阅保留，替代方案为 Opus 5.5 与 GPT-6.1 Sol / GPT-6 Luna【已证实】([GitHub Changelog](https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november/))
   - 2026-10-16 — 趋势：LMArena 文本榜显示 Gemini 4 Argon (high) 以 1524±9 Elo 仍居 #1，但与 Muse Wonder Max（1509±11）、Claude Opus 5.5 (high)（1508±7）置信区间重叠且仍 Preliminary；Artificial Analysis Intelligence Index 则显示 Claude Opus 5.5 (max) 以 57.6 分居首，Gemini 4 Argon (high) 列第 6（52.6 分），两榜口径分化依旧【推测】([BenchLeader](https://www.benchleader.com/benchmarks/lmarena_text), [ModelCap/Artificial Analysis](https://modelcap.ai/benchmarks/aa-intelligence-index))
@@ -85,6 +97,7 @@
 ## 主题：AI 数据中心硬件与开放标准
 - 状态：长期跟踪
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-19 — 彭博社援引知情人士称 Anthropic 与 Nscale 洽谈约 450 亿美元算力租赁协议，涉及西弗吉尼亚 Monarch 数据中心第二座 460 MW 设施，拟采用 NVIDIA Vera Rubin 芯片；双方未置评，Reuters 无法独立核实【厂商宣称/二手】([Yahoo/Reuters](https://finance.yahoo.com/technology/ai/articles/nscale-anthropic-talks-45-billion-193754631.html))
   - 2026-10-19 — NVIDIA 宣布在 Jülich JUPITER 超算完成 104-qubit 容错量子计算模拟，使用 8,192 颗 GH200，验证 magic-state cultivation 方法可在真实噪声下将所需物理量子比特减少约 90%【厂商宣称】([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/nvidia-runs-record-simulation-of-fault-tolerant-quantum-computing-at-julich-supercomputing-centre))
   - 2026-10-18 — FT 报道称 Anthropic 的 Project North Star 计划采购约 1.5 GW Google TPU，融资包约 600 亿美元，Blackstone 拟投 90 亿美元次级债（票面利率约 10%），另有约 420 亿美元由 Broadcom 担保的优先债；尚未获 Anthropic 官方确认【厂商宣称/二手】([Investing.com / FT](https://ng.investing.com/news/company-news/anthropic-offers-blackstone-over-10-yield-in-60b-ai-chip-financing--ft-reports-2741441))
   - 2026-10-16 — CoreWeave 信用压力升至 distressed 区间：五年期 CDS 约 1,038 bps（一度突破 1,140），2031 债券收益率 15.78%；公司债务与义务超 510 亿美元，CEO 称市场“非理性”，Deutsche Bank 估计 backlog 超 1,000 亿美元；Oracle CDS 本周同步上涨约 10%【已证实】([CNBC](https://www.cnbc.com/2026/10/15/coreweave-credit-default-swaps-hit-distress-levels-as-investors-sour-on-ai-debt.html))
@@ -112,6 +125,7 @@
 ## 主题：AI 编码 Agent 插件与 harness 生态
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-21 — 趋势：GitHub Trending 日榜前列被 `ai-job-search`（基于 Claude Code 的求职 agent）、`cloudflare/security-audit-skill`、`stablyai/orca`（agent 车队）、`headroomlabs-ai/headroom`（上下文压缩）等具体场景/安全审计/上下文优化项目占据，此前连续居首的 `claude-plugins-official` 已退出榜首；开发者关注点从“插件目录”转向“具体 agent 场景 + 运行成本/安全审计”【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-18 — 趋势：GitHub Trending 榜首仍为 Anthropic 官方 `claude-plugins-official`（+1,383 stars），前十包括 `ai-job-search`、`ECC`、`CLI-Anything`、`scientific-agent-skills`、`ruflo`、`claude-code` 等 agent harness、插件、记忆与技能库项目，开发者关注点继续停留在 agent 工程基础设施；日新增 star 较 10-17 的 +1,552 略有降温【推测】([GitHub Trending 第三方快照](https://yidinghuiziyou.com/github/trending/2026-10-18/))
   - 2026-10-17 — 趋势：GitHub Trending 榜首为 Anthropic 官方 `claude-plugins-official`（+1,552 stars），前十同时出现 `scientific-agent-skills`、`ECC`、`CLI-Anything`、`context-mode`、`ruflo` 等 agent harness、MCP、技能库与上下文优化项目，开发者关注点明显从模型榜单转向 agent 编排与工程基础设施【推测】([GitHub](https://github.com/trending))
 
@@ -125,6 +139,7 @@
 ## 主题：OpenRouter 生产用量格局
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-21 — 趋势：OpenRouter 截至 10-19 的日榜显示 DeepSeek V4.1 Flash 1017 以 4.15T（+15%）仍居 #1，MiniMax M3.1 Flash (free) 以 3.91T（+272%）跃升至 #2；周榜中 DeepSeek V4.1 Flash #1（27.3T，-32%）、GLM 5.3 Flash #2（11.6T，-10%）、DeepSeek V4.1 Flash 1017 #3（11.5T，new）；作者请求份额中 Anthropic 从低位 +25% 至 4.7%，Z.ai/Xiaomi 份额下降；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-19 — 趋势：OpenRouter 最新完整日榜仍为 10-17 数据，DeepSeek V4.1 Flash #1（4.09T，-25%）未变；GPT-6 Luna 以 660B 列日榜 #7，日环比 -33%，显示新模型开始放量但生产迁移仍处早期；GPT-5.6 Luna 月榜 -59%，代际切换迹象明显；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-18 — 趋势：DeepSeek V4.1 Flash 日榜 #1（4.09T，-25%）但仍领先；Step 5 Preview 周榜 #2（13.9T，+119%）增速较 10-16 的 +430% 明显放缓；DeepSeek V4.1-Flash-1017 新上榜即登顶“New & Trending”周榜（683B）；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-16 — 趋势：DeepSeek V4.1 Flash 日榜 #1（5.41T，+5%）且周榜 #1（36.8T，-2%）；GLM 5.3 Flash 日榜 #2（1.74T，-5%）；Step 5 Preview 周榜仍 #2（17.1T，+430%）但已跌出日榜前十；Gemini 4 Argon 在 OpenRouter“New & Trending”周榜登顶（506B），Nemotron 3.5 Super VL free 列第二（343B）；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
@@ -166,6 +181,7 @@
 ## 主题：Anthropic 治理与公共利益承诺
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-20 — Anthropic 推销的联邦 AI 安全法案草案遭 Politico 泄露，引发安全社区反弹；草案仅在 >50 人死亡或 >10 亿美元损失等灾难性风险下允许法院暂停模型，并 preempt 部分州法；Anthropic 联邦事务负责人承认 preemption 措辞“不够精确”，将重写【二手】([TechCrunch](https://techcrunch.com/2026/10/20/anthropic-pitches-ai-safety-bill-that-may-block-a-model-if-50-people-could-be-killed/), [Politico](https://www.politico.com/news/2026/10/16/anthropic-ai-safety-01124654))
   - 2026-10-18 — Anthropic 宣布设立 Anthropic Public Benefit Fund（全资子公司 LLC），先划拨 5% 股份，并可在公司估值每增长 50% 时追加 2%；基金用途包括向传统非营利组织大额捐赠或对特定人群直接分配；加上创始人与员工既有股权捐赠承诺，约 20% 公司股份将用于公共利益；治理细节与估值基准将在未来数月披露【已证实】([Anthropic](https://www.anthropic.com/news/public-benefit-fund))
 
 ---
