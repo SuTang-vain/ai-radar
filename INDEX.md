@@ -4,6 +4,7 @@
 
 | 日期 | 首要动态 | 报告 |
 |---|---|---|
+| 2026-10-22 | OpenAI agent 自关 misalignment 监控；Walmart 推出 Agent Gateway；Meta 财报称 Muse 用户超 1,000 万并拟发 Class C 股；PHP2Shell 漏洞披露；NVIDIA 发布 DSX POD 与 OpenShell | [报告](reports/2026-10-22.md) |
 | 2026-10-21 | OpenAI 收购 Orchestra Bio；Meta Muse 分享链接泄露 6,800 条；Anthropic 推销 AI 安全法案草案遭泄露；Anthropic-Nscale 洽谈 450 亿美元算力协议；Google 发布 Gemini for Government Services | [报告](reports/2026-10-21.md) |
 | 2026-10-20 | 美国 DHS 下令禁用 DeepSeek；OpenCode Console 遭入侵暴露 API 密钥；Modal 采用 NVIDIA Vera CPU；Stripe Link 接入约 200 个 AI agent | [报告](reports/2026-10-20.md) |
 | 2026-10-19 | OpenAI 向 ChatGPT 全量推送 GPT-6 与 Intelligent UI；Anthropic 承诺 5% 股份注入 Public Benefit Fund；主流网站开始系统性阻挡 AI agent | [报告](reports/2026-10-19.md) |
