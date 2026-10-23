@@ -1,0 +1,12 @@
+[Unit]
+Description=AI Radar daily scan
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/ai-radar
+ExecStart=%h/ai-radar/run.sh
+# 超时由 run.sh 自己管（AI_RADAR_TIMEOUT），这里放开
+TimeoutStartSec=infinity
+# 密钥文件：systemd 不读 .bashrc
+EnvironmentFile=-%h/.config/pi-secrets.env

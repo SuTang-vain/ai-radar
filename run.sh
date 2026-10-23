@@ -16,7 +16,13 @@ PROJECT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 cd "$PROJECT_DIR" || exit 1
 
 DATE="${1:-$(date +%F)}"
-WEEK_START="$(date -d "$DATE -6 days" +%F 2>/dev/null || date -d '-6 days' +%F)"   # 滚动 7 天窗口起点
+# 跨平台日期运算：Linux 用 GNU date -d，macOS 用 BSD date -j -v（BSD date 没有 -d）
+week_start_for() { # <YYYY-MM-DD> → 6 天前
+  date -d "$1 -6 days" +%F 2>/dev/null \
+    || date -j -v-6d -f "%Y-%m-%d" "$1" +%F 2>/dev/null \
+    || date -d '-6 days' +%F
+}
+WEEK_START="$(week_start_for "$DATE")"   # 滚动 7 天窗口起点
 MODEL="${AI_RADAR_MODEL:-kimi-coding/kimi-for-coding-highspeed}"
 THINKING="${AI_RADAR_THINKING:-high}"
 RUN_TIMEOUT="${AI_RADAR_TIMEOUT:-1800}"        # 单次尝试上限（秒）
@@ -53,9 +59,23 @@ else
   log "WARN: ~/.config/pi-secrets.env 缺失，web 抓取可能降级"
 fi
 
+run_with_timeout() { # secs cmd...
+  local secs="$1"; shift
+  if command -v timeout >/dev/null 2>&1; then
+    timeout "$secs" "$@"
+  else
+    # macOS 没有 GNU timeout：alarm 设在 perl 进程上，exec 后仍然有效
+    perl -e 'alarm shift; exec @ARGV' "$secs" "$@"
+  fi
+}
+
 notify() { # title, body, urgency
-  timeout 15 notify-send --app-name="AI Radar" --icon=dialog-information \
-    -u "${3:-normal}" "$1" "$2" >/dev/null 2>&1 || log "WARN: notify-send 失败（无图形会话？）"
+  if [ "$(uname -s)" = "Darwin" ]; then
+    osascript -e "display notification \"${2//\"/\\\"}\" with title \"${1//\"/\\\"}\"" >/dev/null 2>&1 || true
+  else
+    run_with_timeout 15 notify-send --app-name="AI Radar" --icon=dialog-information \
+      -u "${3:-normal}" "$1" "$2" >/dev/null 2>&1 || log "WARN: notify-send 失败（无图形会话？）"
+  fi
 }
 
 # 从日报里抠出前 N 条「今日必读」的加粗结论，用于通知正文
@@ -89,12 +109,23 @@ while [ "$attempt" -lt "$ATTEMPTS" ]; do
   attempt=$((attempt + 1))
   log "-- attempt $attempt/$ATTEMPTS --"
   rm -f "$REPORT"   # 清掉旧文件，避免残留报告冒充本次成功
-  timeout "$RUN_TIMEOUT" "$PI_BIN" --print --approve \
+  # 每次尝试的输出单独落盘，便于定位「哪一次失败、为什么失败」
+  attempt_out="$SESSION_DIR/out-$SESSION_ID-$attempt.log"
+  run_with_timeout "$RUN_TIMEOUT" "$PI_BIN" --print --approve \
     --model "$MODEL" --thinking "$THINKING" \
     --name "ai-radar $DATE" --session-dir "$SESSION_DIR" --session-id "$SESSION_ID" \
     --tools read,write,edit,web_search,fetch_content,get_search_content \
-    "$PROMPT" >>"$LOG" 2>&1
+    "$PROMPT" >"$attempt_out" 2>&1
   rc=$?
+  cat "$attempt_out" >>"$LOG" 2>/dev/null
+
+  # 余额不足属于账户级故障，重试无意义：立即终止，不空烧到超时
+  if grep -q 'Insufficient Balance' "$attempt_out" 2>/dev/null; then
+    log "FATAL: ${MODEL} 返回 Insufficient Balance（余额不足），任务终止并跳过剩余尝试"
+    notify "AI Radar 余额不足" "${MODEL} 账户余额不足，今日日报未生成" critical
+    rm -f "$attempt_out"
+    exit 3
+  fi
   size=0; [ -f "$REPORT" ] && size=$(wc -c <"$REPORT")
 
   # (a) 结构校验：必备章节标题是否齐全（提示词里已写明，缺失即不合规）
@@ -122,7 +153,7 @@ while [ "$attempt" -lt "$ATTEMPTS" ]; do
   # (c) 引文溯源：报告里每条引用 URL 必须在本轮 session 出现过（抓取过或出现在检索结果里）
   total_cited=0; untraceable=0; untraceable_list=""
   if [ -n "$sess_file" ] && [ -f "$REPORT" ]; then
-    _pool="$(mktemp)"; _cited="$(mktemp)"
+    _pool="$(mktemp "${TMPDIR:-/tmp}/airadar-pool.XXXXXX")"; _cited="$(mktemp "${TMPDIR:-/tmp}/airadar-cited.XXXXXX")"
     grep -oE 'https?://[^"\\ )]+' "$sess_file" | norm_url | LC_ALL=C sort -u >"$_pool"
     grep -oE '\]\(https?://[^)]+\)' "$REPORT" | sed -E 's#^\]\(##; s#\)$##' | norm_url | LC_ALL=C sort -u >"$_cited"
     total_cited=$(wc -l <"$_cited")
@@ -134,7 +165,7 @@ while [ "$attempt" -lt "$ATTEMPTS" ]; do
 
   # (d) 一手取证：标了【一手】的断言行，其引用 URL 必须在本轮真的被抓取过（只读搜索摘要不算溯源）
   if [ -n "$sess_file" ] && [ -f "$REPORT" ]; then
-    _fpool="$(mktemp)"
+    _fpool="$(mktemp "${TMPDIR:-/tmp}/airadar-fpool.XXXXXX")"
     grep -o '"name":"fetch_content","arguments":{[^}]*}' "$sess_file" | grep -oE 'https?://[^"]+' | norm_url | LC_ALL=C sort -u >"$_fpool"
     while IFS= read -r _line; do
       _urls="$(printf '%s' "$_line" | grep -oE '\]\(https?://[^)]+\)' | sed -E 's#^\]\(##; s#\)$##')"
@@ -172,10 +203,12 @@ while [ "$attempt" -lt "$ATTEMPTS" ]; do
 done
 
 # 项目内保留策略（~/z/z-clean.timer 已把本项目排除，所以这里自己管）
-prune() { find "$1" -maxdepth 1 -type f -name "$2" -mtime +"$3" -delete 2>/dev/null; }
+# BSD find 无 -delete，统一用 -exec rm（GNU/BSD 均可用）
+prune() { find "$1" -maxdepth 1 -type f -name "$2" -mtime +"$3" -exec rm -f {} + 2>/dev/null; }
 prune "$PROJECT_DIR/reports" '*.md' "$KEEP_REPORT_DAYS"
 prune "$LOG_DIR" '*.log' "$KEEP_LOG_DAYS"
 prune "$SESSION_DIR" '*.jsonl' "$KEEP_LOG_DAYS"
+prune "$SESSION_DIR" 'out-*.log' "$KEEP_LOG_DAYS"
 
 # 运行器举证与来源披露：把可验证的事实写进报告本身
 if [ "$status" = "ok" ] && [ -n "$sess_file" ]; then
@@ -222,6 +255,15 @@ if [ "$status" = "ok" ] && git -C "$PROJECT_DIR" rev-parse --git-dir >/dev/null 
   else
     push_note="（git push 未成功，本地提交已保留，详见 logs/$DATE.log）"
     log "WARN: git push 失败"
+  fi
+fi
+
+# 可选飞书推送：脚本存在且配了 webhook 才发，失败不影响任务成败
+if [ "$status" = "ok" ] && [ -x "$PROJECT_DIR/push-feishu.sh" ]; then
+  if "$PROJECT_DIR/push-feishu.sh" "$DATE" >>"$LOG" 2>&1; then
+    log "飞书: 卡片已推送"
+  else
+    log "WARN: 飞书推送失败（不影响任务成败）"
   fi
 fi
 
