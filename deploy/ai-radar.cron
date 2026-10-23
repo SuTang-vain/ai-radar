@@ -1,0 +1,8 @@
+# AI Radar 每日扫描（cron 版）
+#
+# 安装：crontab -e，把下面这行贴进去（按实际路径改 /opt/ai-radar）
+# 说明：必须显式给 PATH —— cron 不读 .bashrc，默认 PATH 里没有 /usr/local/bin，
+#       会找不到 `pi`。
+# systemd 机器请改用 ai-radar.timer + ai-radar.service。
+
+30 8 * * * cd /opt/ai-radar && PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin ./run.sh >> /opt/ai-radar/logs/cron.out.log 2>&1

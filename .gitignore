@@ -4,3 +4,7 @@ logs/
 *.tmp
 .keep-probe
 .exclusion-probe/
+# 本地配置（飞书 webhook / 接收方 / 报告链接），绝不入库
+config.env
+.DS_Store
+__pycache__/

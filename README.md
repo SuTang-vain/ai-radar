@@ -99,3 +99,77 @@ systemctl --user disable --now ai-radar.timer   # 停掉定时任务
 ## 这个仓库是公开的
 
 日报内容（AI 行业公开信息 + 来源链接）会公开可见，`logs/` 不推送。历史提交无法撤回 —— 推送前如不想公开发布某天内容，先 `git reset` / 删除报告文件。
+
+## 可选扩展：飞书推送 / 跨平台 / 抓取增强
+
+以下能力默认关闭，不影响原有 systemd + notify-send 用法。
+
+### 飞书卡片推送
+
+把《今日必读》压成一张卡片推到飞书群（支持群自定义机器人 Webhook 或 lark-cli 应用机器人）：
+
+```bash
+./push-feishu.sh                # 发今天的报告
+./push-feishu.sh 2026-10-20     # 补发某天
+./push-feishu.sh --dry-run      # 只看卡片 JSON，不发送
+```
+
+配置写在 `config.env`（已 gitignore）：
+
+```
+FEISHU_WEBHOOK_URL=https://open.feishu.cn/open-apis/bot/v2/hook/xxx
+FEISHU_WEBHOOK_SECRET=          # 开了签名校验才填
+REPORT_BASE_URL=https://github.com/<owner>/ai-radar/blob/main
+```
+
+`run.sh` 成功后会调用它，失败只记 WARN、不影响任务成败。
+注意：自定义机器人只渲染 **Card 1.0**，用 2.0 发出去飞书返回 `success` 但群里不显示，`build-card.py` 固定输出 1.0。
+
+### 跨平台（macOS / Linux）
+
+`run.sh` 里的三处平台差异做了双实现：
+
+| 原实现 | 兼容写法 |
+|---|---|
+| `date -d` (GNU) | `date -j -v-6d` (BSD) 优先，回退 `date -d` |
+| `mktemp -t name` | `mktemp "${TMPDIR:-/tmp}/name.XXXXXX"` |
+| `notify-send` | `osascript`（仅 Darwin），Linux 静默跳过 |
+
+macOS 可用 `com.gugu.ai-radar.plist` 走 launchd 定时；Linux 仍用 systemd timer 或 cron。
+
+### 抓取增强（`fetch.sh`）
+
+`prompt.md` 原本要求 agent 自己抓正文，这里提供一个统一入口：
+
+```bash
+./fetch.sh <url> [max_chars]
+```
+
+- **代理降级**：直连失败（000/403/429/5xx）自动用 `FETCH_PROXY` 重试一次
+- **JSON 透传**：`application/json` 原样输出，不被 HTML 去标签破坏（抓榜单 API 必需）
+- **HF 镜像**：`HF_MIRROR` 可把 `huggingface.co` 重写为镜像地址（境内服务器直连不通时用），记账仍用原始 URL
+- **调用记账**：设了 `AI_RADAR_FETCH_LOG` 就逐次记录 URL / HTTP 码 / 通道，供 `run.sh` 精确统计抓取次数（比从 session 里数 toolCall 更准）
+
+### 运行器的两处加固
+
+- **余额不足立即止报**：模型返回 `Insufficient Balance` 时直接退出（`exit 3`）并发通知，不再等满超时再重试——重试对该错误无意义
+- **attempt 输出单独落盘**：每次尝试的输出写到 `logs/sessions/out-<session>-<n>.log`，便于单独排查某一次失败
+
+## 部署到服务器
+
+`deploy/` 目录提供三种调度方式的现成材料：
+
+| 文件 | 用途 |
+|---|---|
+| `deploy/README.md` | **从零部署到 Linux 服务器的完整路径**（含境内网络适配：HF 镜像、GitHub over SSH 443、抓取代理） |
+| `deploy/ai-radar.cron` | cron 版定时（cron 不读 .bashrc，必须显式给 PATH） |
+| `deploy/ai-radar.service` + `.timer` | systemd --user 版定时（补齐了原本不在仓库内的 unit 文件） |
+
+境内服务器有三处必须适配，否则报告质量会明显下降：
+
+1. **HuggingFace** 直连不通 → `HF_MIRROR=https://hf-mirror.com`
+2. **GitHub 推送** → 走 `ssh.github.com:443`（`github.com:443` 不通，SSH 端口通）
+3. **抓取代理** → `FETCH_PROXY=http://127.0.0.1:7897`，且代理内核必须关闭 TUN 模式，
+   否则 `auto-route` 会把 SSH 流量劫持进 fake-ip，`git push` 报 `Connection closed by 198.18.x.x`
+
+实测差异（同一台机器、同一份 prompt）：无代理时一手来源 5 条，配代理后 16 条。
