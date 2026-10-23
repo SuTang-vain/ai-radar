@@ -37,6 +37,7 @@
 ## 主题：Meta 开放权重模型
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-19/20 — Meta 发布 Muse Glimmer 30B，面向消费级硬件的端侧 agentic 模型，支持文本/图像输入、多步推理、工具使用与失败恢复，Apache 2.0 许可；在工具使用、多步规划等 agentic 基准上超过同尺寸 Gemma4-31B 与 Qwen3.6-27B【已证实】([AI at Meta](https://ai.meta.com/research/publications/muse-glimmer-30b-an-on-device-agentic-model/))
   - 2026-10-16 — Meta 发布 Muse Spark Open，816B 总参数 / 42B 激活、1M 上下文、原生多模态，可在两台 Apple M5 Ultra Mac Studio 桌面运行，权重上架 Hugging Face/Google Cloud Model Garden/Microsoft Foundry 等，API 接入 OpenRouter/Together/Fireworks 等；许可为 Muse Model License（有限商业条款）【已证实】([Meta AI Research](https://research.meta.ai/blog/muse-spark-open))
 
 ## 主题：Meta Muse 隐私与安全
@@ -73,6 +74,7 @@
 ## 主题：OpenAI 监管、诉讼与模型生命周期
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-23 — OpenAI 今日正式关闭 `gpt-3.5-turbo-0125`、`gpt-4-0613`、`gpt-4-1106-preview`、`gpt-4-turbo`、`gpt-4.1-nano`、`gpt-4o-2024-05-13`、`gpt-image-1`、`o1-2024-12-17`、`o1-pro-2025-03-19`、`o3-mini-2025-01-31` 及多个微调版本，推荐迁移至 `gpt-5.6` 系列【已证实】([OpenAI Deprecations](https://developers.openai.com/api/docs/deprecations))
   - 2026-10-14 — OpenAI 宣布 GPT-4o、GPT-4o mini、GPT-4.1、GPT-4.1 mini 的 API 快照将于 2027-01-14 下线，建议迁移至 gpt-6-luna；这是继 2026-02-13 ChatGPT 端退役后 API 端的正式 deprecation【已证实】([OpenAI Deprecations](https://developers.openai.com/api/docs/deprecations))
   - 2026-10-15 — 美国爱荷华、堪萨斯、内布拉斯加、西弗吉尼亚、阿肯色、亚利桑那、爱达荷、蒙大拿八个州起诉 OpenAI，指控 ChatGPT 危害未成年人并误导消费者【已证实】([Arizona AG](https://www.azag.gov/press-release/attorney-general-mayes-announces-lawsuit-against-openai-deceiving-arizonans-about), [Nebraska AG](https://ago.nebraska.gov/news/attorney-general-hilgers-announces-lawsuit-against-openai-deceiving-nebraskans-about-safety))
   - 2026-10-15 — 趋势：OpenAI 同时面临八州诉讼、欧盟 AI Act 调查与科学家公开信，短期风评与监管压力显著上升；OpenRouter 上 GPT-5.6 Luna 月榜环比 -52%【推测】([Arizona AG](https://www.azag.gov/press-release/attorney-general-mayes-announces-lawsuit-against-openai-deceiving-arizonans-about), [EU Commission](https://digital-strategy.ec.europa.eu/en/news/special-meeting-ai-scientific-panel), [OpenRouter](https://openrouter.ai/rankings))
@@ -86,6 +88,7 @@
 ## 主题：GitHub Copilot 模型池与开发者工具定价
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-23 — 趋势：LMArena 文本榜 10-20 快照显示 Gemini 4 Argon (high) 仍以 1524±9 Elo 居首，Muse Wonder (max) #2（1510±9）、Claude Opus 5.5 (high) #3（1509±7），与 10-20 基本持平；前三名仍处置信区间重叠且 Gemini 标 Preliminary；未抓取 LMArena 官方页正文，数据来自搜索摘要【推测】([arena.ai](https://arena.ai/leaderboard/chat/text))
   - 2026-10-21 — 趋势：BenchLeader 第三方快照显示 LMArena 文本榜 Gemini 4 Argon (high) 仍以 1524 Elo 居首，Muse Wonder (max) #2（1509）、Claude Opus 5.5 (high) #3（1508），与 10-19/10-20 基本持平；未抓取 LMArena/Artificial Analysis 官方页，数据来自第三方聚合【推测】([BenchLeader](https://www.benchleader.com/benchmarks/lmarena_text))
   - 2026-10-19 — 趋势：LMArena 文本榜 10-18 第三方快照显示 Gemini 4 Argon (high) 仍以 1524 Elo 居首，与 10-18 报告的 1525±9 基本持平；Artificial Analysis Intelligence Index 此前显示 Claude Opus 5.5 (max) 以 57.6 分居首、Gemini 4 Argon 列第 9（52.6 分），两榜口径分化依旧；未抓取 LMArena/Artificial Analysis 官方页，数据来自第三方聚合【推测】([BenchLeader](https://www.benchleader.com/benchmarks/lmarena_text))
   - 2026-10-18 — GitHub 宣布 2026-11-16 将在所有 Copilot 体验中移除 Claude Opus 4.8、Claude Opus 5 与 GPT-5.6 Terra；Opus 4.8 仍对按年 individual 订阅保留，替代方案为 Opus 5.5 与 GPT-6.1 Sol / GPT-6 Luna【已证实】([GitHub Changelog](https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november/))
@@ -97,6 +100,7 @@
 ## 主题：AI 数据中心硬件与开放标准
 - 状态：长期跟踪
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-23 — NVIDIA DGX Spark 64GB 系统与 Nemotron Bolt E4B 4GB 今日起向合作伙伴出货；同日 Recursive Superintelligence 发布 40B/2.5B active 本地编码模型 Recursive Flint，针对 RTX Spark 优化，Apache 2.0 权重已上架 Hugging Face【已证实】([NVIDIA Blog](https://blogs.nvidia.com/blog/local-ai-gtc-rtx-dgx-spark-station-sync/))
   - 2026-10-21 — NVIDIA 在 GTC Berlin 发布 DSX POD 参考设计：将 Vera Rubin 机柜等基础设施在工厂预集成到集装箱，到场连接水电网即可运行，部署时间从约 6 个月缩至 14 天，2027 年初由 Dell/HPE/Lenovo/Foxconn 等伙伴交付；同日发布 OpenShell Reference Architecture，整合 Vera Rubin/Vera CPU/BlueField-4/Sentry 为企业 agent 提供沙箱、监控与硬件级策略执行，Anthropic/OpenAI/Google/Microsoft/Meta 等为合作方【已证实】([NVIDIA DSX POD](https://nvidianews.nvidia.com/news/nvidia-introduces-dsx-pod-ai-factories-to-accelerate-europes-infrastructure-deployment), [NVIDIA OpenShell](https://nvidianews.nvidia.com/news/openshell-reference-architecture))
   - 2026-10-19 — 彭博社援引知情人士称 Anthropic 与 Nscale 洽谈约 450 亿美元算力租赁协议，涉及西弗吉尼亚 Monarch 数据中心第二座 460 MW 设施，拟采用 NVIDIA Vera Rubin 芯片；双方未置评，Reuters 无法独立核实【厂商宣称/二手】([Yahoo/Reuters](https://finance.yahoo.com/technology/ai/articles/nscale-anthropic-talks-45-billion-193754631.html))
   - 2026-10-19 — NVIDIA 宣布在 Jülich JUPITER 超算完成 104-qubit 容错量子计算模拟，使用 8,192 颗 GH200，验证 magic-state cultivation 方法可在真实噪声下将所需物理量子比特减少约 90%【厂商宣称】([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/nvidia-runs-record-simulation-of-fault-tolerant-quantum-computing-at-julich-supercomputing-centre))
@@ -108,6 +112,7 @@
 ## 主题：Anthropic 开发者基础设施
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-23 — Google Cloud 上线 Anthropic-managed 的 Claude Models 部署选项，Anthropic 作为 data processor 在 GCP 基础设施上运营，提供 day-zero 模型与 Claude Managed Agents（beta）、skills、code execution 等平台功能；与 Google-managed 选项共用 GCP IAM、审计日志与账单【已证实】([Google Cloud Blog](https://cloud.google.com/blog/products/ai-machine-learning/expanding-claude-availability-on-google-cloud))
   - 2026-10-17 — 趋势：GitHub Trending 榜首为 Anthropic 官方 `claude-plugins-official`（+1,552 stars），agent harness、MCP、技能库、上下文优化项目占据前十多数，显示开发者关注点正从模型本身转向 agent 编排与工程基础设施【推测】([GitHub](https://github.com/trending))
   - 2026-10-12 — Anthropic 发布反蒸馏防御技术博客，称新措施使蒸馏者 harvest 数据减少约 90–99%，reasoning tokens 提取量降至 1/10–1/100，已封禁数万个账户；同时承认对正常用户存在集成变更、<0.1% 误杀与重新收费等 trade-off【厂商宣称】([Anthropic Research](https://www.anthropic.com/research/distillation-defenses))
   - 2026-10-16 — Anthropic 披露内部 VCS Scion（7 人 5 个月内从 git 迁移，9 月日均合并超 30,000 次）并宣布 Claude Code Review GA、Claude Platform OpenTelemetry traces public beta；三连发显示其正把模型能力转化为工程组织基础设施【已证实】([Anthropic Engineering](https://www.anthropic.com/engineering/redesigning-source-control), [Claude Code Review](https://claude.com/resources/articles/code-review-is-now-generally-available), [Claude OTel](https://claude.com/resources/articles/agent-observability-on-the-claude-platform))
@@ -126,6 +131,7 @@
 ## 主题：AI 编码 Agent 插件与 harness 生态
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-23 — 趋势：GitHub Trending 官方日榜前列出现 `anthropics/knowledge-work-plugins`（面向知识工作者的 Claude 插件）、`DietrichGebert/ponytail`（让 agent 像“最懒的资深开发者”只写必要代码）、`cloudflare/security-audit-skill`、`Graphify-Labs/graphify`；开发者关注点从“推理效率/安全审计”进一步延伸到“角色插件 + 极简代码 agent”【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-22 — 趋势：GitHub Trending 前列同时出现 `vllm-project/vllm`（推理引擎）、`cloudflare/security-audit-skill`、`headroomlabs-ai/headroom`（上下文压缩）、`akitaonrails/ai-memory`（跨 agent 记忆交接）、`Graphify-Labs/graphify`（代码知识图谱 skill）；相比 10-21 新增“推理效率/成本优化”维度，开发者同时关心 agent 跑得快、跑得省、可审计【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-21 — 趋势：GitHub Trending 日榜前列被 `ai-job-search`（基于 Claude Code 的求职 agent）、`cloudflare/security-audit-skill`、`stablyai/orca`（agent 车队）、`headroomlabs-ai/headroom`（上下文压缩）等具体场景/安全审计/上下文优化项目占据，此前连续居首的 `claude-plugins-official` 已退出榜首；开发者关注点从“插件目录”转向“具体 agent 场景 + 运行成本/安全审计”【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-18 — 趋势：GitHub Trending 榜首仍为 Anthropic 官方 `claude-plugins-official`（+1,383 stars），前十包括 `ai-job-search`、`ECC`、`CLI-Anything`、`scientific-agent-skills`、`ruflo`、`claude-code` 等 agent harness、插件、记忆与技能库项目，开发者关注点继续停留在 agent 工程基础设施；日新增 star 较 10-17 的 +1,552 略有降温【推测】([GitHub Trending 第三方快照](https://yidinghuiziyou.com/github/trending/2026-10-18/))
@@ -142,6 +148,7 @@
 ## 主题：OpenRouter 生产用量格局
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-23 — 趋势：OpenRouter 截至 10-21 的周榜显示 DeepSeek V4.1 Flash 仍以 25.7T（-31%）列 #1，DeepSeek V4.1 Flash 1017 以 16.5T 升至 #2，Claude Opus 5.5 以 7.14T（+26%）首次进入周榜前十；日榜前三（MiniMax 5.38T、DeepSeek 1017 4.99T、DeepSeek V4.1 Flash 2.86T）与 10-21 持平；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-22 — 趋势：OpenRouter 截至 10-21 的日榜显示 MiniMax M3.1 Flash (free) 以 5.38T（+37%）从 #2 升至 #1，DeepSeek V4.1 Flash 1017 以 4.99T（+20%）降至 #2，DeepSeek V4.1 Flash 以 2.86T 列 #3；免费/低价模型在生产平台上迭代极快，没有单一模型能长期霸榜；作者请求份额中 Anthropic 仍 4.7%（+25%）、Z.ai 12.2%（-6%）；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-21 — 趋势：OpenRouter 截至 10-19 的日榜显示 DeepSeek V4.1 Flash 1017 以 4.15T（+15%）仍居 #1，MiniMax M3.1 Flash (free) 以 3.91T（+272%）跃升至 #2；周榜中 DeepSeek V4.1 Flash #1（27.3T，-32%）、GLM 5.3 Flash #2（11.6T，-10%）、DeepSeek V4.1 Flash 1017 #3（11.5T，new）；作者请求份额中 Anthropic 从低位 +25% 至 4.7%，Z.ai/Xiaomi 份额下降；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-19 — 趋势：OpenRouter 最新完整日榜仍为 10-17 数据，DeepSeek V4.1 Flash #1（4.09T，-25%）未变；GPT-6 Luna 以 660B 列日榜 #7，日环比 -33%，显示新模型开始放量但生产迁移仍处早期；GPT-5.6 Luna 月榜 -59%，代际切换迹象明显；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
@@ -254,3 +261,17 @@
   - 2026-10-21 — Meta Q3 财报电话会称 Muse 个人 agent 上线约六周在美加已有逾 1,000 万用户设置，约 25% 设置用户每日使用，购物为最主要场景（逾四分之一活跃用户购买，平均客单价 >$200）；Meta 同时宣布发行无投票权 Class C 股票以支持 AI 投资【厂商宣称/二手】([Meta IR](https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/default.aspx), [Business Insider](https://www.businessinsider.com/meta-q3-2026-earnings-mark-zuckerberg-muse-ai-app-users-2026-10))
   - 2026-10-21 — Anthropic 向美区 Pro/Max 用户开放 Claude Duet 研究预览（iOS、Android、Web），定位为“主动型个人助理”，早晨简报、每几小时检查账户、后台虚拟机持续执行任务，发送/支付/删除前需用户审批【已证实/二手】([Anthropic](https://claude.com/resources/articles/claude-duet))
   - 2026-10-19 — Replika 创始人 Eugenia Kuyda 的 Wabi 正式向所有用户开放 iOS、Android、Mac，定位为“多人 personal AI assistant”，以 messenger 形态支持多个 agentic thread 与 on-demand mini app，目前免费【已证实/二手】([TechCrunch](https://techcrunch.com/2026/10/19/replikas-founder-built-the-ai-assistant-she-pitched-at-disrupt-12-years-ago/))
+
+---
+
+## 主题：企业级 AI Agent 部署
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-22 — Uber 宣布向全球 3 万多名员工全量 rollout ChatGPT Work，从 1,000 人试点扩展，默认由 GPT-6.1 Sol 驱动，连接 Google Drive/Gmail/Calendar/Slack 等工具，用于会议简报、数据分析、演示文稿等知识工作；这是目前公开最大规模企业级 agentic 平台部署之一【已证实】([OpenAI](https://openai.com/index/uber-chatgpt-work-rollout/))
+
+---
+
+## 主题：OpenAI 商业化与融资
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-22 — CNBC 援引知情人士称，OpenAI 正接近敲定最高 30 亿美元桥接融资，pre-money 估值 1.25 万亿美元，由阿联酋投资者与 Coatue 领投，定位为 IPO 前“机会型”桥接；同时 OpenAI 还在就阿联酋额外算力进行商业谈判；OpenAI 未置评，条款仍可能变化【厂商宣称/二手】([CNBC](https://www.cnbc.com/2026/10/22/openai-funding-round-uae-investors.html))
