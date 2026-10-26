@@ -238,29 +238,38 @@ if [ "$status" = "ok" ] && [ -n "$sess_file" ]; then
 fi
 
 # 落账到 git（推送失败不改变任务成败：日报才是主要产出）
+# 卡片按钮指向 REPORT_BASE_URL；只有它非空时，「报告是否真的推上去」才影响要不要发飞书
+REPORT_BASE_URL="$(sed -n 's/^REPORT_BASE_URL=//p' "$PROJECT_DIR/config.env" 2>/dev/null | head -1)"
 push_note=""
+push_ok=1   # 0 = 报告没真正上去；卡片按钮会 404，此时不能发飞书
 if [ "$status" = "ok" ] && git -C "$PROJECT_DIR" rev-parse --git-dir >/dev/null 2>&1; then
   if [ -n "$(git -C "$PROJECT_DIR" status --porcelain 2>/dev/null)" ]; then
     git -C "$PROJECT_DIR" add -A -- . >>"$LOG" 2>&1
     if git -C "$PROJECT_DIR" commit -q -m "report: $DATE" >>"$LOG" 2>&1; then
       log "git: 已提交 report: $DATE"
     else
-      log "WARN: git commit 失败"
+      # 无人值守环境（cron/systemd）最常见原因：没有 user.name / user.email
+      push_ok=0
+      log "FATAL: git commit 失败（无人值守环境多为未配置 user.name/user.email）"
     fi
   else
     log "git: 无变更，跳过提交"
   fi
-  if timeout 120 git -C "$PROJECT_DIR" push --quiet origin HEAD >>"$LOG" 2>&1; then
+  if run_with_timeout 120 git -C "$PROJECT_DIR" push --quiet origin HEAD >>"$LOG" 2>&1; then
     log "git: 已推送 origin"
   else
+    push_ok=0
     push_note="（git push 未成功，本地提交已保留，详见 logs/$DATE.log）"
     log "WARN: git push 失败"
   fi
 fi
 
 # 可选飞书推送：脚本存在且配了 webhook 才发，失败不影响任务成败
+# 但报告没推送成功时不发 —— 卡片按钮指向 REPORT_BASE_URL，点开必然 404
 if [ "$status" = "ok" ] && [ -x "$PROJECT_DIR/push-feishu.sh" ]; then
-  if "$PROJECT_DIR/push-feishu.sh" "$DATE" >>"$LOG" 2>&1; then
+  if [ "$push_ok" != "1" ] && [ -n "$REPORT_BASE_URL" ]; then
+    log "WARN: 报告未推送成功，跳过飞书推送（否则卡片按钮会 404）"
+  elif "$PROJECT_DIR/push-feishu.sh" "$DATE" >>"$LOG" 2>&1; then
     log "飞书: 卡片已推送"
   else
     log "WARN: 飞书推送失败（不影响任务成败）"
