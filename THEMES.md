@@ -89,6 +89,7 @@
 ## 主题：GitHub Copilot 模型池与开发者工具定价
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-26 — 趋势：LMArena 官方页 10-22 快照显示文本榜前三集体跳升：Gemini 4 Argon (high) #1（1551±9）、Claude Opus 5.5 (high) #2（1539±9）、Claude Fable 5.1 (Max) #3（1534±8）；与 10-20 的 1524/1509/1510 相比，前三门槛提高约 24–30 分，Anthropic 占据两席。这种整体跃升更可能对应新模型版本或 high/max 采样策略更新【推测】([arena.ai](https://arena.ai/leaderboard/chat/text/exclude-ties?scoring=raw))
   - 2026-10-24 — 趋势：BenchLeader 第三方快照（数据截至 10-22）显示 LMArena 文本榜 Gemini 4 Argon (high) #1（1517）、Claude Opus 5.5 (high) #2（1509）、Muse Wonder (max) #3（1509）；与 10-20 的 1524/1509/1510 相比，Gemini 分数下降、前三差距从约 15 分缩至 8 分，位次仍不稳定；LMArena 官方页触发 bot 验证未抓取【推测】([BenchLeader](https://www.benchleader.com/benchmarks/lmarena_text))
   - 2026-10-23 — 趋势：LMArena 文本榜 10-20 快照显示 Gemini 4 Argon (high) 仍以 1524±9 Elo 居首，Muse Wonder (max) #2（1510±9）、Claude Opus 5.5 (high) #3（1509±7），与 10-20 基本持平；前三名仍处置信区间重叠且 Gemini 标 Preliminary；未抓取 LMArena 官方页正文，数据来自搜索摘要【推测】([arena.ai](https://arena.ai/leaderboard/chat/text))
   - 2026-10-21 — 趋势：BenchLeader 第三方快照显示 LMArena 文本榜 Gemini 4 Argon (high) 仍以 1524 Elo 居首，Muse Wonder (max) #2（1509）、Claude Opus 5.5 (high) #3（1508），与 10-19/10-20 基本持平；未抓取 LMArena/Artificial Analysis 官方页，数据来自第三方聚合【推测】([BenchLeader](https://www.benchleader.com/benchmarks/lmarena_text))
@@ -135,6 +136,7 @@
 ## 主题：AI 编码 Agent 插件与 harness 生态
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-26 — 趋势：GitHub Trending 官方日榜主题从“安全审计/运行时”转向“设计技能 + 本地通用 agent”：`makecindy/cindy`（开箱即用本地 AI agent）登顶，`Nutlope/hallmark`（反 AI-slop 设计 skill）与 `pbakaus/impeccable`（前端设计指导）进入前四，此前连续居首的 `cloudflare/security-audit-skill` 跌至 #10。开发者开始关注“让 agent 输出不像 AI 生成”与“能在本地跑的真实任务 agent”【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-24 — 趋势：GitHub Trending 官方日榜 `cloudflare/security-audit-skill` 登顶（+2,633 stars），`php/php-src` 因 PHP2Shell 后续热度升至 #2，`anthropics/knowledge-work-plugins` 维持 #3，`NVIDIA/OpenShell` 列 #4。安全审计从“上榜”升至“榜首”，OpenShell（agent 安全运行时）进入前四，显示开发者关注点正向“agent 如何被约束与审计”转移【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-23 — 趋势：GitHub Trending 官方日榜前列出现 `anthropics/knowledge-work-plugins`（面向知识工作者的 Claude 插件）、`DietrichGebert/ponytail`（让 agent 像“最懒的资深开发者”只写必要代码）、`cloudflare/security-audit-skill`、`Graphify-Labs/graphify`；开发者关注点从“推理效率/安全审计”进一步延伸到“角色插件 + 极简代码 agent”【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-22 — 趋势：GitHub Trending 前列同时出现 `vllm-project/vllm`（推理引擎）、`cloudflare/security-audit-skill`、`headroomlabs-ai/headroom`（上下文压缩）、`akitaonrails/ai-memory`（跨 agent 记忆交接）、`Graphify-Labs/graphify`（代码知识图谱 skill）；相比 10-21 新增“推理效率/成本优化”维度，开发者同时关心 agent 跑得快、跑得省、可审计【推测】([GitHub Trending](https://github.com/trending))
@@ -155,6 +157,7 @@
 ## 主题：OpenRouter 生产用量格局
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-26 — 趋势：OpenRouter 截至 10-25 的日榜/周榜显示 DeepSeek V4.1 Flash 1017 以 33.6T 保持周榜 #1（+801% 因前周为部分新上榜数据，实际周环比约 +26%），Claude Opus 5.5 以 8.27T（+34%）列周榜 #7；Anthropic 作者请求份额从 10-12 的 4.7% 升至 10-19 的 5.5%，连续三周 +25%；低价模型仍主导 token 量，但 Anthropic 正把口碑转化为请求份额；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-24 — 趋势：OpenRouter 截至 10-22 的日榜显示 DeepSeek V4.1 Flash 1017 以 5.05T（-3%）回到 #1，MiniMax M3.1 Flash (free) 从 5.38T 降至 3.33T（-38%）跌至 #2，GLM 5.3 Flash 以 2.18T（+14%）升至 #3，GPT-6 Luna 以 1.63T（+65%）跃至 #4，Claude Opus 5.5 以 1.52T（+15%）升至 #5；免费/低价模型头部位置极不稳定，生产迁移迅速；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-23 — 趋势：OpenRouter 截至 10-21 的周榜显示 DeepSeek V4.1 Flash 仍以 25.7T（-31%）列 #1，DeepSeek V4.1 Flash 1017 以 16.5T 升至 #2，Claude Opus 5.5 以 7.14T（+26%）首次进入周榜前十；日榜前三（MiniMax 5.38T、DeepSeek 1017 4.99T、DeepSeek V4.1 Flash 2.86T）与 10-21 持平；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-22 — 趋势：OpenRouter 截至 10-21 的日榜显示 MiniMax M3.1 Flash (free) 以 5.38T（+37%）从 #2 升至 #1，DeepSeek V4.1 Flash 1017 以 4.99T（+20%）降至 #2，DeepSeek V4.1 Flash 以 2.86T 列 #3；免费/低价模型在生产平台上迭代极快，没有单一模型能长期霸榜；作者请求份额中 Anthropic 仍 4.7%（+25%）、Z.ai 12.2%（-6%）；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
@@ -190,6 +193,7 @@
 ## 主题：DeepSeek 模型与 API 生态
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-26 — DeepSeek 在 GitHub 以 Apache 2.0 开源生产级推理框架 DeepInfer，支持 DeepSeek-V4.1-Flash、优化 kernel、异步调度、结构化输出、batch-invariant 与确定性采样，兼容 NVIDIA SM100 与华为 Ascend 950；继模型权重后，推理软件栈成为开源竞争新前线【已证实】([GitHub](https://github.com/deepseek-ai/DeepInfer))
   - 2026-10-18 — DeepSeek 发布 V4.1-Flash-1017（763B/1M 上下文，MIT 权重），自评 DeepSWE 77.0、Terminal-Bench 4.0 42.3；同日开放 Search/Fetch API，$0.75/1,000 成功请求，11-01 起计费，通过 Claude Code/Codex/DeepSeek Harness 的 server-side 调用在 11-01 前免费【已证实】([Hugging Face](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017), [DeepSeek API Docs](https://api-docs.deepseek.com/guides/search/))
   - 2026-10-16 — 趋势：DeepSeek V4.1 Flash 在 OpenRouter 日榜/周榜均居 #1，中国作者模型在 OpenRouter 周请求份额合计约 47.9%；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
 
@@ -294,6 +298,8 @@
 ## 主题：OpenAI 商业化与融资
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-26 — OpenAI  reportedly 向 Anthropic 企业客户提供最高 90% 折扣抢夺客户，Replit 将超过 1 亿美元年度 AI 支出从 Anthropic 转向 OpenAI，Rippling 编码任务中 OpenAI 占比从 5 月 16% 升至 52%；价格战正在压缩 Anthropic 上市前利润【厂商宣称/二手】([The Decoder](https://www.thedecoder.ai/openai-offers-discounts-up-to-90-percent-to-poach-anthropics-biggest-customers))
+  - 2026-10-21 — OpenAI 与 Google Cloud 宣布合作，OpenAI 前沿模型与 Codex agentic workflows 将进入 Google Cloud Model Garden 与 Marketplace，企业可用现有 GCP 消费承诺抵扣；Microsoft 仍被明确为 OpenAI 首要云伙伴【已证实】([OpenAI](https://openai.com/index/openai-models-google-cloud/))
   - 2026-10-22 — CNBC 援引知情人士称，OpenAI 正接近敲定最高 30 亿美元桥接融资，pre-money 估值 1.25 万亿美元，由阿联酋投资者与 Coatue 领投，定位为 IPO 前“机会型”桥接；同时 OpenAI 还在就阿联酋额外算力进行商业谈判；OpenAI 未置评，条款仍可能变化【厂商宣称/二手】([CNBC](https://www.cnbc.com/2026/10/22/openai-funding-round-uae-investors.html))
 
 ---
@@ -327,3 +333,24 @@
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
   - 2026-10-22 — 宾夕法尼亚州州长 Josh Shapiro 签署 Senate Bill 806（Artificial Intelligence Deceptive Advertising Act），12-21 生效；要求对使用 AI 显著修改或生成并可能误导消费者的广告内容加注清晰显著标签，最高民事罚款 $3,000，无私人诉讼权，纯文本广告与讽刺作品豁免【已证实/二手】([The Verge](https://www.theverge.com/ai-artificial-intelligence/1018187/pennsylvania-ai-deceptive-advertising-act))
+
+---
+
+## 主题：AI 投融资与资本市场
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-26 — AI 初创融资单周约 51.8 亿美元（10-19 ~ 10-25，25 轮 ≥$20M），为前一周 24.2 亿美元的两倍以上；Tenstorrent（RISC-V AI 芯片）$1.5B Series E、Flapping Airplanes（低成本训练研究实验室）$1B Series A、Legora（法律 AI）$550M Series E 分列前三；资本明显流向基础设施与可货币化的垂直 agent【已证实/二手】([AI Funding Tracker](https://aifundingtracker.com/ai-funding-hits-5-2b-as-tenstorrent-and-flapping-airplanes-lead-week-oct-18-oct-25-2026/))
+
+---
+
+## 主题：大型平台数据隐私与算法责任
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-21 — 新墨西哥州法官就 Cambridge Analytica 案判罚 Meta 250 亿美元；陪审团认定 Facebook 存在 43,899,725 次违反州《不公平做法法》的行为，法官将法定计算金额 2,194.986 亿美元减至 250 亿美元，年利率 15%；Meta 表示将上诉。这是美国州级消费者保护法对大型平台数据 misleading 的最重处罚【已证实】([New Mexico DOJ](https://nmdoj.gov/press-release/the-new-mexico-department-of-justice-secures-another-landmark-victory-against-big-tech-with-historic-25-billion-penalty-against-facebook/))
+
+---
+
+## 主题：科罗拉多算法决策与聊天机器人监管
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-26 — 科罗拉多州司法部就自动化决策技术（ADMT）与聊天机器人安全法案举行公开听证，书面意见截止 10-26 23:59 MST；规则旨在落实 2027-01-01 生效的 SB 26-189 与 HB 26-1263，覆盖算法歧视、未成年人保护、AI 披露等。这是美国州级 AI 监管从立法进入规则细化阶段的关键节点【已证实】([Colorado AG](https://coag.gov/ai/))
