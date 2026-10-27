@@ -103,6 +103,7 @@
 ## 主题：AI 数据中心硬件与开放标准
 - 状态：长期跟踪
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-26 — SpaceX 与 Apollo 管理的实体达成约 400 亿美元 GPU 及相关设备主融资租赁（principal payments），BlackRock/Goldman Sachs Asset Management/KKR 等参与；用于采购 NVIDIA Vera Rubin 芯片，预计 2027 上半年交付，以支持 SpaceX 地面算力建设与 Grok 企业/消费者服务【已证实】([SpaceX IR](https://ir.spacex.com/updates/releases-details/2026/SPACEX-SECURES-40-BILLION-IN-THE-LARGEST-GPU-FINANCING-EVER-2026-EnDqGhTAB3/))
   - 2026-10-22 — Google 宣布 PyTorch-native 版 SGLang-TorchTPU 已在 Meta 数据中心生产部署，vLLM-TorchTPU 开源；报道称 16 颗 seventh-gen Ironwood TPU 服务 Kimi K3 可达 700 tokens/s，对比 16 颗 NVIDIA GB200 的 452 tokens/s。这是 Google TPU 首次以原生 PyTorch 推理栈进入外部超大规模数据中心生产环境【二手】([Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/googles-tpus-for-ai-workloads-now-run-in-at-metas-data-centers-tpus-sold-to-external-customers-for-the-first-time-threaten-nvidias-market-dominance))
   - 2026-10-23 — NVIDIA DGX Spark 64GB 系统与 Nemotron Bolt E4B 4GB 今日起向合作伙伴出货；同日 Recursive Superintelligence 发布 40B/2.5B active 本地编码模型 Recursive Flint，针对 RTX Spark 优化，Apache 2.0 权重已上架 Hugging Face【已证实】([NVIDIA Blog](https://blogs.nvidia.com/blog/local-ai-gtc-rtx-dgx-spark-station-sync/))
   - 2026-10-21 — NVIDIA 在 GTC Berlin 发布 DSX POD 参考设计：将 Vera Rubin 机柜等基础设施在工厂预集成到集装箱，到场连接水电网即可运行，部署时间从约 6 个月缩至 14 天，2027 年初由 Dell/HPE/Lenovo/Foxconn 等伙伴交付；同日发布 OpenShell Reference Architecture，整合 Vera Rubin/Vera CPU/BlueField-4/Sentry 为企业 agent 提供沙箱、监控与硬件级策略执行，Anthropic/OpenAI/Google/Microsoft/Meta 等为合作方【已证实】([NVIDIA DSX POD](https://nvidianews.nvidia.com/news/nvidia-introduces-dsx-pod-ai-factories-to-accelerate-europes-infrastructure-deployment), [NVIDIA OpenShell](https://nvidianews.nvidia.com/news/openshell-reference-architecture))
@@ -136,6 +137,7 @@
 ## 主题：AI 编码 Agent 插件与 harness 生态
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-27 — 趋势：GitHub Trending 官方日榜主题进一步扩展至金融多智能体、agent 安全扫描、本地多 agent 桌面工作区与跨平台信息获取：`Nutlope/hallmark`（反 AI-slop 设计 skill）#1，`TauricResearch/TradingAgents`（金融多智能体）#2，`JetBrains/thinkrail`（pi 驱动的 IDE）#3，`makecindy/cindy`（本地 agent）#4，`NVIDIA/SkillSpector`（agent skill 安全扫描）#7，`nightly-labs/openbot`（本地多 agent 桌面工作区）#9，`Panniantong/Agent-Reach`（让 agent 读取登录态/视频字幕/中文平台）#10【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-26 — 趋势：GitHub Trending 官方日榜主题从“安全审计/运行时”转向“设计技能 + 本地通用 agent”：`makecindy/cindy`（开箱即用本地 AI agent）登顶，`Nutlope/hallmark`（反 AI-slop 设计 skill）与 `pbakaus/impeccable`（前端设计指导）进入前四，此前连续居首的 `cloudflare/security-audit-skill` 跌至 #10。开发者开始关注“让 agent 输出不像 AI 生成”与“能在本地跑的真实任务 agent”【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-24 — 趋势：GitHub Trending 官方日榜 `cloudflare/security-audit-skill` 登顶（+2,633 stars），`php/php-src` 因 PHP2Shell 后续热度升至 #2，`anthropics/knowledge-work-plugins` 维持 #3，`NVIDIA/OpenShell` 列 #4。安全审计从“上榜”升至“榜首”，OpenShell（agent 安全运行时）进入前四，显示开发者关注点正向“agent 如何被约束与审计”转移【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-23 — 趋势：GitHub Trending 官方日榜前列出现 `anthropics/knowledge-work-plugins`（面向知识工作者的 Claude 插件）、`DietrichGebert/ponytail`（让 agent 像“最懒的资深开发者”只写必要代码）、`cloudflare/security-audit-skill`、`Graphify-Labs/graphify`；开发者关注点从“推理效率/安全审计”进一步延伸到“角色插件 + 极简代码 agent”【推测】([GitHub Trending](https://github.com/trending))
@@ -157,6 +159,7 @@
 ## 主题：OpenRouter 生产用量格局
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-27 — 趋势：OpenRouter 截至 10-25 的日榜显示 DeepSeek V4.1 Flash 1017 以 5.42T（-6%）仍居 #1，GLM 5.3 Flash 以 2.27T（+7%）升至 #2，DeepSeek V4.1 Flash 以 2.21T（+16%）列 #3，GPT-6 Luna 1.52T（+4%）#4，Claude Opus 5.5 1.04T（+25%）升至 #6；作者周请求份额 Anthropic 维持 5.5%（+25%）；New & Trending 中 Kimi K3.1 Pro、Flint、GPT-6.1 Terra 等新模型快速上榜；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-26 — 趋势：OpenRouter 截至 10-25 的日榜/周榜显示 DeepSeek V4.1 Flash 1017 以 33.6T 保持周榜 #1（+801% 因前周为部分新上榜数据，实际周环比约 +26%），Claude Opus 5.5 以 8.27T（+34%）列周榜 #7；Anthropic 作者请求份额从 10-12 的 4.7% 升至 10-19 的 5.5%，连续三周 +25%；低价模型仍主导 token 量，但 Anthropic 正把口碑转化为请求份额；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-24 — 趋势：OpenRouter 截至 10-22 的日榜显示 DeepSeek V4.1 Flash 1017 以 5.05T（-3%）回到 #1，MiniMax M3.1 Flash (free) 从 5.38T 降至 3.33T（-38%）跌至 #2，GLM 5.3 Flash 以 2.18T（+14%）升至 #3，GPT-6 Luna 以 1.63T（+65%）跃至 #4，Claude Opus 5.5 以 1.52T（+15%）升至 #5；免费/低价模型头部位置极不稳定，生产迁移迅速；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-23 — 趋势：OpenRouter 截至 10-21 的周榜显示 DeepSeek V4.1 Flash 仍以 25.7T（-31%）列 #1，DeepSeek V4.1 Flash 1017 以 16.5T 升至 #2，Claude Opus 5.5 以 7.14T（+26%）首次进入周榜前十；日榜前三（MiniMax 5.38T、DeepSeek 1017 4.99T、DeepSeek V4.1 Flash 2.86T）与 10-21 持平；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
@@ -202,6 +205,7 @@
 ## 主题：OpenAI GPT-6 与 Intelligent UI
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-26 — OpenAI 发布 GPT-6.1 Terra：标准 API 定价 $1/$5 per 1M input/output，约为 GPT-5.6 Terra 与 GPT-6.1 Sol 的一半；上下文 1.05M tokens，面向 ChatGPT Work/Codex 与 API；官方称 Agents’ Last Exam 比 GPT-5.6 Terra 高 15 个百分点、成本约 1/3，Terminal-Bench 4.0 从 21.5% 提升至 50.3%【已证实】([OpenAI](https://openai.com/index/introducing-gpt-6-1-terra/))
   - 2026-10-19 — OpenAI 宣布 GPT-6 开始面向 ChatGPT Plus/Pro/Business/Enterprise 全球 rollout，Free/Go 次日覆盖；付费层由 GPT-6 Sol 驱动，免费层由 GPT-6 Luna 驱动；Intelligent UI 支持在对话中生成可交互组件（图表、表单、按钮、小游戏），并支持边想边答的流式响应；官方称对需要 web search 的问题 GPT-6 Instant 比 GPT-5.6 Instant 早 44% 开始输出【已证实】([OpenAI](https://openai.com/index/gpt-6-for-everyone))
 
 ---
@@ -209,6 +213,7 @@
 ## 主题：OpenAI 数学与形式化证明
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-26 — OpenAI 宣称内部模型在数学（证明所有维度的 local smoothing / Kakeya / Stein restriction 猜想）、计算机科学（证伪 Exponential Time Hypothesis）与理论物理（QCD 与标准模型统一完备性的四维量子场论存在性证明）上取得三项突破；数学与 CS 结果已在 Lean 形式化并发布 GitHub，ETH 证伪由 Russell Impagliazzo、Ramamohan Paturi、Ryan Williams 领衔复核，物理结果由 David Gross 小组审核、暂不公开原始材料【厂商宣称】([OpenAI](https://openai.com/index/building-scientific-understanding-with-academic-communities/))
   - 2026-10-15 — OpenAI 公布由内部 frontier 模型产出的数学结果，并在 GitHub 仓库发布多项证明的 Lean 形式化版本；同时向 Simons Foundation 捐赠 500 万美元用于帮助数学家审查、理解并基于 AI 结果做进一步研究；产生结果的模型尚未公开发布或进入 API【已证实】([OpenAI](https://openai.com/index/sharing-ai-progress-in-mathematics))
 
 ---
@@ -222,6 +227,7 @@
 ## 主题：Anthropic 商业化与 IPO
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-26 — Anthropic 正式向 SEC 递交 Form S-1 注册文件，拟在纳斯达克全球精选市场以股票代码 ANT 上市；发行股数与价格区间尚未确定。此前 IFR 报道称目标最高融资 1000 亿美元、估值 2 万亿美元【已证实】([Anthropic](https://www.anthropic.com/news/s1-sec))
   - 2026-10-23 — IFR 援引知情人士称 Anthropic 拟 10-26 向 SEC 公开递交 IPO 文件，11-9 当周启动路演，次周定价；目标最高融资 1000 亿美元、估值 2 万亿美元；Morgan Stanley 与 Goldman Sachs 为联席账簿管理人。公司 Q3 营收 168 亿美元（环比 +45%），但增速较 Q1→Q2 的 140%+ 放缓；DA Davidson 估计 Q3 末 ARR 740 亿美元。NYC 审计长 Mark Levine 同日致信 Dario Amodei 要求暂停 IPO 直至透明解决 AI 安全与治理问题【厂商宣称/二手】([IFR](https://www.ifre.com/equities/2499407/anthropic-pushes-ahead-with-mid-november-ipo))
   - 2026-10-20/21 — WSJ 援引 draft S-1/投资者会议披露，Anthropic H1 2026 净亏损 807 亿美元、IPO 讨论估值约 1.5 万亿美元；亏损扩大主要由可转债公允价值变动导致【二手】([Reuters/Investing.com](https://www.investing.com/news/stock-market-news/anthropic-recorded-net-loss-of-over-80-billion-in-first-half-of-this-year-wsj-reports-4960917))
 
@@ -290,6 +296,7 @@
 ## 主题：企业级 AI Agent 部署
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-26 — Oracle 在 Oracle AI World 发布 25 款基于 Fusion Claw 的 Fusion Agentic Applications，覆盖 ERP/HCM/SCM/CX，并推出 Fusion Companion / Agentic Home 用户体验与 Fusion Setup and Configuration Registry（FSCR）公共 Git 仓库，让 AI agent 在受控权限下执行企业配置与复杂业务流程【已证实】([Oracle](https://www.oracle.com/news/announcement/ai-world-oracle-advances-outcome-driven-ai-across-fusion-applications-2026-10-26/))
   - 2026-10-23 — Siemens 与 NVIDIA 在德国 Erlangen 工厂部署工业 AI：利用数字孪生、Cosmos 世界模型、Factory Operations Blueprint 与 Omniverse 模拟生产方案，声称 PCB 检测工程工作量最高降 85%、上市时间最高降 40%；Siemens 计划到 2030 年向该厂投资约 5.59 亿美元【厂商宣称/二手】([TechTarget](https://www.techtarget.com/ai/news/366652655/Siemens-Nvidia-deploy-industrial-AI-to-reduce-engineering-effort))
   - 2026-10-22 — Uber 宣布向全球 3 万多名员工全量 rollout ChatGPT Work，从 1,000 人试点扩展，默认由 GPT-6.1 Sol 驱动，连接 Google Drive/Gmail/Calendar/Slack 等工具，用于会议简报、数据分析、演示文稿等知识工作；这是目前公开最大规模企业级 agentic 平台部署之一【已证实】([OpenAI](https://openai.com/index/uber-chatgpt-work-rollout/))
 
@@ -339,6 +346,7 @@
 ## 主题：AI 投融资与资本市场
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-26 — Meta 披露约 950 亿美元股权融资计划：同步承销约 350 亿美元（225 亿 Class A 普通股 + 125 亿存托股份），并计划在 Class C 股票交易启动后推出约 600 亿美元 ATM 计划；NVIDIA、AMD、Broadcom 表示有兴趣合计认购最多 50 亿美元 Class A 股票；资金用途为 AI 基础设施与个人超级智能【已证实】([SEC FWP](https://www.sec.gov/Archives/edgar/data/1326801/000119312526431036/d116268dfwp.htm))
   - 2026-10-26 — AI 初创融资单周约 51.8 亿美元（10-19 ~ 10-25，25 轮 ≥$20M），为前一周 24.2 亿美元的两倍以上；Tenstorrent（RISC-V AI 芯片）$1.5B Series E、Flapping Airplanes（低成本训练研究实验室）$1B Series A、Legora（法律 AI）$550M Series E 分列前三；资本明显流向基础设施与可货币化的垂直 agent【已证实/二手】([AI Funding Tracker](https://aifundingtracker.com/ai-funding-hits-5-2b-as-tenstorrent-and-flapping-airplanes-lead-week-oct-18-oct-25-2026/))
 
 ---

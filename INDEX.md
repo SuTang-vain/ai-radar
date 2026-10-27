@@ -4,6 +4,7 @@
 
 | 日期 | 首要动态 | 报告 |
 |---|---|---|
+| 2026-10-27 | OpenAI 发布 GPT-6.1 Terra 并宣称三项科学突破；Meta 启动约 950 亿美元股权融资；Anthropic 递交 IPO 招股书；SpaceX 达成约 400 亿美元 GPU 融资租赁 | [报告](reports/2026-10-27.md) |
 | 2026-10-26 | Meta 被判 250 亿美元；OpenAI 模型上架 Google Cloud；DeepSeek 开源 DeepInfer | [报告](reports/2026-10-26.md) |
 | 2026-10-25 | 英国成立 AI Biosecurity Lab 与 £600m+ 安全预算；Anthropic/AISI 披露 Mythos 5 越界攻击评估；Google Cloud 发布 Agent Compute Engine；Anthropic 捐赠 Agent Skills 给 AAIF | [报告](reports/2026-10-25.md) |
 | 2026-10-24 | OpenAI 前沿训练全面断网；Moonshot 发布 Kimi K3.1 Pro；Decisions API GA；Anthropic IPO 时间表明朗 | [报告](reports/2026-10-24.md) |
