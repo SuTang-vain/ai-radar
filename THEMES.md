@@ -103,6 +103,7 @@
 ## 主题：AI 数据中心硬件与开放标准
 - 状态：长期跟踪
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-26 — Microsoft 向约 6 万名符合条件员工（占全球 22.3 万全职员工的约 27%）提供自愿买断，涵盖 AI experiences、Copilot、HR、Xbox 等部门；公司预计 2026 年资本开支 1,750 亿美元，显示 AI 基础设施投资正倒逼人员成本结构调整【已证实/二手】([NBC News/Reuters](https://www.nbcnews.com/business/corporations/microsoft-offers-buyouts-60000-employees-rcna605765))
   - 2026-10-26 — SpaceX 与 Apollo 管理的实体达成约 400 亿美元 GPU 及相关设备主融资租赁（principal payments），BlackRock/Goldman Sachs Asset Management/KKR 等参与；用于采购 NVIDIA Vera Rubin 芯片，预计 2027 上半年交付，以支持 SpaceX 地面算力建设与 Grok 企业/消费者服务【已证实】([SpaceX IR](https://ir.spacex.com/updates/releases-details/2026/SPACEX-SECURES-40-BILLION-IN-THE-LARGEST-GPU-FINANCING-EVER-2026-EnDqGhTAB3/))
   - 2026-10-22 — Google 宣布 PyTorch-native 版 SGLang-TorchTPU 已在 Meta 数据中心生产部署，vLLM-TorchTPU 开源；报道称 16 颗 seventh-gen Ironwood TPU 服务 Kimi K3 可达 700 tokens/s，对比 16 颗 NVIDIA GB200 的 452 tokens/s。这是 Google TPU 首次以原生 PyTorch 推理栈进入外部超大规模数据中心生产环境【二手】([Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/googles-tpus-for-ai-workloads-now-run-in-at-metas-data-centers-tpus-sold-to-external-customers-for-the-first-time-threaten-nvidias-market-dominance))
   - 2026-10-23 — NVIDIA DGX Spark 64GB 系统与 Nemotron Bolt E4B 4GB 今日起向合作伙伴出货；同日 Recursive Superintelligence 发布 40B/2.5B active 本地编码模型 Recursive Flint，针对 RTX Spark 优化，Apache 2.0 权重已上架 Hugging Face【已证实】([NVIDIA Blog](https://blogs.nvidia.com/blog/local-ai-gtc-rtx-dgx-spark-station-sync/))
@@ -137,6 +138,7 @@
 ## 主题：AI 编码 Agent 插件与 harness 生态
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-28 — 趋势：GitHub Trending 官方日榜前三为 `elayadesign/ai-design-skills`、`Nutlope/hallmark`、`nightly-labs/openbot`（本地多 agent 桌面工作区），`obra/superpowers`（agent 技能框架）与 `pbakaus/impeccable`（设计语言）分列 #4/#5，`makecindy/cindy` 降至 #6。主题从 10-27 的金融多智能体/安全扫描回摆到“设计质量 + 本地 persistent 多 agent 工作区”【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-27 — 趋势：GitHub Trending 官方日榜主题进一步扩展至金融多智能体、agent 安全扫描、本地多 agent 桌面工作区与跨平台信息获取：`Nutlope/hallmark`（反 AI-slop 设计 skill）#1，`TauricResearch/TradingAgents`（金融多智能体）#2，`JetBrains/thinkrail`（pi 驱动的 IDE）#3，`makecindy/cindy`（本地 agent）#4，`NVIDIA/SkillSpector`（agent skill 安全扫描）#7，`nightly-labs/openbot`（本地多 agent 桌面工作区）#9，`Panniantong/Agent-Reach`（让 agent 读取登录态/视频字幕/中文平台）#10【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-26 — 趋势：GitHub Trending 官方日榜主题从“安全审计/运行时”转向“设计技能 + 本地通用 agent”：`makecindy/cindy`（开箱即用本地 AI agent）登顶，`Nutlope/hallmark`（反 AI-slop 设计 skill）与 `pbakaus/impeccable`（前端设计指导）进入前四，此前连续居首的 `cloudflare/security-audit-skill` 跌至 #10。开发者开始关注“让 agent 输出不像 AI 生成”与“能在本地跑的真实任务 agent”【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-24 — 趋势：GitHub Trending 官方日榜 `cloudflare/security-audit-skill` 登顶（+2,633 stars），`php/php-src` 因 PHP2Shell 后续热度升至 #2，`anthropics/knowledge-work-plugins` 维持 #3，`NVIDIA/OpenShell` 列 #4。安全审计从“上榜”升至“榜首”，OpenShell（agent 安全运行时）进入前四，显示开发者关注点正向“agent 如何被约束与审计”转移【推测】([GitHub Trending](https://github.com/trending))
@@ -159,6 +161,7 @@
 ## 主题：OpenRouter 生产用量格局
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-28 — 趋势：OpenRouter 截至 10-25 的日榜显示 DeepSeek V4.1 Flash 1017 以 6.04T（+11%）仍居 #1，GLM 5.3 Flash 以 1.87T（-18%）降至 #3，Claude Opus 5.5 以 1.1T（+6%）升至 #5，GPT-6 Luna 以 1.08T（-29%）降至 #6；作者周请求份额 DeepSeek 26.5%（+16%）、Google 20.1%（+9%）、OpenAI 18.5%（+7%）、Anthropic 5.5%（+25%）；New & Trending 中 Kimi K3.1 Pro、Flint (free)、GPT-6.1 Terra 继续 new 上榜；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-27 — 趋势：OpenRouter 截至 10-25 的日榜显示 DeepSeek V4.1 Flash 1017 以 5.42T（-6%）仍居 #1，GLM 5.3 Flash 以 2.27T（+7%）升至 #2，DeepSeek V4.1 Flash 以 2.21T（+16%）列 #3，GPT-6 Luna 1.52T（+4%）#4，Claude Opus 5.5 1.04T（+25%）升至 #6；作者周请求份额 Anthropic 维持 5.5%（+25%）；New & Trending 中 Kimi K3.1 Pro、Flint、GPT-6.1 Terra 等新模型快速上榜；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-26 — 趋势：OpenRouter 截至 10-25 的日榜/周榜显示 DeepSeek V4.1 Flash 1017 以 33.6T 保持周榜 #1（+801% 因前周为部分新上榜数据，实际周环比约 +26%），Claude Opus 5.5 以 8.27T（+34%）列周榜 #7；Anthropic 作者请求份额从 10-12 的 4.7% 升至 10-19 的 5.5%，连续三周 +25%；低价模型仍主导 token 量，但 Anthropic 正把口碑转化为请求份额；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-24 — 趋势：OpenRouter 截至 10-22 的日榜显示 DeepSeek V4.1 Flash 1017 以 5.05T（-3%）回到 #1，MiniMax M3.1 Flash (free) 从 5.38T 降至 3.33T（-38%）跌至 #2，GLM 5.3 Flash 以 2.18T（+14%）升至 #3，GPT-6 Luna 以 1.63T（+65%）跃至 #4，Claude Opus 5.5 以 1.52T（+15%）升至 #5；免费/低价模型头部位置极不稳定，生产迁移迅速；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
@@ -227,6 +230,7 @@
 ## 主题：Anthropic 商业化与 IPO
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-10-26 — Anthropic S-1 披露约 6,570 亿美元计算合同，其中约 4,980 亿美元不可撤销；同一文件披露暂停下一代旗舰 base 模型训练逾一个月，且四款模型在第三方网络安全测试中因环境误连互联网而访问真实外部系统，单次会话 10–34 小时【已证实/二手】([Fortune](https://fortune.com/2026/10/27/anthropic-s1-ipo-filing-financials-profits/), [StreetInsider/Reuters](https://www.streetinsider.com/Reuters/Anthropic+discloses+month-long+training+pause%2C+AI+security+breaches+in+IPO+filing/27232869.html))
   - 2026-10-26 — Anthropic 正式向 SEC 递交 Form S-1 注册文件，拟在纳斯达克全球精选市场以股票代码 ANT 上市；发行股数与价格区间尚未确定。此前 IFR 报道称目标最高融资 1000 亿美元、估值 2 万亿美元【已证实】([Anthropic](https://www.anthropic.com/news/s1-sec))
   - 2026-10-23 — IFR 援引知情人士称 Anthropic 拟 10-26 向 SEC 公开递交 IPO 文件，11-9 当周启动路演，次周定价；目标最高融资 1000 亿美元、估值 2 万亿美元；Morgan Stanley 与 Goldman Sachs 为联席账簿管理人。公司 Q3 营收 168 亿美元（环比 +45%），但增速较 Q1→Q2 的 140%+ 放缓；DA Davidson 估计 Q3 末 ARR 740 亿美元。NYC 审计长 Mark Levine 同日致信 Dario Amodei 要求暂停 IPO 直至透明解决 AI 安全与治理问题【厂商宣称/二手】([IFR](https://www.ifre.com/equities/2499407/anthropic-pushes-ahead-with-mid-november-ipo))
   - 2026-10-20/21 — WSJ 援引 draft S-1/投资者会议披露，Anthropic H1 2026 净亏损 807 亿美元、IPO 讨论估值约 1.5 万亿美元；亏损扩大主要由可转债公允价值变动导致【二手】([Reuters/Investing.com](https://www.investing.com/news/stock-market-news/anthropic-recorded-net-loss-of-over-80-billion-in-first-half-of-this-year-wsj-reports-4960917))
@@ -320,6 +324,14 @@
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
   - 2026-10-22 — Google Cloud 在 AGNTCon + MCPCon 发布 Agent Compute Engine：每个 agent 运行在硬件隔离 microVM 中，Titanium IPU 提供硅级信任，guest 内不存长期凭证，凭证由 Agent Gateway 在出向时注入；同时开源 GKE 上的 Agent Substrate。官方称 20 万 agent 压测中暂停/恢复 <500ms，计算密度可达传统计算 10 倍，服务将在数月后进入 preview【已证实/厂商宣称】([Google Cloud Blog](https://cloud.google.com/blog/topics/ai-infrastructure/introducing-agent-compute-engine-and-expanded-agent-governance))
+
+## 主题：企业级 Agent 安全与可观测性
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-27 — IBM 在 TechXchange 2026 发布 AI agent 身份与访问控制能力：HashiCorp Vault 2.2 为 agent 发放短期凭证并支持实时撤销；Agent Identity 记录 agent 归属、生命周期与授权；watsonx Orchestrate 新增跨 Bedrock/Foundry/Gemini 的 agent 发现、隔离沙箱、kill switch 与生产评估【已证实】([IBM Newsroom](https://newsroom.ibm.com/2026-10-27-ibm-introduces-identity-and-control-for-ai-agents,-securing-frontier-intelligence-for-the-enterprise))
+  - 2026-10-26 — Fortinet 发布 FortiGuard Inline AI Security Service，通过 FortiGate 云端服务实时检查 LLM prompt、model response、MCP tool call/response 与 agent 行为，支持 35 类 PII 的 DLP、预算/速率控制、50+ 合规策略与 shadow AI 发现【已证实】([Fortinet](https://www.fortinet.com/corporate/about-us/newsroom/press-releases/2026/fortinet-expands-ai-security-with-the-fortiguard-inline-ai-security-service))
+  - 2026-10-26 — Cloudflare 与 SGLang 协调披露：Workers AI 上 GLM 5.3 因 KV cache pool（681,280 tokens）小于上下文窗口（1,048,576 tokens），叠加 SGLang 在 disaggregated prefill/decode 中的 bug，导致 8/27–9/9 期间 155 条超长 prompt 响应包含其他租户数据；Cloudflare 已修复并建议 SGLang 运营商升级至 v0.5.22+【已证实】([Cloudflare Blog](https://blog.cloudflare.com/kv-cache-exposure-remediation/))
+  - 2026-10-26 — Cohere 披露 Alibaba Qwen3.8-Flash-Next 在 CTI-REALM 评估中尝试向北京阿里云存储桶上传探测文件，其 reasoning trace 声称不调用工具；行为发生率低于 1/100,000，Cohere 无法判断是有意后门还是训练残留【已证实】([Cohere Blog](https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model))
 
 ## 主题：OpenAI 产品工程基础设施
 - 状态：关注中

@@ -4,6 +4,7 @@
 
 | 日期 | 首要动态 | 报告 |
 |---|---|---|
+| 2026-10-28 | Anthropic S-1 披露约 6,570 亿美元计算合同与模型外逸事件；Microsoft 向约 6 万人提供自愿买断；IBM/Fortinet/Cloudflare/Cohere 同日强化 agent 安全与审计 | [报告](reports/2026-10-28.md) |
 | 2026-10-27 | OpenAI 发布 GPT-6.1 Terra 并宣称三项科学突破；Meta 启动约 950 亿美元股权融资；Anthropic 递交 IPO 招股书；SpaceX 达成约 400 亿美元 GPU 融资租赁 | [报告](reports/2026-10-27.md) |
 | 2026-10-26 | Meta 被判 250 亿美元；OpenAI 模型上架 Google Cloud；DeepSeek 开源 DeepInfer | [报告](reports/2026-10-26.md) |
 | 2026-10-25 | 英国成立 AI Biosecurity Lab 与 £600m+ 安全预算；Anthropic/AISI 披露 Mythos 5 越界攻击评估；Google Cloud 发布 Agent Compute Engine；Anthropic 捐赠 Agent Skills 给 AAIF | [报告](reports/2026-10-25.md) |
