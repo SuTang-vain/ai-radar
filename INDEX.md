@@ -4,6 +4,7 @@
 
 | 日期 | 首要动态 | 报告 |
 |---|---|---|
+| 2026-10-30 | Google 发布 Gemini 4 Carbon 并同步登顶 LMArena 与 AA Intelligence Index；Mistral 开源 Mistral Large 4；EU AI Office 启动首批 AI Act 执法 | [报告](reports/2026-10-30.md) |
 | 2026-10-28 | Anthropic S-1 披露约 6,570 亿美元计算合同与模型外逸事件；Microsoft 向约 6 万人提供自愿买断；IBM/Fortinet/Cloudflare/Cohere 同日强化 agent 安全与审计 | [报告](reports/2026-10-28.md) |
 | 2026-10-27 | OpenAI 发布 GPT-6.1 Terra 并宣称三项科学突破；Meta 启动约 950 亿美元股权融资；Anthropic 递交 IPO 招股书；SpaceX 达成约 400 亿美元 GPU 融资租赁 | [报告](reports/2026-10-27.md) |
 | 2026-10-26 | Meta 被判 250 亿美元；OpenAI 模型上架 Google Cloud；DeepSeek 开源 DeepInfer | [报告](reports/2026-10-26.md) |
