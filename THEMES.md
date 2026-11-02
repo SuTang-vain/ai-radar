@@ -117,6 +117,7 @@
 ## 主题：AI 数据中心硬件与开放标准
 - 状态：长期跟踪
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-01 — National Grid 宣布已就 Teesworks 的 Dorman Point 约 70 英亩土地达成协议，拟建 400kV Tees Dock 变电站，合同容量超 1 GW，用于支持邻近 AI 数据中心与电池储能；这是 AI 电力需求直接驱动英国国家级输电网基础设施扩张的最新案例【已证实】([National Grid](https://www.nationalgrid.com/electricity-transmission/network-and-infrastructure/infrastructure-projects/tees-dock-substation))
   - 2026-10-28 — Alphabet Q3 2026 财报：Google Cloud 收入 $30.7B（+103%），Cloud 运营利润 $11.1B（去年同期 $3.6B），backlog $561B；公司明确 TPU systems sales 对 Cloud 增长有显著贡献，first-party model APIs 每分钟处理近 320 亿 tokens【已证实】([Alphabet IR](https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Third-Quarter-2026-Results-2026-FCcqxfIfmh/default.aspx))
   - 2026-10-26 — Microsoft 向约 6 万名符合条件员工（占全球 22.3 万全职员工的约 27%）提供自愿买断，涵盖 AI experiences、Copilot、HR、Xbox 等部门；公司预计 2026 年资本开支 1,750 亿美元，显示 AI 基础设施投资正倒逼人员成本结构调整【已证实/二手】([NBC News/Reuters](https://www.nbcnews.com/business/corporations/microsoft-offers-buyouts-60000-employees-rcna605765))
   - 2026-10-26 — SpaceX 与 Apollo 管理的实体达成约 400 亿美元 GPU 及相关设备主融资租赁（principal payments），BlackRock/Goldman Sachs Asset Management/KKR 等参与；用于采购 NVIDIA Vera Rubin 芯片，预计 2027 上半年交付，以支持 SpaceX 地面算力建设与 Grok 企业/消费者服务【已证实】([SpaceX IR](https://ir.spacex.com/updates/releases-details/2026/SPACEX-SECURES-40-BILLION-IN-THE-LARGEST-GPU-FINANCING-EVER-2026-EnDqGhTAB3/))
@@ -258,6 +259,7 @@
 ## 主题：AI agent 与网站可及性
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-01 — CNBC 报道 JPMorgan Chase、Charles Schwab、Amazon、Kohl's、Neiman Marcus 已采取措施阻止 Meta Muse 等第三方 agent 代用户访问账户或完成交易；Amazon 发言人确认已要求 Meta 将 Amazon 从 Muse 体验中移除，与 Walmart 开放 Agent Gateway 形成“开放接入 vs 围墙花园”的鲜明分化【已证实/二手】([CNBC](https://www.cnbc.com/2026/11/01/jpmorgan-amazon-ai-agents-meta-muse.html))
   - 2026-10-21 — Walmart 推出 Agent Gateway 与 Agent Profiles，允许授权 AI agent 通过 MCP 直接对接 Walmart/Sam’s Club 库存并代为下单，顾客可设置消费上限与逐笔审批；同日 Amazon 继续封禁外部 agent，零售商策略出现“开放接入 vs 围墙花园”分化【已证实】([Walmart Corporate](https://corporate.walmart.com/news/2026/10/Making-It-Possible-for-Agents-to-Shop-on-Behalf-of-Customers))
   - 2026-10-18 — The Verge 报道 Yelp、Delta、JPMorgan Chase、Charles Schwab、Cars.com、Amtrak 等已阻止或限制 Meta Muse、xAI Grok、OpenAI Dots、Instinct 等 agent 访问或执行交易；Amazon 与 Perplexity 的 agent 购物诉讼仍在持续，上诉法院 8 月推翻禁制令后 Amazon 已提交修正诉状；Cloudflare 反 bot 机制也加剧了 agent 被拦截【已证实/二手】([The Verge](https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web))
 
@@ -280,6 +282,7 @@
 ## 主题：Agentic commerce 与支付基础设施
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-01 — CNBC 报道 JPMorgan Chase、Charles Schwab、Amazon、Kohl's、Neiman Marcus 已采取措施阻止 Meta Muse 等第三方 agent 代用户访问账户或完成交易；Amazon 明确要求 Meta 将 Amazon 从 Muse 中移除，与 Walmart 的开放策略形成对比：agentic commerce 在“开放接入”与“围墙花园”之间的冲突正在升级【已证实/二手】([CNBC](https://www.cnbc.com/2026/11/01/jpmorgan-amazon-ai-agents-meta-muse.html))
   - 2026-10-21 — Walmart 推出 Agent Gateway 与 Agent Profiles，让授权 AI agent 代顾客在 Walmart/Sam’s Club 下单，支持消费上限与逐笔审批；同日 Meta 财报披露 Muse 购物为最常见使用场景（>25% 活跃用户、平均客单价 >$200），与 Stripe Link ~200 agents 形成连续信号：agentic commerce 正从“能支付”走向“有授权框架的真实消费”【已证实/二手】([Walmart Corporate](https://corporate.walmart.com/news/2026/10/Making-It-Possible-for-Agents-to-Shop-on-Behalf-of-Customers), [Meta/Business Insider](https://www.businessinsider.com/meta-q3-2026-earnings-mark-zuckerberg-muse-ai-app-users-2026-10), [Upstarts Media](https://www.upstartsmedia.com/p/data-stripe-link-how-ai-assistants-spend))
   - 2026-10-19 — Stripe Link 目前为约 200 个 AI agent/assistant 提供支付能力，较 9 月的约 70 个接近翻倍；涉及 Muse、Grok Bot、Instinct、Skydive、Town 等，Stripe 高管称 agent 交易量已“very material”【厂商宣称/二手】([Upstarts Media](https://www.upstartsmedia.com/p/data-stripe-link-how-ai-assistants-spend))
 
@@ -327,6 +330,7 @@
 ## 主题：OpenAI 商业化与融资
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-01/02 — OpenAI Help Center 更新：12 月起 Plus/Pro/Business 的 ChatGPT 与 Codex 将共享 usage allowance，用量按 token 计量；同时新增每张支付卡与每台设备的付费账号上限，超出会提示 "Device limit reached" 或拦截新购，多账号堆叠订阅的 workaround 被收紧【已证实】([OpenAI Help Center](https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits), [Understanding card and device limits](https://help.openai.com/en/articles/20001559-understanding-card-and-device-limits-in-chatgpt))
   - 2026-10-26 — OpenAI  reportedly 向 Anthropic 企业客户提供最高 90% 折扣抢夺客户，Replit 将超过 1 亿美元年度 AI 支出从 Anthropic 转向 OpenAI，Rippling 编码任务中 OpenAI 占比从 5 月 16% 升至 52%；价格战正在压缩 Anthropic 上市前利润【厂商宣称/二手】([The Decoder](https://www.thedecoder.ai/openai-offers-discounts-up-to-90-percent-to-poach-anthropics-biggest-customers))
   - 2026-10-21 — OpenAI 与 Google Cloud 宣布合作，OpenAI 前沿模型与 Codex agentic workflows 将进入 Google Cloud Model Garden 与 Marketplace，企业可用现有 GCP 消费承诺抵扣；Microsoft 仍被明确为 OpenAI 首要云伙伴【已证实】([OpenAI](https://openai.com/index/openai-models-google-cloud/))
   - 2026-10-22 — CNBC 援引知情人士称，OpenAI 正接近敲定最高 30 亿美元桥接融资，pre-money 估值 1.25 万亿美元，由阿联酋投资者与 Coatue 领投，定位为 IPO 前“机会型”桥接；同时 OpenAI 还在就阿联酋额外算力进行商业谈判；OpenAI 未置评，条款仍可能变化【厂商宣称/二手】([CNBC](https://www.cnbc.com/2026/10/22/openai-funding-round-uae-investors.html))
@@ -392,3 +396,33 @@
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
   - 2026-10-26 — 科罗拉多州司法部就自动化决策技术（ADMT）与聊天机器人安全法案举行公开听证，书面意见截止 10-26 23:59 MST；规则旨在落实 2027-01-01 生效的 SB 26-189 与 HB 26-1263，覆盖算法歧视、未成年人保护、AI 披露等。这是美国州级 AI 监管从立法进入规则细化阶段的关键节点【已证实】([Colorado AG](https://coag.gov/ai/))
+
+---
+
+## 主题：美国州级 AI 儿童安全立法
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-28 — 纽约州长 Kathy Hochul 签署 S.9051B/A.10379C，禁止向未成年人提供 12 类不安全 AI companion 功能（假装人类、建立情感依赖、鼓励自残、性对话等），要求年龄验证并删除验证信息，违规最高 $25,000/次，2027-01-01 生效；这是目前美国最严格的儿童 AI 聊天机器人安全法【已证实】([NY Governor](https://www.governor.ny.gov/news/governor-hochul-signs-nation-leading-legislation-protect-kids-ai-chatbots-and-ensure-baby))
+
+---
+
+## 主题：AI 媒体内容编辑 agent
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-29 — Adobe Research 与 UCSD 发布 EditAgent：通过扩展 action space（通用编辑器 + 专业化工具）与 observation space（verification records，如 change map、局部放大、颜色/几何测量），让通用 VLM judge 在专家标注基准上击败专门微调的 reward model；专家在 78.5% 的对比中更偏好并行候选而非顺序精修，对 Photoshop 等创意工具的 AI agent 化有直接参考意义【已证实】([arXiv](https://arxiv.org/abs/2610.39664))
+  - 2026-10-27 — Google、Stanford、Oxford 等机构发布 StreamVibe：面向显式/隐式/动态用户意图的主动视频 agent 基准（4.1K 评测样本、183 小时视频）与模型，每秒决定是否介入；在响应时机与答案质量上比基线高 10.7%，结合 memory harness 后再提升 12.3%；论文指出长视频中模型仍难判断何时保持沉默【已证实】([arXiv](https://arxiv.org/abs/2610.34662))
+
+---
+
+## 主题：AI 行业落地财务回报
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-10-28 — Santander Q3 财报披露，2026 年前九个月 AI 通过更好客户服务、更高生产力与商业增长，带来 €194 million 业务价值（更高收入、更低成本、更低贷款损失拨备）；这是大型银行首次在季报中给出较具体的 AI 财务贡献口径【已证实】([Santander Q3 Press Release PDF](https://www.biznesradar.pl/storage/a/55/38/55380028-zal01-q326-press-release-en-1846dc3.pdf))
+  - 2026-10-27 — Novartis CEO Vas Narasimhan 在 CNBC 采访中表示“本季度我第一次真正看到 AI 从有形层面改善我们的 P&L”，指向 SG&A 等领域的生产力提升；公司未单独披露 AI 贡献金额【厂商宣称/二手】([CNBC](https://www.cnbc.com/video/2026/10/27/novartis-ceo-says-ai-has-tangibly-improved-pl-for-the-first-time.html))
+
+---
+
+## 主题：AI 政治偏见与多语言安全
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-11-01 — The Decoder 援引 Vals AI 10-12 研究再次报道：Chinese models 的 pro-China lean 低于预期，但 Simplified Chinese 提示会显著增加亲政府立场，部分非中国模型偶尔也会附和官方中国立场；提示语言、部署上下文与响应格式均会影响政治倾向得分【二手】([The Decoder](https://the-decoder.com/chinese-ai-models-are-politically-complex-not-just-government-mouthpieces-study-finds/), [Vals AI](https://www.vals.ai/blogs/china-us-analysis))
