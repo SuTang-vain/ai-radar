@@ -117,6 +117,7 @@
 ## 主题：AI 数据中心硬件与开放标准
 - 状态：长期跟踪
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-02 — OpenAI 启动 Grid Protectors Program，未来算力园区将与电网约定可削减负荷；Georgia Effingham County 园区（Project Camellia）作为试点，承诺承担全部基础设施与供电成本，并与 Georgia Power 约定最高 1,000 MW 需求响应，相当于约 70 万户家庭平均用电；OpenAI 称此举可在电网紧张时释放电力并降低其他用户电费压力【已证实】([OpenAI](https://openai.com/index/grid-protectors-program))
   - 2026-11-01 — National Grid 宣布已就 Teesworks 的 Dorman Point 约 70 英亩土地达成协议，拟建 400kV Tees Dock 变电站，合同容量超 1 GW，用于支持邻近 AI 数据中心与电池储能；这是 AI 电力需求直接驱动英国国家级输电网基础设施扩张的最新案例【已证实】([National Grid](https://www.nationalgrid.com/electricity-transmission/network-and-infrastructure/infrastructure-projects/tees-dock-substation))
   - 2026-10-28 — Alphabet Q3 2026 财报：Google Cloud 收入 $30.7B（+103%），Cloud 运营利润 $11.1B（去年同期 $3.6B），backlog $561B；公司明确 TPU systems sales 对 Cloud 增长有显著贡献，first-party model APIs 每分钟处理近 320 亿 tokens【已证实】([Alphabet IR](https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Third-Quarter-2026-Results-2026-FCcqxfIfmh/default.aspx))
   - 2026-10-26 — Microsoft 向约 6 万名符合条件员工（占全球 22.3 万全职员工的约 27%）提供自愿买断，涵盖 AI experiences、Copilot、HR、Xbox 等部门；公司预计 2026 年资本开支 1,750 亿美元，显示 AI 基础设施投资正倒逼人员成本结构调整【已证实/二手】([NBC News/Reuters](https://www.nbcnews.com/business/corporations/microsoft-offers-buyouts-60000-employees-rcna605765))
@@ -148,12 +149,14 @@
 ## 主题：Cursor 与 AI 编码 Agent 平台
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-02 — Anthropic 员工确认 Claude Code 的 Opus 5.5 系统提示新增规则，引导模型远离“复刻他人特定游戏”，称此举是为防止用 Claude 侵犯 IP；原创游戏、类型游戏及使用用户自有设计与资产的游戏仍应可用，但部分用户反映普通逆向工程任务也被拦截，Anthropic 称将继续迭代以“取得平衡”【已证实/二手】([Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-confirms-new-claude-code-limits-to-prevent-game-cloning-users-report-opus-5-5-is-also-actively-blocking-reverse-engineering-tasks))
   - 2026-10-18 — Replit CEO Amjad Masad 在 TechCrunch Disrupt 表示 OpenAI 已取代 Anthropic 成为 Replit Agent 的默认模型提供商，原因包括成本、合作与性能；Anthropic 模型仍可在平台选用，但消息人士称双方合作关系仍在，未获 Replit/Anthropic 官方确认【二手】([Yahoo / TechCrunch](https://finance.yahoo.com/technology/ai/articles/replit-no-longer-working-anthropic-212228968.html))
   - 2026-10-15 — Cursor 开放 Origin App Marketplace 第三方提交，已集成 20+ 家服务商应用【已证实】([Cursor Changelog](https://cursor.com/changelog/origin-app-marketplace))
 
 ## 主题：AI 编码 Agent 插件与 harness 生态
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-03 — 趋势：GitHub Trending 官方日榜 #1 为 `vercel-labs/agent-desktop`（面向 agent 的 computer use CLI），#2 `thedotmack/claude-mem`（跨 session 持久记忆），#3 `D4Vinci/Scrapling`（爬虫框架），#8 `shiyu-coder/Kronos`（金融市场语言模型）。agent 桌面与持久记忆继续居首，显示开发者正在补齐 agent 长期运行与工具调用底座；金融/安全等垂直场景保持前十但未再突前【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-30 — 趋势：GitHub Trending 官方日榜 #1 为 `HKUDS/DeepTutor`（终身个性化辅导），#5 `milind-soni/OpenMausBot`（开源 Grok Bot 替代），#6 `nightly-labs/openbot`（本地多 agent 桌面工作区）仍居前；`obra/superpowers`（agent 技能框架）、`pbakaus/impeccable`（设计语言）保持前列。教育个性化与开源 bot 替代成为新焦点，agent 工程基础设施热度未退【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-28 — 趋势：GitHub Trending 官方日榜前三为 `elayadesign/ai-design-skills`、`Nutlope/hallmark`、`nightly-labs/openbot`（本地多 agent 桌面工作区），`obra/superpowers`（agent 技能框架）与 `pbakaus/impeccable`（设计语言）分列 #4/#5，`makecindy/cindy` 降至 #6。主题从 10-27 的金融多智能体/安全扫描回摆到“设计质量 + 本地 persistent 多 agent 工作区”【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-27 — 趋势：GitHub Trending 官方日榜主题进一步扩展至金融多智能体、agent 安全扫描、本地多 agent 桌面工作区与跨平台信息获取：`Nutlope/hallmark`（反 AI-slop 设计 skill）#1，`TauricResearch/TradingAgents`（金融多智能体）#2，`JetBrains/thinkrail`（pi 驱动的 IDE）#3，`makecindy/cindy`（本地 agent）#4，`NVIDIA/SkillSpector`（agent skill 安全扫描）#7，`nightly-labs/openbot`（本地多 agent 桌面工作区）#9，`Panniantong/Agent-Reach`（让 agent 读取登录态/视频字幕/中文平台）#10【推测】([GitHub Trending](https://github.com/trending))
@@ -179,6 +182,7 @@
 ## 主题：OpenRouter 生产用量格局
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-02 — 趋势：OpenRouter 截至 11-01 的日榜显示 DeepSeek V4.1 Flash 1017 仍以 6T 居首但日环比 -15%，Kimi K3.1 Pro 以 572B（+144%）跃至 #9，GPT-5.6 Luna 以 571B（-48%）跌至 #10；作者周请求份额 DeepSeek 29.8%（+7%）、OpenAI 18.8%（-3%）、Google 14.4%（-32%）、Anthropic 5.7%（0%）；DeepSeek 份额继续扩大，Google 连续两周明显收缩，GPT-5.6 Luna 代际切换加速；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-30 — 趋势：OpenRouter 截至 10-28 的日榜显示 DeepSeek V4.1 Flash 1017 以 7.3T（+21%）扩大领先，GLM 5.3 Flash 以 2.43T（+30%）保持 #3，GPT-6 Luna 以 1.45T（+34%）升至 #5，Claude Opus 5.5 以 1.01T（-8%）跌至 #6；作者周请求份额 DeepSeek 26.5%（+16%）、Google 20.1%（+9%）、OpenAI 18.5%（+7%）、Anthropic 5.5%（+25%）；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-28 — 趋势：OpenRouter 截至 10-25 的日榜显示 DeepSeek V4.1 Flash 1017 以 6.04T（+11%）仍居 #1，GLM 5.3 Flash 以 1.87T（-18%）降至 #3，Claude Opus 5.5 以 1.1T（+6%）升至 #5，GPT-6 Luna 以 1.08T（-29%）降至 #6；作者周请求份额 DeepSeek 26.5%（+16%）、Google 20.1%（+9%）、OpenAI 18.5%（+7%）、Anthropic 5.5%（+25%）；New & Trending 中 Kimi K3.1 Pro、Flint (free)、GPT-6.1 Terra 继续 new 上榜；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-27 — 趋势：OpenRouter 截至 10-25 的日榜显示 DeepSeek V4.1 Flash 1017 以 5.42T（-6%）仍居 #1，GLM 5.3 Flash 以 2.27T（+7%）升至 #2，DeepSeek V4.1 Flash 以 2.21T（+16%）列 #3，GPT-6 Luna 1.52T（+4%）#4，Claude Opus 5.5 1.04T（+25%）升至 #6；作者周请求份额 Anthropic 维持 5.5%（+25%）；New & Trending 中 Kimi K3.1 Pro、Flint、GPT-6.1 Terra 等新模型快速上榜；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
@@ -213,6 +217,7 @@
 ## 主题：Moonshot AI 与 Kimi 模型
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-02 — 趋势：OpenRouter 截至 11-01 的日榜显示 Kimi K3.1 Pro 以 572B tokens（+144%）跃至 #9，生产平台采纳速度明显快于公开评测沉淀；完整权重预计 11-04 前释放，释放后可观察其在 LMArena/AA 榜单中的后续表现；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-23/24 — Moonshot AI 发布 Kimi K3.1 Pro：2.8T total / 104B active、1M 上下文，API 定价 $2/$10/$0.20 per 1M input/output/cache hit（较 Kimi K3 低 33%），官方称 Terminal-Bench 4.0 65.7%；Artificial Analysis Intelligence Index 55 分列第 4，Terminal-Bench 4.0 以 67% 居首；完整权重预计 11-04 前释放【已证实】([Kimi Blog](https://www.kimi.ai/blog/kimi-k3-1-pro), [Artificial Analysis](https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks))
 
 ## 主题：DeepSeek 模型与 API 生态
@@ -249,6 +254,7 @@
 ## 主题：Anthropic 商业化与 IPO
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-02 — Anthropic 提交 S-1/A 修正案，新增风险因素称 AI 加速研发可能导致能力进步快于安全/对齐措施；内部估算显示未来模型“可能即将”满足 Responsible Scaling Policy 中“由 AI 带来的显著加速进展”定义，但目前没有模型被认定越过该阈值；公司称将继续评估数据并考虑更新 RSP 以保持人类对前沿模型开发的控制【厂商宣称/二手】([TechCrunch](https://techcrunch.com/2026/11/02/anthropic-warns-that-its-very-close-to-rsi-capability-aka-self-building-ai/))
   - 2026-10-26 — Anthropic S-1 披露约 6,570 亿美元计算合同，其中约 4,980 亿美元不可撤销；同一文件披露暂停下一代旗舰 base 模型训练逾一个月，且四款模型在第三方网络安全测试中因环境误连互联网而访问真实外部系统，单次会话 10–34 小时【已证实/二手】([Fortune](https://fortune.com/2026/10/27/anthropic-s1-ipo-filing-financials-profits/), [StreetInsider/Reuters](https://www.streetinsider.com/Reuters/Anthropic+discloses+month-long+training+pause%2C+AI+security+breaches+in+IPO+filing/27232869.html))
   - 2026-10-26 — Anthropic 正式向 SEC 递交 Form S-1 注册文件，拟在纳斯达克全球精选市场以股票代码 ANT 上市；发行股数与价格区间尚未确定。此前 IFR 报道称目标最高融资 1000 亿美元、估值 2 万亿美元【已证实】([Anthropic](https://www.anthropic.com/news/s1-sec))
   - 2026-10-23 — IFR 援引知情人士称 Anthropic 拟 10-26 向 SEC 公开递交 IPO 文件，11-9 当周启动路演，次周定价；目标最高融资 1000 亿美元、估值 2 万亿美元；Morgan Stanley 与 Goldman Sachs 为联席账簿管理人。公司 Q3 营收 168 亿美元（环比 +45%），但增速较 Q1→Q2 的 140%+ 放缓；DA Davidson 估计 Q3 末 ARR 740 亿美元。NYC 审计长 Mark Levine 同日致信 Dario Amodei 要求暂停 IPO 直至透明解决 AI 安全与治理问题【厂商宣称/二手】([IFR](https://www.ifre.com/equities/2499407/anthropic-pushes-ahead-with-mid-november-ipo))
@@ -396,6 +402,16 @@
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
   - 2026-10-26 — 科罗拉多州司法部就自动化决策技术（ADMT）与聊天机器人安全法案举行公开听证，书面意见截止 10-26 23:59 MST；规则旨在落实 2027-01-01 生效的 SB 26-189 与 HB 26-1263，覆盖算法歧视、未成年人保护、AI 披露等。这是美国州级 AI 监管从立法进入规则细化阶段的关键节点【已证实】([Colorado AG](https://coag.gov/ai/))
+
+## 主题：AI 训练数据与版权诉讼
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-11-02 — 《纽约时报》、New York Daily News、Chicago Tribune、Orlando Sentinel 分别在纽约南区联邦法院起诉 Brave Software，指控其用未标识爬虫构建超过 300 亿网页索引，通过 Brave Search API 向 Anthropic、Perplexity、Mistral、xAI、Cohere 等提供实时版权内容，并通过浏览器 Paywall blocker 帮助用户绕过付费墙；NYT 称曾在 2025-08 与 2026-04 发函未果【已证实】([NYT Complaint PDF](https://nytco-assets.nytimes.com/2026/11/new-york-times-brave-complaint-11-2-26.pdf))
+
+## 主题：AI 评测与个人 agent 基准
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-11-02 — OpenAI 发布 LifeVal，基于美国时间使用调查、跨国时间使用研究与 3,995 人代表性调查构建日常生活任务评估，覆盖育儿、健康、教育、家庭管理、财务、购物、政务等场景；示例任务包括搬家后选幼儿园、管理洪水志愿者、为糖尿病初诊家长准备膳食计划；OpenAI 称已用该评估驱动模型改进一年【已证实】([OpenAI](https://openai.com/index/lifeval/))
 
 ---
 
