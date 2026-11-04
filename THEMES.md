@@ -50,9 +50,10 @@
 - 时间线（最新在最上，最多 12 条）：
   - 2026-10-20 — 安全公司 Claroc 披露 Muse 对话分享链接因把标题写入子域名，导致通过 passive DNS 可公开枚举 6,800 条链接，样本含收入审查、贷款申请、员工日历、银行欺诈告警等；Meta 已暂停该分享功能【已证实/二手】([The Verge](https://www.theverge.com/tech/1014627/meta-muse-ai-sharing-ai-chats), [Ars Technica](https://arstechnica.com/security/2026/10/meta-muse-exposes-users-personal-and-business-secrets-when-they-share-conversations/))
 
-## 主题：Ant Ling 与中国开源模型
+## 主题：中国开源模型与国际评测
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-03 — Artificial Analysis Intelligence Index v5.0 改采 60% 私有/held-out 测试集后，中国开放权重模型排名明显下滑：Kimi K3.1 Pro（权重未释放）46 分仍是最佳 open 模型，但可下载的 DeepSeek V4.1 Flash 1017 与 GLM-5.3 约 32 分，落后 Gemini 4 Carbon（59.4）约 26 分，且低于 Claude Haiku 5.5（36）。变化主因是评测规则改变，不等于能力实际下降，但对“中国开源模型已逼近美国前沿”的叙事构成修正【已证实/推测/二手】([Business Insider](https://www.businessinsider.com/chinese-ai-models-rankings-artificial-analysis-private-tests-anthropic-openai-2026-11), [Artificial Analysis v5 Announcement](https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5))
   - 2026-10-16 — Ant Group 的 inclusionAI 开源 Ling-3.1-flash，560B/25B MoE、1M 上下文、MIT 许可，量化后可在 4 卡 GB300/Hopper 配置 serve；同日发布基于开源 coding agent Pi 的 LingCode（尚未开源）【已证实】([Hugging Face](https://huggingface.co/inclusionAI/Ling-3.1-flash))
 
 ## 主题：Cognition Devin 与 AI SRE
@@ -117,6 +118,7 @@
 ## 主题：AI 数据中心硬件与开放标准
 - 状态：长期跟踪
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-03 — CNBC 援引知情人士称 Meta 寻求发行 200–250 亿美元债券，约三分之二美元、三分之一欧元，用于 AI 基础设施、模型与服务支出；S&P 因资本支出不确定性与负自由现金流将 Meta 展望从稳定调至负面（AA-）。Meta 预计 2026 年资本支出 1,350–1,450 亿美元，上季度自由现金流转负 21.2 亿美元【已证实/二手】([CNBC](https://www.cnbc.com/2026/11/03/meta-meta-bond-sale-ai-spending.html))
   - 2026-11-02 — OpenAI 启动 Grid Protectors Program，未来算力园区将与电网约定可削减负荷；Georgia Effingham County 园区（Project Camellia）作为试点，承诺承担全部基础设施与供电成本，并与 Georgia Power 约定最高 1,000 MW 需求响应，相当于约 70 万户家庭平均用电；OpenAI 称此举可在电网紧张时释放电力并降低其他用户电费压力【已证实】([OpenAI](https://openai.com/index/grid-protectors-program))
   - 2026-11-01 — National Grid 宣布已就 Teesworks 的 Dorman Point 约 70 英亩土地达成协议，拟建 400kV Tees Dock 变电站，合同容量超 1 GW，用于支持邻近 AI 数据中心与电池储能；这是 AI 电力需求直接驱动英国国家级输电网基础设施扩张的最新案例【已证实】([National Grid](https://www.nationalgrid.com/electricity-transmission/network-and-infrastructure/infrastructure-projects/tees-dock-substation))
   - 2026-10-28 — Alphabet Q3 2026 财报：Google Cloud 收入 $30.7B（+103%），Cloud 运营利润 $11.1B（去年同期 $3.6B），backlog $561B；公司明确 TPU systems sales 对 Cloud 增长有显著贡献，first-party model APIs 每分钟处理近 320 亿 tokens【已证实】([Alphabet IR](https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Third-Quarter-2026-Results-2026-FCcqxfIfmh/default.aspx))
@@ -156,6 +158,7 @@
 ## 主题：AI 编码 Agent 插件与 harness 生态
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-04 — 趋势：GitHub Trending 官方日榜 #1 `thedotmack/claude-mem`（跨 session 持久记忆）、#2 `vercel-labs/agent-desktop`（agent computer use CLI）、#3 `max-sixty/worktrunk`（Git worktree for 并行 AI agent 工作流）、#8 `D4Vinci/Scrapling`（爬虫框架）、#11 `shiyu-coder/Kronos`（金融市场语言模型）。持久记忆反超桌面工具居首，并出现面向 agent 并行开发的新工具，显示开发者正在补齐 agent 长期运行与工程协作底座【推测】([GitHub Trending](https://github.com/trending))
   - 2026-11-03 — 趋势：GitHub Trending 官方日榜 #1 为 `vercel-labs/agent-desktop`（面向 agent 的 computer use CLI），#2 `thedotmack/claude-mem`（跨 session 持久记忆），#3 `D4Vinci/Scrapling`（爬虫框架），#8 `shiyu-coder/Kronos`（金融市场语言模型）。agent 桌面与持久记忆继续居首，显示开发者正在补齐 agent 长期运行与工具调用底座；金融/安全等垂直场景保持前十但未再突前【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-30 — 趋势：GitHub Trending 官方日榜 #1 为 `HKUDS/DeepTutor`（终身个性化辅导），#5 `milind-soni/OpenMausBot`（开源 Grok Bot 替代），#6 `nightly-labs/openbot`（本地多 agent 桌面工作区）仍居前；`obra/superpowers`（agent 技能框架）、`pbakaus/impeccable`（设计语言）保持前列。教育个性化与开源 bot 替代成为新焦点，agent 工程基础设施热度未退【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-28 — 趋势：GitHub Trending 官方日榜前三为 `elayadesign/ai-design-skills`、`Nutlope/hallmark`、`nightly-labs/openbot`（本地多 agent 桌面工作区），`obra/superpowers`（agent 技能框架）与 `pbakaus/impeccable`（设计语言）分列 #4/#5，`makecindy/cindy` 降至 #6。主题从 10-27 的金融多智能体/安全扫描回摆到“设计质量 + 本地 persistent 多 agent 工作区”【推测】([GitHub Trending](https://github.com/trending))
@@ -182,6 +185,7 @@
 ## 主题：OpenRouter 生产用量格局
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-03 — 趋势：OpenRouter 日榜显示 DeepSeek V4.1 Flash 1017 以 7.79T（+30%）居首，GLM 5.3 Flash 以 2.58T（+83%）升至 #2，GPT-5.6 Luna 以 1.31T（+130%）从 #10 反弹至 #5，Kimi K3.1 Pro 以 720B（+26%）列 #10。与 11-01 的普跌相比，低价/代际切换模型在 48 小时内剧烈反转；最新周作者份额仍为 DeepSeek 29.8%、OpenAI 18.8%、Google 14.4%、Anthropic 5.7%。单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-11-02 — 趋势：OpenRouter 截至 11-01 的日榜显示 DeepSeek V4.1 Flash 1017 仍以 6T 居首但日环比 -15%，Kimi K3.1 Pro 以 572B（+144%）跃至 #9，GPT-5.6 Luna 以 571B（-48%）跌至 #10；作者周请求份额 DeepSeek 29.8%（+7%）、OpenAI 18.8%（-3%）、Google 14.4%（-32%）、Anthropic 5.7%（0%）；DeepSeek 份额继续扩大，Google 连续两周明显收缩，GPT-5.6 Luna 代际切换加速；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-30 — 趋势：OpenRouter 截至 10-28 的日榜显示 DeepSeek V4.1 Flash 1017 以 7.3T（+21%）扩大领先，GLM 5.3 Flash 以 2.43T（+30%）保持 #3，GPT-6 Luna 以 1.45T（+34%）升至 #5，Claude Opus 5.5 以 1.01T（-8%）跌至 #6；作者周请求份额 DeepSeek 26.5%（+16%）、Google 20.1%（+9%）、OpenAI 18.5%（+7%）、Anthropic 5.5%（+25%）；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-28 — 趋势：OpenRouter 截至 10-25 的日榜显示 DeepSeek V4.1 Flash 1017 以 6.04T（+11%）仍居 #1，GLM 5.3 Flash 以 1.87T（-18%）降至 #3，Claude Opus 5.5 以 1.1T（+6%）升至 #5，GPT-6 Luna 以 1.08T（-29%）降至 #6；作者周请求份额 DeepSeek 26.5%（+16%）、Google 20.1%（+9%）、OpenAI 18.5%（+7%）、Anthropic 5.5%（+25%）；New & Trending 中 Kimi K3.1 Pro、Flint (free)、GPT-6.1 Terra 继续 new 上榜；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
@@ -217,6 +221,7 @@
 ## 主题：Moonshot AI 与 Kimi 模型
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-04 — Moonshot 博客承诺 Kimi K3.1 Pro 完整权重将于 11-04 前释放，但截至本轮抓取 moonshotai Hugging Face 组织最新仓库仍为 9-02 更新的 Kimi-K3，无 K3.1 Pro 仓库。OpenRouter 11-03 日榜显示 Kimi K3.1 Pro 以 720B（+26%）列 #10，生产平台采纳持续但权重释放尚未落地【已证实】([Kimi Blog](https://www.kimi.ai/blog/kimi-k3-1-pro), [Hugging Face moonshotai](https://huggingface.co/moonshotai), [OpenRouter](https://openrouter.ai/rankings))
   - 2026-11-02 — 趋势：OpenRouter 截至 11-01 的日榜显示 Kimi K3.1 Pro 以 572B tokens（+144%）跃至 #9，生产平台采纳速度明显快于公开评测沉淀；完整权重预计 11-04 前释放，释放后可观察其在 LMArena/AA 榜单中的后续表现；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-23/24 — Moonshot AI 发布 Kimi K3.1 Pro：2.8T total / 104B active、1M 上下文，API 定价 $2/$10/$0.20 per 1M input/output/cache hit（较 Kimi K3 低 33%），官方称 Terminal-Bench 4.0 65.7%；Artificial Analysis Intelligence Index 55 分列第 4，Terminal-Bench 4.0 以 67% 居首；完整权重预计 11-04 前释放【已证实】([Kimi Blog](https://www.kimi.ai/blog/kimi-k3-1-pro), [Artificial Analysis](https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks))
 
@@ -254,6 +259,7 @@
 ## 主题：Anthropic 商业化与 IPO
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-02 — Anthropic 提交 S-1/A 修正案披露 Q3 财务：前三季度营收 332.4 亿美元；Q3 约 169.6 亿美元，同比增约 1,127%，但环比增速从 Q2 的 144% 降至约 47%；Q3 运营亏损 5.67 亿美元；purchase commitments 与租赁协议合计约 8,954 亿美元，其中约 4,475 亿美元预计 2030 年底前到期、698 亿美元在 2026-09-30 后 12 个月内到期。修正案同时新增风险因素称未来模型“可能即将”满足 RSP 递归自我改进阈值【已证实/二手】([CNBC](https://www.cnbc.com/2026/11/02/anthropic-ant-s-1-quarter-financials.html), [SECTracker S-1/A](https://sectracker.app/en/ANT/filing/0001628280-26-068676))
   - 2026-11-02 — Anthropic 提交 S-1/A 修正案，新增风险因素称 AI 加速研发可能导致能力进步快于安全/对齐措施；内部估算显示未来模型“可能即将”满足 Responsible Scaling Policy 中“由 AI 带来的显著加速进展”定义，但目前没有模型被认定越过该阈值；公司称将继续评估数据并考虑更新 RSP 以保持人类对前沿模型开发的控制【厂商宣称/二手】([TechCrunch](https://techcrunch.com/2026/11/02/anthropic-warns-that-its-very-close-to-rsi-capability-aka-self-building-ai/))
   - 2026-10-26 — Anthropic S-1 披露约 6,570 亿美元计算合同，其中约 4,980 亿美元不可撤销；同一文件披露暂停下一代旗舰 base 模型训练逾一个月，且四款模型在第三方网络安全测试中因环境误连互联网而访问真实外部系统，单次会话 10–34 小时【已证实/二手】([Fortune](https://fortune.com/2026/10/27/anthropic-s1-ipo-filing-financials-profits/), [StreetInsider/Reuters](https://www.streetinsider.com/Reuters/Anthropic+discloses+month-long+training+pause%2C+AI+security+breaches+in+IPO+filing/27232869.html))
   - 2026-10-26 — Anthropic 正式向 SEC 递交 Form S-1 注册文件，拟在纳斯达克全球精选市场以股票代码 ANT 上市；发行股数与价格区间尚未确定。此前 IFR 报道称目标最高融资 1000 亿美元、估值 2 万亿美元【已证实】([Anthropic](https://www.anthropic.com/news/s1-sec))
@@ -327,6 +333,7 @@
 ## 主题：企业级 AI Agent 部署
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-02 — Salesforce 宣布以约 27 亿美元收购语音客户体验平台 Cresta；Cresta 的语音 agent 可端到端处理复杂客服电话，客户包括 Marriott、Comcast、Alaska Airlines，交易预计 2028 财年 Q1 完成。这是 Salesforce 2026 年继 Fin、Braze、Listen Labs 后的又一笔大型 CX 收购，强化其 Service Cloud + Agentforce 的语音 agent 能力【已证实】([Salesforce](https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-cresta/))
   - 2026-10-26 — Oracle 在 Oracle AI World 发布 25 款基于 Fusion Claw 的 Fusion Agentic Applications，覆盖 ERP/HCM/SCM/CX，并推出 Fusion Companion / Agentic Home 用户体验与 Fusion Setup and Configuration Registry（FSCR）公共 Git 仓库，让 AI agent 在受控权限下执行企业配置与复杂业务流程【已证实】([Oracle](https://www.oracle.com/news/announcement/ai-world-oracle-advances-outcome-driven-ai-across-fusion-applications-2026-10-26/))
   - 2026-10-23 — Siemens 与 NVIDIA 在德国 Erlangen 工厂部署工业 AI：利用数字孪生、Cosmos 世界模型、Factory Operations Blueprint 与 Omniverse 模拟生产方案，声称 PCB 检测工程工作量最高降 85%、上市时间最高降 40%；Siemens 计划到 2030 年向该厂投资约 5.59 亿美元【厂商宣称/二手】([TechTarget](https://www.techtarget.com/ai/news/366652655/Siemens-Nvidia-deploy-industrial-AI-to-reduce-engineering-effort))
   - 2026-10-22 — Uber 宣布向全球 3 万多名员工全量 rollout ChatGPT Work，从 1,000 人试点扩展，默认由 GPT-6.1 Sol 驱动，连接 Google Drive/Gmail/Calendar/Slack 等工具，用于会议简报、数据分析、演示文稿等知识工作；这是目前公开最大规模企业级 agentic 平台部署之一【已证实】([OpenAI](https://openai.com/index/uber-chatgpt-work-rollout/))
@@ -336,6 +343,7 @@
 ## 主题：OpenAI 商业化与融资
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-03 — OpenAI ChatGPT 消费产品负责人 Adam Fry 称：ChatGPT 周活跃用户从 10 亿增至 12 亿（60 天内增加 2 亿）；搜索类查询量约为 Google 的 20%；每周生成 15 亿张图片；语音（含听写与语音对话）周活跃用户 2.5 亿。该数字为 OpenAI 内部口径，未获独立验证【厂商宣称/二手】([Big Technology](https://www.bigtechnology.com/p/openai-chatgpt-search-is-about-20))
   - 2026-11-01/02 — OpenAI Help Center 更新：12 月起 Plus/Pro/Business 的 ChatGPT 与 Codex 将共享 usage allowance，用量按 token 计量；同时新增每张支付卡与每台设备的付费账号上限，超出会提示 "Device limit reached" 或拦截新购，多账号堆叠订阅的 workaround 被收紧【已证实】([OpenAI Help Center](https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits), [Understanding card and device limits](https://help.openai.com/en/articles/20001559-understanding-card-and-device-limits-in-chatgpt))
   - 2026-10-26 — OpenAI  reportedly 向 Anthropic 企业客户提供最高 90% 折扣抢夺客户，Replit 将超过 1 亿美元年度 AI 支出从 Anthropic 转向 OpenAI，Rippling 编码任务中 OpenAI 占比从 5 月 16% 升至 52%；价格战正在压缩 Anthropic 上市前利润【厂商宣称/二手】([The Decoder](https://www.thedecoder.ai/openai-offers-discounts-up-to-90-percent-to-poach-anthropics-biggest-customers))
   - 2026-10-21 — OpenAI 与 Google Cloud 宣布合作，OpenAI 前沿模型与 Codex agentic workflows 将进入 Google Cloud Model Garden 与 Marketplace，企业可用现有 GCP 消费承诺抵扣；Microsoft 仍被明确为 OpenAI 首要云伙伴【已证实】([OpenAI](https://openai.com/index/openai-models-google-cloud/))
@@ -356,6 +364,7 @@
 ## 主题：企业级 Agent 安全与可观测性
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-03 — CrowdStrike 宣布收购 Fiddler AI（agent 可观测与可解释性）与 Dreadnode（自动化 AI 安全测试），分别整合为 Falcon Observe 与 Falcon Guardian 能力；Fiddler 支持 agent traceability、行为漂移与幻觉检测、token 成本追踪；Dreadnode 支持 100 余种攻击策略、覆盖 MCP servers 与 agent reasoning loop；华尔街日报称收购价分别约 4 亿美元与 9,500 万美元【已证实】([CrowdStrike Fiddler](https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-acquire-fiddler-deliver-agent-observability-ai-trust/), [CrowdStrike Dreadnode](https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-acquire-dreadnode-advance-ai-trust-and-deliver/))
   - 2026-10-27 — IBM 在 TechXchange 2026 发布 AI agent 身份与访问控制能力：HashiCorp Vault 2.2 为 agent 发放短期凭证并支持实时撤销；Agent Identity 记录 agent 归属、生命周期与授权；watsonx Orchestrate 新增跨 Bedrock/Foundry/Gemini 的 agent 发现、隔离沙箱、kill switch 与生产评估【已证实】([IBM Newsroom](https://newsroom.ibm.com/2026-10-27-ibm-introduces-identity-and-control-for-ai-agents,-securing-frontier-intelligence-for-the-enterprise))
   - 2026-10-26 — Fortinet 发布 FortiGuard Inline AI Security Service，通过 FortiGate 云端服务实时检查 LLM prompt、model response、MCP tool call/response 与 agent 行为，支持 35 类 PII 的 DLP、预算/速率控制、50+ 合规策略与 shadow AI 发现【已证实】([Fortinet](https://www.fortinet.com/corporate/about-us/newsroom/press-releases/2026/fortinet-expands-ai-security-with-the-fortiguard-inline-ai-security-service))
   - 2026-10-26 — Cloudflare 与 SGLang 协调披露：Workers AI 上 GLM 5.3 因 KV cache pool（681,280 tokens）小于上下文窗口（1,048,576 tokens），叠加 SGLang 在 disaggregated prefill/decode 中的 bug，导致 8/27–9/9 期间 155 条超长 prompt 响应包含其他租户数据；Cloudflare 已修复并建议 SGLang 运营商升级至 v0.5.22+【已证实】([Cloudflare Blog](https://blog.cloudflare.com/kv-cache-exposure-remediation/))
@@ -442,3 +451,14 @@
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
   - 2026-11-01 — The Decoder 援引 Vals AI 10-12 研究再次报道：Chinese models 的 pro-China lean 低于预期，但 Simplified Chinese 提示会显著增加亲政府立场，部分非中国模型偶尔也会附和官方中国立场；提示语言、部署上下文与响应格式均会影响政治倾向得分【二手】([The Decoder](https://the-decoder.com/chinese-ai-models-are-politically-complex-not-just-government-mouthpieces-study-finds/), [Vals AI](https://www.vals.ai/blogs/china-us-analysis))
+
+## 主题：平台 AI 治理与未成年人保护
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-11-03 — Google 宣布 K-12 学生账号的 Gemini、Gemini Notebook、Gemini in Classroom 与 Google Search 默认全部关闭，需学校管理员显式开启；同时推出 Guided Learning 引导学生分步思考。Google 教育 VP 向 NYT 表示“Search 与 AI 已深度整合”，若学校禁用 AI，学生将无法使用 Search。该政策把搜索入口与 AI 功能捆绑，可能引发反垄断与儿童数字权益讨论【已证实】([Google Blog](https://blog.google/products-and-platforms/products/education/ai-learning-era-updates-2026/))
+  - 2026-11-02 — Apple 宣布 App Store Connect 年龄评级问卷新增“Dating and Relationships”与“Shared Location”声明；含虚拟 companion 进行性/浪漫互动的应用须最低 18+，2026-11-16 生效，所有应用须在 2027-01-12 前完成声明。这是平台方对 AI companion 未成年人风险的直接规制【已证实】([Apple Developer](https://developer.apple.com/news/?id=yxkh08us))
+
+## 主题：印度与新兴市场本土 AI
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-11-03 — 印度 MeitY 通过 IndiaAI Mission 发布 Soket Labs 的 EKA-1（26.3B 参数、7.5T tokens、覆盖 22 种印度官方语言与英语，面向数学/代码/推理/agentic 用例）和 ZenteiQ 的 Dhīr 2B/5B（支持 10 种印度语言、可离线/空域部署的端侧多语言助手）。两者均面向政府、国防、网络安全等敏感场景的本地部署，显示印度正通过国家算力补贴推进主权 AI 能力【已证实/二手】([PIB India](https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2332315&lang=1&reg=3))
