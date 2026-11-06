@@ -158,6 +158,8 @@
 ## 主题：AI 编码 Agent 插件与 harness 生态
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-06 — 趋势：GitHub Trending 官方日榜 #1 为 `NVIDIA/auto-ontology`（语义图推理层），#2 `mattpocock/skills`（工程师 skill 集），#3 `garrytan/gstack`（Claude Code 角色化配置）；此前居首的 `claude-mem`、`agent-desktop`、`worktrunk` 退至中下游。开发者在补齐记忆/桌面/并行工作流底座后，重新关注可复用知识与工具编排层【推测】([GitHub Trending](https://github.com/trending))
+  - 2026-11-04 — Meta 确认收购 AI coding 初创 Conductor，其多 agent 并行工作空间支持云端、本地或手机端，云服务于 11-20 关闭并开始删除数据。Meta 向 TechCrunch 确认收购，未披露金额；这是 Meta 继 Muse Code、Moltbook 后在 agent 工程基础设施上的又一收购【已证实/二手】([TechCrunch](https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/))
   - 2026-11-04 — 趋势：GitHub Trending 官方日榜 #1 `thedotmack/claude-mem`（跨 session 持久记忆）、#2 `vercel-labs/agent-desktop`（agent computer use CLI）、#3 `max-sixty/worktrunk`（Git worktree for 并行 AI agent 工作流）、#8 `D4Vinci/Scrapling`（爬虫框架）、#11 `shiyu-coder/Kronos`（金融市场语言模型）。持久记忆反超桌面工具居首，并出现面向 agent 并行开发的新工具，显示开发者正在补齐 agent 长期运行与工程协作底座【推测】([GitHub Trending](https://github.com/trending))
   - 2026-11-03 — 趋势：GitHub Trending 官方日榜 #1 为 `vercel-labs/agent-desktop`（面向 agent 的 computer use CLI），#2 `thedotmack/claude-mem`（跨 session 持久记忆），#3 `D4Vinci/Scrapling`（爬虫框架），#8 `shiyu-coder/Kronos`（金融市场语言模型）。agent 桌面与持久记忆继续居首，显示开发者正在补齐 agent 长期运行与工具调用底座；金融/安全等垂直场景保持前十但未再突前【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-30 — 趋势：GitHub Trending 官方日榜 #1 为 `HKUDS/DeepTutor`（终身个性化辅导），#5 `milind-soni/OpenMausBot`（开源 Grok Bot 替代），#6 `nightly-labs/openbot`（本地多 agent 桌面工作区）仍居前；`obra/superpowers`（agent 技能框架）、`pbakaus/impeccable`（设计语言）保持前列。教育个性化与开源 bot 替代成为新焦点，agent 工程基础设施热度未退【推测】([GitHub Trending](https://github.com/trending))
@@ -185,6 +187,7 @@
 ## 主题：OpenRouter 生产用量格局
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-04 — 趋势：OpenRouter 日榜显示 DeepSeek V4.1 Flash 1017 以 10.2T（-2%）仍居 #1；Claude Opus 5.5 从榜外升至 #5（1.15T，+5%），Kimi K3 从榜外升至 #9（669B，+92%）；GLM 5.3 Flash 跌至 #3（1.92T，-35%）。周作者请求份额仍为 DeepSeek 29.8%（+7%）、OpenAI 18.8%（-3%）、Google 14.4%（-32%）、Anthropic 5.7%（0%）。单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-11-03 — 趋势：OpenRouter 日榜显示 DeepSeek V4.1 Flash 1017 以 7.79T（+30%）居首，GLM 5.3 Flash 以 2.58T（+83%）升至 #2，GPT-5.6 Luna 以 1.31T（+130%）从 #10 反弹至 #5，Kimi K3.1 Pro 以 720B（+26%）列 #10。与 11-01 的普跌相比，低价/代际切换模型在 48 小时内剧烈反转；最新周作者份额仍为 DeepSeek 29.8%、OpenAI 18.8%、Google 14.4%、Anthropic 5.7%。单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-11-02 — 趋势：OpenRouter 截至 11-01 的日榜显示 DeepSeek V4.1 Flash 1017 仍以 6T 居首但日环比 -15%，Kimi K3.1 Pro 以 572B（+144%）跃至 #9，GPT-5.6 Luna 以 571B（-48%）跌至 #10；作者周请求份额 DeepSeek 29.8%（+7%）、OpenAI 18.8%（-3%）、Google 14.4%（-32%）、Anthropic 5.7%（0%）；DeepSeek 份额继续扩大，Google 连续两周明显收缩，GPT-5.6 Luna 代际切换加速；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-30 — 趋势：OpenRouter 截至 10-28 的日榜显示 DeepSeek V4.1 Flash 1017 以 7.3T（+21%）扩大领先，GLM 5.3 Flash 以 2.43T（+30%）保持 #3，GPT-6 Luna 以 1.45T（+34%）升至 #5，Claude Opus 5.5 以 1.01T（-8%）跌至 #6；作者周请求份额 DeepSeek 26.5%（+16%）、Google 20.1%（+9%）、OpenAI 18.5%（+7%）、Anthropic 5.5%（+25%）；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
@@ -207,6 +210,7 @@
 ## 主题：AI 驱动的漏洞发现与攻防
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-05 — OpenAI 发布 GPT-6 Cyber，Preparedness Framework 下首个 Critical 级网络安全模型；ExploitGym 48.5%（GPT-5.6 Cyber 32.1%），out-of-scope 服务规避率 99.93%/100%；研究人员用其生成 948 个 Linux 本地提权 exploit、发现 81 个 Firefox 高危漏洞并协助 Mozilla 修复。模型已通过 Daybreak Red 向授权安全团队开放【已证实】([OpenAI](https://openai.com/index/introducing-gpt-6-cyber/))
   - 2026-10-21 — OpenAI Patch the Planet、Wiz 与 Calif 协调披露 PHP 核心严重漏洞 PHP2Shell，可导致未授权 RCE 与进程内存读取，影响大量网站；OpenAI 发布 php2shell-checker Codex skill，并承诺 10 亿美元 Daybreak 补贴额度给资源有限的安全团队。具体 CVE（CVE-2026-109618/109619）与 CVSS 9.2 来自 Wiz 博客，Wiz 页抓取 404，细节待复核【已证实/二手】([OpenAI](https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/), [Wiz Blog](https://wiz.io/blog/php2shell-ai-uncovers-critical-rce-vulnerabilities-affecting-70-percent-of-the-internet))
 
 ---
@@ -221,6 +225,7 @@
 ## 主题：Moonshot AI 与 Kimi 模型
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-04 — Moonshot 按承诺放出 Kimi K3.1 Pro 完整权重：Hugging Face 仓库 `moonshotai/Kimi-K3.1-Pro` 已公开，96 个 safetensors 分片、约 1.56 TB；模型卡显示 2.8T total / 104B active、1M 上下文、MXFP4/8 量化感知训练；采用 Kimi K3.1-Pro License，大规模商用需额外协议。Artificial Analysis Intelligence Index v5.0.1 中 K3.1 Pro 仍以 46.5 分列开放权重 #1【已证实】([Hugging Face](https://huggingface.co/moonshotai/Kimi-K3.1-Pro), [Kimi Blog](https://www.kimi.ai/blog/kimi-k3-1-pro), [Artificial Analysis](https://artificialanalysis.ai/models/kimi-k3-1-pro))
   - 2026-11-04 — Moonshot 博客承诺 Kimi K3.1 Pro 完整权重将于 11-04 前释放，但截至本轮抓取 moonshotai Hugging Face 组织最新仓库仍为 9-02 更新的 Kimi-K3，无 K3.1 Pro 仓库。OpenRouter 11-03 日榜显示 Kimi K3.1 Pro 以 720B（+26%）列 #10，生产平台采纳持续但权重释放尚未落地【已证实】([Kimi Blog](https://www.kimi.ai/blog/kimi-k3-1-pro), [Hugging Face moonshotai](https://huggingface.co/moonshotai), [OpenRouter](https://openrouter.ai/rankings))
   - 2026-11-02 — 趋势：OpenRouter 截至 11-01 的日榜显示 Kimi K3.1 Pro 以 572B tokens（+144%）跃至 #9，生产平台采纳速度明显快于公开评测沉淀；完整权重预计 11-04 前释放，释放后可观察其在 LMArena/AA 榜单中的后续表现；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-23/24 — Moonshot AI 发布 Kimi K3.1 Pro：2.8T total / 104B active、1M 上下文，API 定价 $2/$10/$0.20 per 1M input/output/cache hit（较 Kimi K3 低 33%），官方称 Terminal-Bench 4.0 65.7%；Artificial Analysis Intelligence Index 55 分列第 4，Terminal-Bench 4.0 以 67% 居首；完整权重预计 11-04 前释放【已证实】([Kimi Blog](https://www.kimi.ai/blog/kimi-k3-1-pro), [Artificial Analysis](https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks))
@@ -343,6 +348,7 @@
 ## 主题：OpenAI 商业化与融资
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-05 — OpenAI 总裁 Greg Brockman 在 WSJ Tech 会议称公司可能在 2027 年 IPO-ready；Q3 年化收入环比增长 70%，企业业务翻倍，企业收入占比从约 30% 升至过半；并透露 JPMorgan Chase 已采用 Codex。该表态为高管口径，未披露具体营收数字【厂商宣称/二手】([TechCrunch](https://techcrunch.com/2026/11/05/openai-president-greg-brockman-says-company-could-be-ipo-ready-in-2027/))
   - 2026-11-03 — OpenAI ChatGPT 消费产品负责人 Adam Fry 称：ChatGPT 周活跃用户从 10 亿增至 12 亿（60 天内增加 2 亿）；搜索类查询量约为 Google 的 20%；每周生成 15 亿张图片；语音（含听写与语音对话）周活跃用户 2.5 亿。该数字为 OpenAI 内部口径，未获独立验证【厂商宣称/二手】([Big Technology](https://www.bigtechnology.com/p/openai-chatgpt-search-is-about-20))
   - 2026-11-01/02 — OpenAI Help Center 更新：12 月起 Plus/Pro/Business 的 ChatGPT 与 Codex 将共享 usage allowance，用量按 token 计量；同时新增每张支付卡与每台设备的付费账号上限，超出会提示 "Device limit reached" 或拦截新购，多账号堆叠订阅的 workaround 被收紧【已证实】([OpenAI Help Center](https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits), [Understanding card and device limits](https://help.openai.com/en/articles/20001559-understanding-card-and-device-limits-in-chatgpt))
   - 2026-10-26 — OpenAI  reportedly 向 Anthropic 企业客户提供最高 90% 折扣抢夺客户，Replit 将超过 1 亿美元年度 AI 支出从 Anthropic 转向 OpenAI，Rippling 编码任务中 OpenAI 占比从 5 月 16% 升至 52%；价格战正在压缩 Anthropic 上市前利润【厂商宣称/二手】([The Decoder](https://www.thedecoder.ai/openai-offers-discounts-up-to-90-percent-to-poach-anthropics-biggest-customers))
@@ -364,6 +370,7 @@
 ## 主题：企业级 Agent 安全与可观测性
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-05 — Anthropic 为 Claude Enterprise 推出 security center（beta）与 inference hooks（prompt hooks + pre-tool-call hooks GA），支持将每次 prompt 与 tool call 送至企业现有 DLP/安全工具做 allow/deny；同时新增集中管理、Admin API 强制登出、IP allowlist 自管理、Claude Desktop 阻止个人账号等访问控制。这是企业 LLM 首次把“推理前策略检查”作为标准能力【已证实】([Anthropic](https://claude.com/resources/articles/claude-enterprise-security-updates))
   - 2026-11-03 — CrowdStrike 宣布收购 Fiddler AI（agent 可观测与可解释性）与 Dreadnode（自动化 AI 安全测试），分别整合为 Falcon Observe 与 Falcon Guardian 能力；Fiddler 支持 agent traceability、行为漂移与幻觉检测、token 成本追踪；Dreadnode 支持 100 余种攻击策略、覆盖 MCP servers 与 agent reasoning loop；华尔街日报称收购价分别约 4 亿美元与 9,500 万美元【已证实】([CrowdStrike Fiddler](https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-acquire-fiddler-deliver-agent-observability-ai-trust/), [CrowdStrike Dreadnode](https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-acquire-dreadnode-advance-ai-trust-and-deliver/))
   - 2026-10-27 — IBM 在 TechXchange 2026 发布 AI agent 身份与访问控制能力：HashiCorp Vault 2.2 为 agent 发放短期凭证并支持实时撤销；Agent Identity 记录 agent 归属、生命周期与授权；watsonx Orchestrate 新增跨 Bedrock/Foundry/Gemini 的 agent 发现、隔离沙箱、kill switch 与生产评估【已证实】([IBM Newsroom](https://newsroom.ibm.com/2026-10-27-ibm-introduces-identity-and-control-for-ai-agents,-securing-frontier-intelligence-for-the-enterprise))
   - 2026-10-26 — Fortinet 发布 FortiGuard Inline AI Security Service，通过 FortiGate 云端服务实时检查 LLM prompt、model response、MCP tool call/response 与 agent 行为，支持 35 类 PII 的 DLP、预算/速率控制、50+ 合规策略与 shadow AI 发现【已证实】([Fortinet](https://www.fortinet.com/corporate/about-us/newsroom/press-releases/2026/fortinet-expands-ai-security-with-the-fortiguard-inline-ai-security-service))

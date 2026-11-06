@@ -4,6 +4,7 @@
 
 | 日期 | 首要动态 | 报告 |
 |---|---|---|
+| 2026-11-06 | OpenAI 发布 GPT-6 Cyber 并生成 948 个 Linux LPE；Moonshot 释放 Kimi K3.1 Pro 完整权重；Meta 收购 Conductor；Anthropic 为 Claude Enterprise 推出 inference hooks | [报告](reports/2026-11-06.md) |
 | 2026-11-04 | OpenAI 称 ChatGPT 搜索量约为 Google 20%、周活 12 亿；Anthropic IPO 修正稿披露 8,954 亿美元承诺支出；Google K-12 AI/Search 默认关闭并捆绑；CrowdStrike 收购 Fiddler/Dreadnode | [报告](reports/2026-11-04.md) |
 | 2026-11-03 | OpenAI 启动 Grid Protectors Program；Anthropic IPO 修正案警告或接近递归自我改进阈值；《纽约时报》等起诉 Brave 抓取并转售版权内容 | [报告](reports/2026-11-03.md) |
 | 2026-11-02 | OpenAI 合并 ChatGPT/Codex 用量池并加设备/卡片上限；National Grid 为 Teesside AI 数据中心规划英国最大变电站；JPMorgan/Amazon 等封锁外部 AI agent | [报告](reports/2026-11-02.md) |
