@@ -31,6 +31,7 @@
 ## 主题：Meta AI 训练与出版商关系
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-05 — Meta 在 Business Help Center 公告，无限期暂停 Commercial Terms / Product Catalog Terms / Self-Serve Ad Terms / Ad Creative Generative AI Terms 的更新，原定于 2026-11-20 生效的条款不再生效，现有条款继续有效；此前挪威、巴西法院已发布初步禁令，英国 CMA 于 10-30 启动正式调查【已证实】([Meta Business Help Center](https://www.facebook.com/business/help/2481113349080785))
   - 2026-10-18 — Meta 在舆论压力下更新商业服务条款，移除明确用于“train”Meta 产品的表述，称合并后的爬虫条款仅适用于广告与商业产品，不改变现有爬虫做法；条款仍拟 10-30 生效【已证实】([TechCrunch](https://techcrunch.com/2026/10/17/meta-removes-language-that-raised-scraping-and-ai-training-concerns/))
   - 2026-10-16 — Nieman Lab 报道 Meta 新商业服务条款将允许其抓取与商业账户关联的网站内容并明确用于“train”Meta 产品，10-30 生效，法律专家认为可覆盖新闻网站；Meta 回应称只是合并既有爬虫条款、可用 robots.txt 管理【已证实】([Nieman Lab](https://www.niemanlab.org/2026/10/metas-new-commercial-terms-will-allow-the-scraping-of-news-sites-legal-experts-say/))
 
@@ -76,6 +77,7 @@
 ## 主题：Google Gemini 行业垂直方案与政企落地
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-05 — Google 发布 Gemini Omni 1.2 Flash 并全面可用：原生 15 秒视频生成、多轮对话式编辑、更强的参考图与品牌一致性；720p 视频定价 $0.07/秒，较前代 1.1 降低 30%；同时进入 Gemini app / Google Vids / Google Ads / Flow 等产品【已证实】([Google Blog](https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/))
   - 2026-10-29 — Gemini app 支持直接在聊天中生成、预览、编辑文档/PDF/表格/代码；web 端覆盖 Docs/Sheets/Slides/Markdown/TXT/code，移动端覆盖 PDF；所有 Gemini app 支持的语言和地区可用【已证实】([Google Blog](https://blog.google/innovation-and-ai/products/gemini-app/edit-files-directly/))
   - 2026-10-20 — Google Public Sector 推出 Gemini for Government Services 预览，面向美国各级政府的 agentic 解决方案，已获密苏里州与 HHS 选用，提供政策解读、采购合规、FOIA 脱敏、公民材料验证等预置技能，并集成 Workspace/SharePoint/Salesforce/ServiceNow/Oracle Fusion 等系统【已证实】([Google Cloud Press Corner](https://www.googlecloudpresscorner.com/2026-10-20-Google-Public-Sector-Launches-Gemini-for-Government-Services))
 
@@ -88,6 +90,7 @@
 ## 主题：OpenAI 监管、诉讼与模型生命周期
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-06 — Bloomberg 援引知情人士称 OpenAI 完成新一轮约 110 亿美元首关交割，估值 1.25 万亿美元，本轮最多可达 200 亿美元；Coatue、T. Rowe Price 参与首关，OpenAI 拒绝置评。金额与估值均低于此前 300 亿美元 / 1.4 万亿美元的传闻，IPO 时间表继续后移【厂商宣称/二手】([Bloomberg](https://www.bloomberg.com/news/articles/2026-11-06/openai-completes-11-billion-portion-of-funding-at-1-25-trillion-value))
   - 2026-10-29 — OpenAI 更新 Model Spec：围绕 faithfulness to human intent、harm minimization、honesty and transparency、human agency、care 五大价值观组织；引入 principal-agent framing、新增 context/oversight/agency 指导、退役大部分风格规定，模型称谓从 "assistant" 改为 "GPT"【已证实】([OpenAI Model Spec](https://model-spec.openai.com/2026-10-29.html))
   - 2026-10-23 — OpenAI 今日正式关闭 `gpt-3.5-turbo-0125`、`gpt-4-0613`、`gpt-4-1106-preview`、`gpt-4-turbo`、`gpt-4.1-nano`、`gpt-4o-2024-05-13`、`gpt-image-1`、`o1-2024-12-17`、`o1-pro-2025-03-19`、`o3-mini-2025-01-31` 及多个微调版本，推荐迁移至 `gpt-5.6` 系列【已证实】([OpenAI Deprecations](https://developers.openai.com/api/docs/deprecations))
   - 2026-10-14 — OpenAI 宣布 GPT-4o、GPT-4o mini、GPT-4.1、GPT-4.1 mini 的 API 快照将于 2027-01-14 下线，建议迁移至 gpt-6-luna；这是继 2026-02-13 ChatGPT 端退役后 API 端的正式 deprecation【已证实】([OpenAI Deprecations](https://developers.openai.com/api/docs/deprecations))
@@ -118,6 +121,7 @@
 ## 主题：AI 数据中心硬件与开放标准
 - 状态：长期跟踪
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-05 — OpenAI 发布 National Community Compact 与 Compute Campus Policy Blueprint，承诺未来自营运算园区全额支付电力与基础设施成本、公开建设方案及水/电/噪音影响、不使用 NDAs 约束公职人员、公布就业岗位并合作培训；同时呼吁立法将同类规则变为法律【已证实】([OpenAI](https://openai.com/index/setting-new-standard-responsible-ai-infrastructure/))
   - 2026-11-03 — CNBC 援引知情人士称 Meta 寻求发行 200–250 亿美元债券，约三分之二美元、三分之一欧元，用于 AI 基础设施、模型与服务支出；S&P 因资本支出不确定性与负自由现金流将 Meta 展望从稳定调至负面（AA-）。Meta 预计 2026 年资本支出 1,350–1,450 亿美元，上季度自由现金流转负 21.2 亿美元【已证实/二手】([CNBC](https://www.cnbc.com/2026/11/03/meta-meta-bond-sale-ai-spending.html))
   - 2026-11-02 — OpenAI 启动 Grid Protectors Program，未来算力园区将与电网约定可削减负荷；Georgia Effingham County 园区（Project Camellia）作为试点，承诺承担全部基础设施与供电成本，并与 Georgia Power 约定最高 1,000 MW 需求响应，相当于约 70 万户家庭平均用电；OpenAI 称此举可在电网紧张时释放电力并降低其他用户电费压力【已证实】([OpenAI](https://openai.com/index/grid-protectors-program))
   - 2026-11-01 — National Grid 宣布已就 Teesworks 的 Dorman Point 约 70 英亩土地达成协议，拟建 400kV Tees Dock 变电站，合同容量超 1 GW，用于支持邻近 AI 数据中心与电池储能；这是 AI 电力需求直接驱动英国国家级输电网基础设施扩张的最新案例【已证实】([National Grid](https://www.nationalgrid.com/electricity-transmission/network-and-infrastructure/infrastructure-projects/tees-dock-substation))
@@ -129,10 +133,7 @@
   - 2026-10-21 — NVIDIA 在 GTC Berlin 发布 DSX POD 参考设计：将 Vera Rubin 机柜等基础设施在工厂预集成到集装箱，到场连接水电网即可运行，部署时间从约 6 个月缩至 14 天，2027 年初由 Dell/HPE/Lenovo/Foxconn 等伙伴交付；同日发布 OpenShell Reference Architecture，整合 Vera Rubin/Vera CPU/BlueField-4/Sentry 为企业 agent 提供沙箱、监控与硬件级策略执行，Anthropic/OpenAI/Google/Microsoft/Meta 等为合作方【已证实】([NVIDIA DSX POD](https://nvidianews.nvidia.com/news/nvidia-introduces-dsx-pod-ai-factories-to-accelerate-europes-infrastructure-deployment), [NVIDIA OpenShell](https://nvidianews.nvidia.com/news/openshell-reference-architecture))
   - 2026-10-19 — 彭博社援引知情人士称 Anthropic 与 Nscale 洽谈约 450 亿美元算力租赁协议，涉及西弗吉尼亚 Monarch 数据中心第二座 460 MW 设施，拟采用 NVIDIA Vera Rubin 芯片；双方未置评，Reuters 无法独立核实【厂商宣称/二手】([Yahoo/Reuters](https://finance.yahoo.com/technology/ai/articles/nscale-anthropic-talks-45-billion-193754631.html))
   - 2026-10-19 — NVIDIA 宣布在 Jülich JUPITER 超算完成 104-qubit 容错量子计算模拟，使用 8,192 颗 GH200，验证 magic-state cultivation 方法可在真实噪声下将所需物理量子比特减少约 90%【厂商宣称】([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/nvidia-runs-record-simulation-of-fault-tolerant-quantum-computing-at-julich-supercomputing-centre))
-  - 2026-10-18 — FT 报道称 Anthropic 的 Project North Star 计划采购约 1.5 GW Google TPU，融资包约 600 亿美元，Blackstone 拟投 90 亿美元次级债（票面利率约 10%），另有约 420 亿美元由 Broadcom 担保的优先债；尚未获 Anthropic 官方确认【厂商宣称/二手】([Investing.com / FT](https://ng.investing.com/news/company-news/anthropic-offers-blackstone-over-10-yield-in-60b-ai-chip-financing--ft-reports-2741441))
-  - 2026-10-16 — CoreWeave 信用压力升至 distressed 区间：五年期 CDS 约 1,038 bps（一度突破 1,140），2031 债券收益率 15.78%；公司债务与义务超 510 亿美元，CEO 称市场“非理性”，Deutsche Bank 估计 backlog 超 1,000 亿美元；Oracle CDS 本周同步上涨约 10%【已证实】([CNBC](https://www.cnbc.com/2026/10/15/coreweave-credit-default-swaps-hit-distress-levels-as-investors-sour-on-ai-debt.html))
-  - 2026-10-15 — NVIDIA 在 OCP 峰会贡献 Vera Rubin 机架设计、更新 MGX 1.2，与 Cisco 推出 USFP 光模块标准，并开源 DSX OS 组件【已证实】([NVIDIA Blog](https://blogs.nvidia.com/blog/ocp-global-summit-vera-rubin-scale-ai-factories/))
-  - 2026-10-15 — Salience Labs 完成 1.25 亿美元 B 轮融资，加速 AI 数据中心光交换芯片部署【厂商宣称】([Salience Labs](https://www.saliencelabs.ai/salience-labs-125-million-series-b-funding/))
+  - 2026-10-15 ~ 2026-10-18 — 之后趋于沉寂：Anthropic Project North Star 融资传闻、CoreWeave CDS 升至 distressed、NVIDIA OCP 贡献与 Salience Labs B 轮融资等硬件/算力融资与基础设施新闻集中出现；详见历史报告。
 
 ## 主题：Anthropic 开发者基础设施
 - 状态：关注中
@@ -158,6 +159,7 @@
 ## 主题：AI 编码 Agent 插件与 harness 生态
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-07 — 趋势：GitHub Trending 官方日榜中 AI 相关项目 `NVIDIA/auto-ontology`（#2，+2,015 stars）、`google/skills`（#10，+534）、`mattpocock/skills`（#15，+2,070）、`cloudflare/security-audit-skill`（#16，+2,548）保持前列，但榜首被 `zed-industries/zed`、`rails/rails` 等非 AI 通用项目占据；`garrytan/gstack` 退出前列。主题从「agent 记忆/桌面/并行工作流」进一步收敛到「可复用技能 + 安全审计技能」，同时 AI 工具不再霸榜整页【推测】([GitHub Trending](https://github.com/trending))
   - 2026-11-06 — 趋势：GitHub Trending 官方日榜 #1 为 `NVIDIA/auto-ontology`（语义图推理层），#2 `mattpocock/skills`（工程师 skill 集），#3 `garrytan/gstack`（Claude Code 角色化配置）；此前居首的 `claude-mem`、`agent-desktop`、`worktrunk` 退至中下游。开发者在补齐记忆/桌面/并行工作流底座后，重新关注可复用知识与工具编排层【推测】([GitHub Trending](https://github.com/trending))
   - 2026-11-04 — Meta 确认收购 AI coding 初创 Conductor，其多 agent 并行工作空间支持云端、本地或手机端，云服务于 11-20 关闭并开始删除数据。Meta 向 TechCrunch 确认收购，未披露金额；这是 Meta 继 Muse Code、Moltbook 后在 agent 工程基础设施上的又一收购【已证实/二手】([TechCrunch](https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/))
   - 2026-11-04 — 趋势：GitHub Trending 官方日榜 #1 `thedotmack/claude-mem`（跨 session 持久记忆）、#2 `vercel-labs/agent-desktop`（agent computer use CLI）、#3 `max-sixty/worktrunk`（Git worktree for 并行 AI agent 工作流）、#8 `D4Vinci/Scrapling`（爬虫框架）、#11 `shiyu-coder/Kronos`（金融市场语言模型）。持久记忆反超桌面工具居首，并出现面向 agent 并行开发的新工具，显示开发者正在补齐 agent 长期运行与工程协作底座【推测】([GitHub Trending](https://github.com/trending))
@@ -169,9 +171,7 @@
   - 2026-10-24 — 趋势：GitHub Trending 官方日榜 `cloudflare/security-audit-skill` 登顶（+2,633 stars），`php/php-src` 因 PHP2Shell 后续热度升至 #2，`anthropics/knowledge-work-plugins` 维持 #3，`NVIDIA/OpenShell` 列 #4。安全审计从“上榜”升至“榜首”，OpenShell（agent 安全运行时）进入前四，显示开发者关注点正向“agent 如何被约束与审计”转移【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-23 — 趋势：GitHub Trending 官方日榜前列出现 `anthropics/knowledge-work-plugins`（面向知识工作者的 Claude 插件）、`DietrichGebert/ponytail`（让 agent 像“最懒的资深开发者”只写必要代码）、`cloudflare/security-audit-skill`、`Graphify-Labs/graphify`；开发者关注点从“推理效率/安全审计”进一步延伸到“角色插件 + 极简代码 agent”【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-22 — 趋势：GitHub Trending 前列同时出现 `vllm-project/vllm`（推理引擎）、`cloudflare/security-audit-skill`、`headroomlabs-ai/headroom`（上下文压缩）、`akitaonrails/ai-memory`（跨 agent 记忆交接）、`Graphify-Labs/graphify`（代码知识图谱 skill）；相比 10-21 新增“推理效率/成本优化”维度，开发者同时关心 agent 跑得快、跑得省、可审计【推测】([GitHub Trending](https://github.com/trending))
-  - 2026-10-21 — 趋势：GitHub Trending 日榜前列被 `ai-job-search`（基于 Claude Code 的求职 agent）、`cloudflare/security-audit-skill`、`stablyai/orca`（agent 车队）、`headroomlabs-ai/headroom`（上下文压缩）等具体场景/安全审计/上下文优化项目占据，此前连续居首的 `claude-plugins-official` 已退出榜首；开发者关注点从“插件目录”转向“具体 agent 场景 + 运行成本/安全审计”【推测】([GitHub Trending](https://github.com/trending))
-  - 2026-10-18 — 趋势：GitHub Trending 榜首仍为 Anthropic 官方 `claude-plugins-official`（+1,383 stars），前十包括 `ai-job-search`、`ECC`、`CLI-Anything`、`scientific-agent-skills`、`ruflo`、`claude-code` 等 agent harness、插件、记忆与技能库项目，开发者关注点继续停留在 agent 工程基础设施；日新增 star 较 10-17 的 +1,552 略有降温【推测】([GitHub Trending 第三方快照](https://yidinghuiziyou.com/github/trending/2026-10-18/))
-  - 2026-10-17 — 趋势：GitHub Trending 榜首为 Anthropic 官方 `claude-plugins-official`（+1,552 stars），前十同时出现 `scientific-agent-skills`、`ECC`、`CLI-Anything`、`context-mode`、`ruflo` 等 agent harness、MCP、技能库与上下文优化项目，开发者关注点明显从模型榜单转向 agent 编排与工程基础设施【推测】([GitHub](https://github.com/trending))
+  - 2026-10-17 ~ 2026-10-21 — 之后趋于沉寂：GitHub Trending 持续由 agent harness、MCP、技能库、安全审计与上下文优化项目主导，`claude-plugins-official` 从榜首退居前列，开发者关注点从模型榜单转向具体 agent 场景与工程基础设施；详见历史报告。
 
 ## 主题：AI 安全隔离与 containment
 - 状态：关注中
@@ -187,6 +187,7 @@
 ## 主题：OpenRouter 生产用量格局
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-06 — 趋势：OpenRouter 截至 11-05 的日榜显示 DeepSeek V4.1 Flash 1017 仍以 7.83T（+13% 日环比）居首，但绝对量低于 11-04 的 10.2T；Tencent Hy4 以 3.05T 升至 #2 并进入周榜 #5（new）；Claude Opus 5.5 从 #5 降至 #7（1.05T，+2%）。New & Trending 中出现 Crouton Alpha（stealth）与 Ripple 65B Preview（ricursiveai）等新面孔。周作者请求份额未更新，仍为 DeepSeek 29.8%（+7%）、Google 14.4%（-32%）、Anthropic 5.7%（0%）。单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-11-04 — 趋势：OpenRouter 日榜显示 DeepSeek V4.1 Flash 1017 以 10.2T（-2%）仍居 #1；Claude Opus 5.5 从榜外升至 #5（1.15T，+5%），Kimi K3 从榜外升至 #9（669B，+92%）；GLM 5.3 Flash 跌至 #3（1.92T，-35%）。周作者请求份额仍为 DeepSeek 29.8%（+7%）、OpenAI 18.8%（-3%）、Google 14.4%（-32%）、Anthropic 5.7%（0%）。单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-11-03 — 趋势：OpenRouter 日榜显示 DeepSeek V4.1 Flash 1017 以 7.79T（+30%）居首，GLM 5.3 Flash 以 2.58T（+83%）升至 #2，GPT-5.6 Luna 以 1.31T（+130%）从 #10 反弹至 #5，Kimi K3.1 Pro 以 720B（+26%）列 #10。与 11-01 的普跌相比，低价/代际切换模型在 48 小时内剧烈反转；最新周作者份额仍为 DeepSeek 29.8%、OpenAI 18.8%、Google 14.4%、Anthropic 5.7%。单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-11-02 — 趋势：OpenRouter 截至 11-01 的日榜显示 DeepSeek V4.1 Flash 1017 仍以 6T 居首但日环比 -15%，Kimi K3.1 Pro 以 572B（+144%）跃至 #9，GPT-5.6 Luna 以 571B（-48%）跌至 #10；作者周请求份额 DeepSeek 29.8%（+7%）、OpenAI 18.8%（-3%）、Google 14.4%（-32%）、Anthropic 5.7%（0%）；DeepSeek 份额继续扩大，Google 连续两周明显收缩，GPT-5.6 Luna 代际切换加速；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
@@ -198,12 +199,7 @@
   - 2026-10-23 — 趋势：OpenRouter 截至 10-21 的周榜显示 DeepSeek V4.1 Flash 仍以 25.7T（-31%）列 #1，DeepSeek V4.1 Flash 1017 以 16.5T 升至 #2，Claude Opus 5.5 以 7.14T（+26%）首次进入周榜前十；日榜前三（MiniMax 5.38T、DeepSeek 1017 4.99T、DeepSeek V4.1 Flash 2.86T）与 10-21 持平；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-22 — 趋势：OpenRouter 截至 10-21 的日榜显示 MiniMax M3.1 Flash (free) 以 5.38T（+37%）从 #2 升至 #1，DeepSeek V4.1 Flash 1017 以 4.99T（+20%）降至 #2，DeepSeek V4.1 Flash 以 2.86T 列 #3；免费/低价模型在生产平台上迭代极快，没有单一模型能长期霸榜；作者请求份额中 Anthropic 仍 4.7%（+25%）、Z.ai 12.2%（-6%）；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-21 — 趋势：OpenRouter 截至 10-19 的日榜显示 DeepSeek V4.1 Flash 1017 以 4.15T（+15%）仍居 #1，MiniMax M3.1 Flash (free) 以 3.91T（+272%）跃升至 #2；周榜中 DeepSeek V4.1 Flash #1（27.3T，-32%）、GLM 5.3 Flash #2（11.6T，-10%）、DeepSeek V4.1 Flash 1017 #3（11.5T，new）；作者请求份额中 Anthropic 从低位 +25% 至 4.7%，Z.ai/Xiaomi 份额下降；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
-  - 2026-10-19 — 趋势：OpenRouter 最新完整日榜仍为 10-17 数据，DeepSeek V4.1 Flash #1（4.09T，-25%）未变；GPT-6 Luna 以 660B 列日榜 #7，日环比 -33%，显示新模型开始放量但生产迁移仍处早期；GPT-5.6 Luna 月榜 -59%，代际切换迹象明显；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
-  - 2026-10-18 — 趋势：DeepSeek V4.1 Flash 日榜 #1（4.09T，-25%）但仍领先；Step 5 Preview 周榜 #2（13.9T，+119%）增速较 10-16 的 +430% 明显放缓；DeepSeek V4.1-Flash-1017 新上榜即登顶“New & Trending”周榜（683B）；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
-  - 2026-10-16 — 趋势：DeepSeek V4.1 Flash 日榜 #1（5.41T，+5%）且周榜 #1（36.8T，-2%）；GLM 5.3 Flash 日榜 #2（1.74T，-5%）；Step 5 Preview 周榜仍 #2（17.1T，+430%）但已跌出日榜前十；Gemini 4 Argon 在 OpenRouter“New & Trending”周榜登顶（506B），Nemotron 3.5 Super VL free 列第二（343B）；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
-  - 2026-10-16 — 趋势：DeepSeek V4.1 Flash 日榜 #1 反弹至 5.17T tokens（+15%），GLM 5.3 Flash 日榜 #2（1.84T，+2%），Step 5 Preview 从 10-14 的日榜 #2（3.74T，+26%）跌至 10-15 的 #5（1.33T，-65%），周榜仍 #2（19.5T，>999%）；OpenRouter 周 token 榜前十中中国作者仍占多数（单一平台数据，待交叉验证）【已证实】([OpenRouter](https://openrouter.ai/rankings))
-  - 2026-10-15 — 趋势：中国作者模型在 OpenRouter 周请求份额中合计约 47.9%（DeepSeek 24.5%、Z.ai 13.4%、Qwen 5.4%、Xiaomi 2.9%、Tencent 1.7%），但内部分化明显；DeepSeek V4.1 Flash 日榜 #1 但日环比 -11%，Step 5 Preview 日榜 #2 且 +26%，Z.ai 周请求 +107% 扩张最快（单一平台数据，待交叉验证）【已证实】([OpenRouter](https://openrouter.ai/rankings))
-  - 2026-10-15 — DeepSeek 在 OpenRouter 日榜/月榜均居第一，但日环比 -11%；Step 5 Preview 日榜 #2（+26%）、Gemini 4 Argon 新上榜；中国作者（DeepSeek/Z.ai/Qwen/Xiaomi/Tencent）合计份额约 47.9%【已证实】([OpenRouter](https://openrouter.ai/rankings))
+  - 2026-10-15 ~ 2026-10-19 — 之后趋于沉寂：DeepSeek V4.1 Flash 仍居日榜/周榜首位，Step 5 Preview、Gemini 4 Argon、Nemotron 3.5 Super VL 等交替出现在 New & Trending，中国作者模型合计周请求份额一度约 47.9%；详见历史报告。
 
 ---
 
