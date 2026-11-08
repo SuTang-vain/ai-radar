@@ -4,6 +4,7 @@
 
 | 日期 | 首要动态 | 报告 |
 |---|---|---|
+| 2026-11-08 | Google 收购 Crusoe 怀俄明数据中心地块并投资 170 亿美元；Anthropic 推进感恩节前 IPO（估值目标下调）；DOJ 成立 Super Intelligence Task Force；OpenAI 与 Hacktron 合作漏洞挖掘 | [报告](reports/2026-11-08.md) |
 | 2026-11-07 | OpenAI 完成 110 亿美元首关融资（估值 1.25 万亿美元）；Meta 无限期暂停争议商业条款；Google Gemini Omni 1.2 Flash GA 并降价 30%；OpenAI 发布数据中心社区责任承诺 | [报告](reports/2026-11-07.md) |
 | 2026-11-06 | OpenAI 发布 GPT-6 Cyber 并生成 948 个 Linux LPE；Moonshot 释放 Kimi K3.1 Pro 完整权重；Meta 收购 Conductor；Anthropic 为 Claude Enterprise 推出 inference hooks | [报告](reports/2026-11-06.md) |
 | 2026-11-04 | OpenAI 称 ChatGPT 搜索量约为 Google 20%、周活 12 亿；Anthropic IPO 修正稿披露 8,954 亿美元承诺支出；Google K-12 AI/Search 默认关闭并捆绑；CrowdStrike 收购 Fiddler/Dreadnode | [报告](reports/2026-11-04.md) |
