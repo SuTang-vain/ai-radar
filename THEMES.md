@@ -327,6 +327,7 @@
 ## 主题：个人 AI Agent 助手竞争
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-05 — Meta 在美国全量 rollout Muse 实时语音与表情化 Avatar：点击电话图标即可与 Muse 实时通话，支持打断、后台继续执行任务、数百种声音风格与三种显示模式；后续将扩展至 AI Glasses 与 Muse Charm 硬件【已证实】([Meta Newsroom](https://about.fb.com/news/2026/11/introducing-muse-ai-voice-expressive-avatars/))
   - 2026-11-08 — Meta 为 Muse 推出 Spaces：用户用自然语言描述即可在 Muse 内生成 tracker、planner、dashboard、游戏等自定义空间，可连接 Gmail、Google Calendar、OpenTable、Notion 等应用并后台自动更新；同时向 Muse 推出基于 Muse Wonder 训练的专业化模型版本【已证实】([Meta Newsroom](https://about.fb.com/news/2026/11/introducing-spaces-customize-muse-app/))
   - 2026-10-21 — Meta Q3 财报电话会称 Muse 个人 agent 上线约六周在美加已有逾 1,000 万用户设置，约 25% 设置用户每日使用，购物为最主要场景（逾四分之一活跃用户购买，平均客单价 >$200）；Meta 同时宣布发行无投票权 Class C 股票以支持 AI 投资【厂商宣称/二手】([Meta IR](https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/default.aspx), [Business Insider](https://www.businessinsider.com/meta-q3-2026-earnings-mark-zuckerberg-muse-ai-app-users-2026-10))
   - 2026-10-21 — Anthropic 向美区 Pro/Max 用户开放 Claude Duet 研究预览（iOS、Android、Web），定位为“主动型个人助理”，早晨简报、每几小时检查账户、后台虚拟机持续执行任务，发送/支付/删除前需用户审批【已证实/二手】([Anthropic](https://claude.com/resources/articles/claude-duet))
@@ -485,3 +486,29 @@
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
   - 2026-11-06 — Google DeepMind 宣布在人类指导下，AI agent 协助发现 legacy 1024-bit RSA 的两处弱点：签名伪造理论成本可降低约 1,600 倍（短输入场景），批量因数分解额外密钥成本可降低约 30 倍；2048-bit 及以上密钥不受影响。相关结果以工作论文形式发布，尚未完成同行评审与端到端实测验证【厂商宣称/二手】([DeepMind LinkedIn](https://www.linkedin.com/posts/googledeepmind_advancing-the-frontier-of-cryptanalysis-activity-7524521773518802944-DiP6), [IACR ePrint 2026/2131](https://eprint.iacr.org/2026/2131))
+
+## 主题：AI 个人金融与数据信任
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-11-05 — Anthropic 在 Claude 内测 Personal Finance：通过 Plaid 只读连接银行、信用卡、贷款与投资账户，查询余额、最长 24 个月交易、支出分类与订阅，并生成可视化 dashboard；Claude 不触碰资金、不投广告、Personal Finance 对话不用作模型训练；面向 Pro/Max/Ultra 美国用户 beta 推出【已证实】([Anthropic](https://claude.com/resources/articles/introducing-personal-finance-in-claude), [Plaid](https://plaid.com/blog/plaid-anthropic-financial-insights-in-claude/))
+
+## 主题：Perplexity AI 工作代理
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-11-04 — Perplexity 推出 Teammates：基于 Perplexity Computer 构建、可长期运行的个人/团队 agent，能分解目标、并行调用多个桌面/浏览器 agent、监控 Slack/GitHub/Linear 等工具并在变化时主动跟进；初期仅向 $200/月的 Max 个人订阅者开放 research preview【已证实/二手】([Perplexity Blog](https://www.perplexity.ai/hub/blog/teammates-are-agents-for-complex-ongoing-work))
+
+## 主题：NVIDIA Cosmos 物理 AI 与世界模型
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-11-05 — NVIDIA 在 Hugging Face 发布 Cosmos 3 Nano 四款 16B 参数开放权重 checkpoint：Transfer-Auto（多视角驾驶数据生成）、Sim-Auto（流式相机+LiDAR 仿真）、Sim-Transfer（物理 simulator 控制到 RGB）、Sim-Bimanual（双臂机器人动作到视频）；采用 OpenMDW 1.1 许可，允许商业用途，权重与后训练 recipe 已公开【已证实】([Hugging Face Blog](https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation))
+
+## 主题：AI for 湿实验科学
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-11-06 — OpenAI 发布 BioBasicsBench，与 Ligo 合作构建的 100 任务基准，覆盖蛋白方法、成像/流式、定量 assay、核酸方法、分子克隆；测试 AI agent 读原始实验数据、发现对照错误、判断证据是否充分的能力；GPT-6 Astra xhigh 得 66.7%，GPT-5.6 Sol 为 43.8%【已证实/二手】([OpenAI](https://openai.com/index/biobasicsbench-wet-lab-science/))
+
+## 主题：AI 编码 Agent 云端运行时
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-11-03/06 — Google Antigravity v2.29 上线 Remote Agents 与 Voice Mode：将 agent 会话迁至 Google 管理的云端 VM，用户关闭电脑/浏览器后任务仍可继续，支持从 CLI、桌面应用或手机浏览器接管；Voice Mode 基于 Gemini Live 逐步 rollout；Remote Agents 限 Google AI Pro/Ultra 个人账号【已证实】([Antigravity Docs](https://antigravity.google/docs/remote-agents/), [Antigravity Changelog](https://antigravity.google/docs/changelog/))
+  - 2026-11-05 — Mistral 发布 Managed Agents 与 Agents SDK（`mistralai-agents`）public preview：同一 Python agent 可在本地进程、自托管 `agents serve` 或 Mistral 托管 `agents deploy` 三模式运行；部署后支持持久会话、崩溃后从最后完成步骤恢复、等待人工审批后继续；内置 tracing 与沙箱环境【已证实/二手】([Mistral Docs](https://docs.mistral.ai/studio/agents/overview), [Mistral Release Notes](https://docs.mistral.ai/resources/release-notes?entry=2026-11-05-a528ab2e5db6))
