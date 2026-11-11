@@ -121,6 +121,7 @@
 ## 主题：AI 数据中心硬件与开放标准
 - 状态：长期跟踪
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-10 — NVIDIA 董事会独立成员公告称已聘请前纽约南区代理联邦检察官 Joon H. Kim 及其律所 Wachtell, Lipton, Rosen & Katz，对 CEO Jensen Huang  affair 是否危及国家安全与公司机密进行彻底独立调查；此前 Huang 承认与一名被美情报机构指认为中国情报线人的女性有婚外情，NVIDIA 股价两日跌逾 10%。这是 AI 算力供应链核心企业首次面临创始人级别的国家安全与治理审查【已证实】([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/statement-from-the-independent-members-of-the-nvidia-board))
   - 2026-11-08 — Google 官方宣布首座 Wyoming 数据中心长期投资额 170 亿美元，采用 702 MW 燃料电池 + 碳捕集；Crusoe 同日公告其怀俄明东南部地块已被 Google 收购，独立开发商预开发工作后转交超大规模云厂商【已证实】([Google Blog](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/wyoming-data-center/), [Crusoe Newsroom](https://www.crusoe.ai/resources/newsroom/crusoe-wyoming-data-center-campus-update))
   - 2026-11-05 — OpenAI 发布 National Community Compact 与 Compute Campus Policy Blueprint，承诺未来自营运算园区全额支付电力与基础设施成本、公开建设方案及水/电/噪音影响、不使用 NDAs 约束公职人员、公布就业岗位并合作培训；同时呼吁立法将同类规则变为法律【已证实】([OpenAI](https://openai.com/index/setting-new-standard-responsible-ai-infrastructure/))
   - 2026-11-03 — CNBC 援引知情人士称 Meta 寻求发行 200–250 亿美元债券，约三分之二美元、三分之一欧元，用于 AI 基础设施、模型与服务支出；S&P 因资本支出不确定性与负自由现金流将 Meta 展望从稳定调至负面（AA-）。Meta 预计 2026 年资本支出 1,350–1,450 亿美元，上季度自由现金流转负 21.2 亿美元【已证实/二手】([CNBC](https://www.cnbc.com/2026/11/03/meta-meta-bond-sale-ai-spending.html))
@@ -132,9 +133,7 @@
   - 2026-10-22 — Google 宣布 PyTorch-native 版 SGLang-TorchTPU 已在 Meta 数据中心生产部署，vLLM-TorchTPU 开源；报道称 16 颗 seventh-gen Ironwood TPU 服务 Kimi K3 可达 700 tokens/s，对比 16 颗 NVIDIA GB200 的 452 tokens/s。这是 Google TPU 首次以原生 PyTorch 推理栈进入外部超大规模数据中心生产环境【二手】([Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/googles-tpus-for-ai-workloads-now-run-in-at-metas-data-centers-tpus-sold-to-external-customers-for-the-first-time-threaten-nvidias-market-dominance))
   - 2026-10-23 — NVIDIA DGX Spark 64GB 系统与 Nemotron Bolt E4B 4GB 今日起向合作伙伴出货；同日 Recursive Superintelligence 发布 40B/2.5B active 本地编码模型 Recursive Flint，针对 RTX Spark 优化，Apache 2.0 权重已上架 Hugging Face【已证实】([NVIDIA Blog](https://blogs.nvidia.com/blog/local-ai-gtc-rtx-dgx-spark-station-sync/))
   - 2026-10-21 — NVIDIA 在 GTC Berlin 发布 DSX POD 参考设计：将 Vera Rubin 机柜等基础设施在工厂预集成到集装箱，到场连接水电网即可运行，部署时间从约 6 个月缩至 14 天，2027 年初由 Dell/HPE/Lenovo/Foxconn 等伙伴交付；同日发布 OpenShell Reference Architecture，整合 Vera Rubin/Vera CPU/BlueField-4/Sentry 为企业 agent 提供沙箱、监控与硬件级策略执行，Anthropic/OpenAI/Google/Microsoft/Meta 等为合作方【已证实】([NVIDIA DSX POD](https://nvidianews.nvidia.com/news/nvidia-introduces-dsx-pod-ai-factories-to-accelerate-europes-infrastructure-deployment), [NVIDIA OpenShell](https://nvidianews.nvidia.com/news/openshell-reference-architecture))
-  - 2026-10-19 — 彭博社援引知情人士称 Anthropic 与 Nscale 洽谈约 450 亿美元算力租赁协议，涉及西弗吉尼亚 Monarch 数据中心第二座 460 MW 设施，拟采用 NVIDIA Vera Rubin 芯片；双方未置评，Reuters 无法独立核实【厂商宣称/二手】([Yahoo/Reuters](https://finance.yahoo.com/technology/ai/articles/nscale-anthropic-talks-45-billion-193754631.html))
-  - 2026-10-19 — NVIDIA 宣布在 Jülich JUPITER 超算完成 104-qubit 容错量子计算模拟，使用 8,192 颗 GH200，验证 magic-state cultivation 方法可在真实噪声下将所需物理量子比特减少约 90%【厂商宣称】([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/nvidia-runs-record-simulation-of-fault-tolerant-quantum-computing-at-julich-supercomputing-centre))
-  - 2026-10-15 ~ 2026-10-18 — 之后趋于沉寂：Anthropic Project North Star 融资传闻、CoreWeave CDS 升至 distressed、NVIDIA OCP 贡献与 Salience Labs B 轮融资等硬件/算力融资与基础设施新闻集中出现；详见历史报告。
+  - 2026-10-15 ~ 2026-10-19 — 之后趋于沉寂：包括 Anthropic-Nscale 450 亿美元算力租赁洽谈、NVIDIA 104-qubit 量子计算模拟、CoreWeave CDS 升至 distressed、NVIDIA OCP 贡献与 Salience Labs B 轮融资等硬件/算力融资与基础设施新闻；详见历史报告。
 
 ## 主题：Anthropic 开发者基础设施
 - 状态：关注中
@@ -160,6 +159,7 @@
 ## 主题：AI 编码 Agent 插件与 harness 生态
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-11 — 趋势：GitHub Trending 官方日榜 #1 为 `meta/astryx`（agent-ready 开源设计系统，+3,108 stars），#2 `anthropics/skills`（+1,679），#3 `addyosmani/agent-skills`（+465）、#4 `anthropics/claude-quickstarts`（+531），`vercel-labs/agent-browser` 列 #8。主题从单一 agent 工具进一步收敛到「可复用技能 + 前端设计系统 + 浏览器自动化」的组合，agent 工程栈进入界面与规范建设阶段【推测】([GitHub Trending](https://github.com/trending))
   - 2026-11-08 — 趋势：GitHub Trending 官方日榜 #1 为 `vercel-labs/agent-browser`（面向 AI agent 的浏览器自动化 CLI，+190 stars），#2 `cloudflare/security-audit-skill`（+2,085）、#3 `google/skills`（+443）、#4 `mattpocock/skills`（+1,100）、#6 新入 `meta/astryx`（agent-ready 设计系统，+96）；此前居前的 `NVIDIA/auto-ontology` 退出前列。显示开发者关注点从底层技能库/安全审计向 agent 浏览器交互层与前端设计系统延伸【推测】([GitHub Trending](https://github.com/trending))
   - 2026-11-07 — 趋势：GitHub Trending 官方日榜中 AI 相关项目 `NVIDIA/auto-ontology`（#2，+2,015 stars）、`google/skills`（#10，+534）、`mattpocock/skills`（#15，+2,070）、`cloudflare/security-audit-skill`（#16，+2,548）保持前列，但榜首被 `zed-industries/zed`、`rails/rails` 等非 AI 通用项目占据；`garrytan/gstack` 退出前列。主题从「agent 记忆/桌面/并行工作流」进一步收敛到「可复用技能 + 安全审计技能」，同时 AI 工具不再霸榜整页【推测】([GitHub Trending](https://github.com/trending))
   - 2026-11-06 — 趋势：GitHub Trending 官方日榜 #1 为 `NVIDIA/auto-ontology`（语义图推理层），#2 `mattpocock/skills`（工程师 skill 集），#3 `garrytan/gstack`（Claude Code 角色化配置）；此前居首的 `claude-mem`、`agent-desktop`、`worktrunk` 退至中下游。开发者在补齐记忆/桌面/并行工作流底座后，重新关注可复用知识与工具编排层【推测】([GitHub Trending](https://github.com/trending))
@@ -171,8 +171,7 @@
   - 2026-10-27 — 趋势：GitHub Trending 官方日榜主题进一步扩展至金融多智能体、agent 安全扫描、本地多 agent 桌面工作区与跨平台信息获取：`Nutlope/hallmark`（反 AI-slop 设计 skill）#1，`TauricResearch/TradingAgents`（金融多智能体）#2，`JetBrains/thinkrail`（pi 驱动的 IDE）#3，`makecindy/cindy`（本地 agent）#4，`NVIDIA/SkillSpector`（agent skill 安全扫描）#7，`nightly-labs/openbot`（本地多 agent 桌面工作区）#9，`Panniantong/Agent-Reach`（让 agent 读取登录态/视频字幕/中文平台）#10【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-26 — 趋势：GitHub Trending 官方日榜主题从“安全审计/运行时”转向“设计技能 + 本地通用 agent”：`makecindy/cindy`（开箱即用本地 AI agent）登顶，`Nutlope/hallmark`（反 AI-slop 设计 skill）与 `pbakaus/impeccable`（前端设计指导）进入前四，此前连续居首的 `cloudflare/security-audit-skill` 跌至 #10。开发者开始关注“让 agent 输出不像 AI 生成”与“能在本地跑的真实任务 agent”【推测】([GitHub Trending](https://github.com/trending))
   - 2026-10-24 — 趋势：GitHub Trending 官方日榜 `cloudflare/security-audit-skill` 登顶（+2,633 stars），`php/php-src` 因 PHP2Shell 后续热度升至 #2，`anthropics/knowledge-work-plugins` 维持 #3，`NVIDIA/OpenShell` 列 #4。安全审计从“上榜”升至“榜首”，OpenShell（agent 安全运行时）进入前四，显示开发者关注点正向“agent 如何被约束与审计”转移【推测】([GitHub Trending](https://github.com/trending))
-  - 2026-10-23 — 趋势：GitHub Trending 官方日榜前列出现 `anthropics/knowledge-work-plugins`（面向知识工作者的 Claude 插件）、`DietrichGebert/ponytail`（让 agent 像“最懒的资深开发者”只写必要代码）、`cloudflare/security-audit-skill`、`Graphify-Labs/graphify`；开发者关注点从“推理效率/安全审计”进一步延伸到“角色插件 + 极简代码 agent”【推测】([GitHub Trending](https://github.com/trending))
-  - 2026-10-17 ~ 2026-10-22 — 之后趋于沉寂：GitHub Trending 持续由 agent harness、MCP、技能库、安全审计、上下文优化与推理效率项目主导，`claude-plugins-official` 从榜首退居前列，开发者关注点从模型榜单转向具体 agent 场景与工程基础设施；详见历史报告。
+  - 2026-10-17 ~ 2026-10-23 — 之后趋于沉寂：GitHub Trending 持续由 agent harness、MCP、技能库、安全审计、上下文优化与推理效率项目主导，`claude-plugins-official` 从榜首退居前列，开发者关注点从模型榜单转向具体 agent 场景与工程基础设施；详见历史报告。
 
 ## 主题：AI 安全隔离与 containment
 - 状态：关注中
@@ -189,6 +188,7 @@
 ## 主题：OpenRouter 生产用量格局
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-09 — 趋势：OpenRouter 截至 11-09 的日榜显示 DeepSeek V4.1 Flash 1017 以 8.65T（+20%）反弹居首，Hy4 列 #2（2.83T，-11%），GLM 5.3 Flash 以 2.1T（+40%）升至 #4，Claude Opus 5.5 以 1.11T（+17%）从 #8 回到 #5，GPT-6 Luna 1.07T（+5%）#6；周作者请求份额 DeepSeek 31.8%（+6%）、OpenAI 19.3%（+2%）、Google 13.6%（-5%）、Anthropic 5.8%（+1%）。单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-11-08 — 趋势：OpenRouter 截至 11-06 的日榜显示 DeepSeek V4.1 Flash 1017 仍以 6.99T（-11%）居首，Hy4 保持 #2（3.01T，-1%），Claude Opus 5.5 降至 #8（766B，-27%），Kimi K3.1 Pro 逆势从榜外升至 #7（824B，+56%）。周作者请求份额仍为 DeepSeek 29.8%、Google 14.4%、Anthropic 5.7%。单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-11-06 — 趋势：OpenRouter 截至 11-05 的日榜显示 DeepSeek V4.1 Flash 1017 仍以 7.83T（+13% 日环比）居首，但绝对量低于 11-04 的 10.2T；Tencent Hy4 以 3.05T 升至 #2 并进入周榜 #5（new）；Claude Opus 5.5 从 #5 降至 #7（1.05T，+2%）。New & Trending 中出现 Crouton Alpha（stealth）与 Ripple 65B Preview（ricursiveai）等新面孔。周作者请求份额未更新，仍为 DeepSeek 29.8%（+7%）、Google 14.4%（-32%）、Anthropic 5.7%（0%）。单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-11-04 — 趋势：OpenRouter 日榜显示 DeepSeek V4.1 Flash 1017 以 10.2T（-2%）仍居 #1；Claude Opus 5.5 从榜外升至 #5（1.15T，+5%），Kimi K3 从榜外升至 #9（669B，+92%）；GLM 5.3 Flash 跌至 #3（1.92T，-35%）。周作者请求份额仍为 DeepSeek 29.8%（+7%）、OpenAI 18.8%（-3%）、Google 14.4%（-32%）、Anthropic 5.7%（0%）。单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
@@ -199,8 +199,7 @@
   - 2026-10-27 — 趋势：OpenRouter 截至 10-25 的日榜显示 DeepSeek V4.1 Flash 1017 以 5.42T（-6%）仍居 #1，GLM 5.3 Flash 以 2.27T（+7%）升至 #2，DeepSeek V4.1 Flash 以 2.21T（+16%）列 #3，GPT-6 Luna 1.52T（+4%）#4，Claude Opus 5.5 1.04T（+25%）升至 #6；作者周请求份额 Anthropic 维持 5.5%（+25%）；New & Trending 中 Kimi K3.1 Pro、Flint、GPT-6.1 Terra 等新模型快速上榜；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-26 — 趋势：OpenRouter 截至 10-25 的日榜/周榜显示 DeepSeek V4.1 Flash 1017 以 33.6T 保持周榜 #1（+801% 因前周为部分新上榜数据，实际周环比约 +26%），Claude Opus 5.5 以 8.27T（+34%）列周榜 #7；Anthropic 作者请求份额从 10-12 的 4.7% 升至 10-19 的 5.5%，连续三周 +25%；低价模型仍主导 token 量，但 Anthropic 正把口碑转化为请求份额；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
   - 2026-10-24 — 趋势：OpenRouter 截至 10-22 的日榜显示 DeepSeek V4.1 Flash 1017 以 5.05T（-3%）回到 #1，MiniMax M3.1 Flash (free) 从 5.38T 降至 3.33T（-38%）跌至 #2，GLM 5.3 Flash 以 2.18T（+14%）升至 #3，GPT-6 Luna 以 1.63T（+65%）跃至 #4，Claude Opus 5.5 以 1.52T（+15%）升至 #5；免费/低价模型头部位置极不稳定，生产迁移迅速；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
-  - 2026-10-23 — 趋势：OpenRouter 截至 10-21 的周榜显示 DeepSeek V4.1 Flash 仍以 25.7T（-31%）列 #1，DeepSeek V4.1 Flash 1017 以 16.5T 升至 #2，Claude Opus 5.5 以 7.14T（+26%）首次进入周榜前十；日榜前三（MiniMax 5.38T、DeepSeek 1017 4.99T、DeepSeek V4.1 Flash 2.86T）与 10-21 持平；单一平台数据，待交叉验证【已证实】([OpenRouter](https://openrouter.ai/rankings))
-  - 2026-10-15 ~ 2026-10-22 — 之后趋于沉寂：DeepSeek V4.1 Flash/1017 仍居日榜/周榜首位，MiniMax/GLM 交替前列，中国作者模型合计周请求份额一度约 47.9%，Step 5 Preview、Gemini 4 Argon、Nemotron 3.5 Super VL 等交替 New & Trending；详见历史报告。
+  - 2026-10-15 ~ 2026-10-23 — 之后趋于沉寂：包括 10-21 DeepSeek/Claude Opus 5.5 首次进入周榜前十、10-22 MiniMax/GLM 交替前列等；此前中国作者模型合计周请求份额一度约 47.9%，Step 5 Preview、Gemini 4 Argon、Nemotron 3.5 Super VL 等交替 New & Trending；详见历史报告。
 
 ---
 
@@ -261,6 +260,7 @@
 ## 主题：Anthropic 商业化与 IPO
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-10 — Anthropic 官方公告启动 IPO 路演：拟发行 8.25 亿股 Class A 普通股，定价区间 70–78 美元/股，公司出售 801,351,354 股、现有股东出售 23,648,646 股，承销商可超额认购最多 1.2375 亿股；按上限计算完全稀释估值约 1.405 万亿美元，预计 11-18 定价、11-19 在纳斯达克以 ANT 交易【已证实】([Anthropic](https://www.anthropic.com/news/roadshow-launch))
   - 2026-11-08 — 媒体援引 FT/WSJ 投资者口径：Anthropic 仍计划感恩节假期前 IPO，拟融资 800–1000 亿美元，目标估值 1.25–1.75 万亿美元，低于此前 2 万亿美元的市场预期；年化营收约 810 亿美元。该信息为投资者/高管口径，未获 Anthropic 官方确认【厂商宣称/二手】([The Decoder](https://the-decoder.com/anthropic-pushes-ahead-with-pre-thanksgiving-ipo-despite-tech-selloff-accepts-lower-valuation/))
   - 2026-11-02 — Anthropic 提交 S-1/A 修正案披露 Q3 财务：前三季度营收 332.4 亿美元；Q3 约 169.6 亿美元，同比增约 1,127%，但环比增速从 Q2 的 144% 降至约 47%；Q3 运营亏损 5.67 亿美元；purchase commitments 与租赁协议合计约 8,954 亿美元，其中约 4,475 亿美元预计 2030 年底前到期、698 亿美元在 2026-09-30 后 12 个月内到期。修正案同时新增风险因素称未来模型“可能即将”满足 RSP 递归自我改进阈值【已证实/二手】([CNBC](https://www.cnbc.com/2026/11/02/anthropic-ant-s-1-quarter-financials.html), [SECTracker S-1/A](https://sectracker.app/en/ANT/filing/0001628280-26-068676))
   - 2026-11-02 — Anthropic 提交 S-1/A 修正案，新增风险因素称 AI 加速研发可能导致能力进步快于安全/对齐措施；内部估算显示未来模型“可能即将”满足 Responsible Scaling Policy 中“由 AI 带来的显著加速进展”定义，但目前没有模型被认定越过该阈值；公司称将继续评估数据并考虑更新 RSP 以保持人类对前沿模型开发的控制【厂商宣称/二手】([TechCrunch](https://techcrunch.com/2026/11/02/anthropic-warns-that-its-very-close-to-rsi-capability-aka-self-building-ai/))
@@ -297,6 +297,7 @@
 ## 主题：Agentic commerce 与支付基础设施
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-10 — OpenAI 在 ChatGPT 推出 Businesses in ChatGPT beta 与 Business Agents：企业可通过 Business Hub 认领/验证品牌资料、上传商品目录并查看聚合洞察；符合条件的美国电商/在线服务企业可部署 Business Agent，用户在 ChatGPT 内可点击进入独立会话咨询商品，与 Shopify 已打通。这是 OpenAI 将 ChatGPT 从搜索问答转向品牌直营 agentic commerce 平台的关键一步【已证实/二手】([OpenAI](https://openai.com/index/introducing-businesses-chatgpt/), [The Verge](https://www.theverge.com/ai-artificial-intelligence/1030552/openai-chatgpt-business-agents-hub))
   - 2026-11-01 — CNBC 报道 JPMorgan Chase、Charles Schwab、Amazon、Kohl's、Neiman Marcus 已采取措施阻止 Meta Muse 等第三方 agent 代用户访问账户或完成交易；Amazon 明确要求 Meta 将 Amazon 从 Muse 中移除，与 Walmart 的开放策略形成对比：agentic commerce 在“开放接入”与“围墙花园”之间的冲突正在升级【已证实/二手】([CNBC](https://www.cnbc.com/2026/11/01/jpmorgan-amazon-ai-agents-meta-muse.html))
   - 2026-10-21 — Walmart 推出 Agent Gateway 与 Agent Profiles，让授权 AI agent 代顾客在 Walmart/Sam’s Club 下单，支持消费上限与逐笔审批；同日 Meta 财报披露 Muse 购物为最常见使用场景（>25% 活跃用户、平均客单价 >$200），与 Stripe Link ~200 agents 形成连续信号：agentic commerce 正从“能支付”走向“有授权框架的真实消费”【已证实/二手】([Walmart Corporate](https://corporate.walmart.com/news/2026/10/Making-It-Possible-for-Agents-to-Shop-on-Behalf-of-Customers), [Meta/Business Insider](https://www.businessinsider.com/meta-q3-2026-earnings-mark-zuckerberg-muse-ai-app-users-2026-10), [Upstarts Media](https://www.upstartsmedia.com/p/data-stripe-link-how-ai-assistants-spend))
   - 2026-10-19 — Stripe Link 目前为约 200 个 AI agent/assistant 提供支付能力，较 9 月的约 70 个接近翻倍；涉及 Muse、Grok Bot、Instinct、Skydive、Town 等，Stripe 高管称 agent 交易量已“very material”【厂商宣称/二手】([Upstarts Media](https://www.upstartsmedia.com/p/data-stripe-link-how-ai-assistants-spend))
@@ -327,6 +328,7 @@
 ## 主题：个人 AI Agent 助手竞争
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-09 — Meta 发布 Muse Ember：面向高频 agent 子任务的小模型，支持工具调用、编码子任务、路由、抽取与长文档解析；1M 上下文、最高 512K 输出，≤200k input 时 0.10/0.50 美元每百万 tokens，AA Intelligence Index 36 分，与 Claude Haiku 5.5 持平但 Meta 称每任务成本约为 Haiku 三分之一；已接入 Muse Code 与 Meta Model API【已证实】([Meta AI Research](https://research.meta.ai/blog/muse-ember))
   - 2026-11-05 — Meta 在美国全量 rollout Muse 实时语音与表情化 Avatar：点击电话图标即可与 Muse 实时通话，支持打断、后台继续执行任务、数百种声音风格与三种显示模式；后续将扩展至 AI Glasses 与 Muse Charm 硬件【已证实】([Meta Newsroom](https://about.fb.com/news/2026/11/introducing-muse-ai-voice-expressive-avatars/))
   - 2026-11-08 — Meta 为 Muse 推出 Spaces：用户用自然语言描述即可在 Muse 内生成 tracker、planner、dashboard、游戏等自定义空间，可连接 Gmail、Google Calendar、OpenTable、Notion 等应用并后台自动更新；同时向 Muse 推出基于 Muse Wonder 训练的专业化模型版本【已证实】([Meta Newsroom](https://about.fb.com/news/2026/11/introducing-spaces-customize-muse-app/))
   - 2026-10-21 — Meta Q3 财报电话会称 Muse 个人 agent 上线约六周在美加已有逾 1,000 万用户设置，约 25% 设置用户每日使用，购物为最主要场景（逾四分之一活跃用户购买，平均客单价 >$200）；Meta 同时宣布发行无投票权 Class C 股票以支持 AI 投资【厂商宣称/二手】([Meta IR](https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/default.aspx), [Business Insider](https://www.businessinsider.com/meta-q3-2026-earnings-mark-zuckerberg-muse-ai-app-users-2026-10))
@@ -370,6 +372,7 @@
 ## 主题：企业级 Agent 安全与可观测性
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-09 — Fireworks AI 更新 10 月安全事件：10-23 其第三方云服务商托管的 R&D 机器发生安全事件，10-24 攻击者利用该入口进入 Fireworks 开发机器并运行未授权工作负载；影响扩大至账户/账单信息，部分客户的 secrets、数据集及不完整模型权重被访问；支付卡号未存储、未受影响。Fireworks 已撤销凭证、隔离网络、暂停自助数据集上传下载，并与 Palo Alto Networks Unit 42 继续调查。这是 LLMJacking 首次被确认波及模型权重与训练数据的案例【已证实】([Fireworks AI](https://fireworks.ai/security/bulletins/october-2026-security-incident-update))
   - 2026-11-05 — Anthropic 为 Claude Enterprise 推出 security center（beta）与 inference hooks（prompt hooks + pre-tool-call hooks GA），支持将每次 prompt 与 tool call 送至企业现有 DLP/安全工具做 allow/deny；同时新增集中管理、Admin API 强制登出、IP allowlist 自管理、Claude Desktop 阻止个人账号等访问控制。这是企业 LLM 首次把“推理前策略检查”作为标准能力【已证实】([Anthropic](https://claude.com/resources/articles/claude-enterprise-security-updates))
   - 2026-11-03 — CrowdStrike 宣布收购 Fiddler AI（agent 可观测与可解释性）与 Dreadnode（自动化 AI 安全测试），分别整合为 Falcon Observe 与 Falcon Guardian 能力；Fiddler 支持 agent traceability、行为漂移与幻觉检测、token 成本追踪；Dreadnode 支持 100 余种攻击策略、覆盖 MCP servers 与 agent reasoning loop；华尔街日报称收购价分别约 4 亿美元与 9,500 万美元【已证实】([CrowdStrike Fiddler](https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-acquire-fiddler-deliver-agent-observability-ai-trust/), [CrowdStrike Dreadnode](https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-acquire-dreadnode-advance-ai-trust-and-deliver/))
   - 2026-10-27 — IBM 在 TechXchange 2026 发布 AI agent 身份与访问控制能力：HashiCorp Vault 2.2 为 agent 发放短期凭证并支持实时撤销；Agent Identity 记录 agent 归属、生命周期与授权；watsonx Orchestrate 新增跨 Bedrock/Foundry/Gemini 的 agent 发现、隔离沙箱、kill switch 与生产评估【已证实】([IBM Newsroom](https://newsroom.ibm.com/2026-10-27-ibm-introduces-identity-and-control-for-ai-agents,-securing-frontier-intelligence-for-the-enterprise))
@@ -475,6 +478,7 @@
 ## 主题：美国 AI 执法与超级智能监管
 - 状态：关注中
 - 时间线（最新在最上，最多 12 条）：
+  - 2026-11-10 — 纽约州正式向大型前沿 AI 开发者开放 RAISE Act 注册门户：年营收超 5 亿美元且训练算力超 10²⁶ FLOP 的开发者须于 2027-01-01 前注册，须公布安全框架、每季度提交灾难风险评估、72 小时内报告关键安全事件；违规最高可罚 100 万美元，再犯最高 300 万美元。这是美国首个要求前沿模型开发者强制注册与事故披露的州级制度【已证实/二手】([NY Governor](https://www.governor.ny.gov/news/ai-safety-governor-hochul-announces-next-steps-regulate-major-ai-developers-and-protect-new), [TechCrunch](https://techcrunch.com/2026/11/10/openai-anthropic-face-new-oversight-as-new-yorks-ai-safety-law-takes-effect/))
   - 2026-11-05 — 美国司法部成立 Super Intelligence Task Force（DOJ-SITF），由 Associate Attorney General Stanley Woodward 与 Associate Deputy Attorney General Stephen Weiss 共同领导，统筹对 Super Intelligence  misuse 的刑事与民事执法，重点针对外国国家/ sponsored actors、跨国犯罪组织及个人/企业欺诈行为，并与白宫 Super Intelligence Force 对接【已证实】([DOJ](https://www.justice.gov/opa/pr/department-justice-launches-super-intelligence-task-force))
 
 ## 主题：OpenAI 图像生成产品
@@ -512,3 +516,17 @@
 - 时间线（最新在最上，最多 12 条）：
   - 2026-11-03/06 — Google Antigravity v2.29 上线 Remote Agents 与 Voice Mode：将 agent 会话迁至 Google 管理的云端 VM，用户关闭电脑/浏览器后任务仍可继续，支持从 CLI、桌面应用或手机浏览器接管；Voice Mode 基于 Gemini Live 逐步 rollout；Remote Agents 限 Google AI Pro/Ultra 个人账号【已证实】([Antigravity Docs](https://antigravity.google/docs/remote-agents/), [Antigravity Changelog](https://antigravity.google/docs/changelog/))
   - 2026-11-05 — Mistral 发布 Managed Agents 与 Agents SDK（`mistralai-agents`）public preview：同一 Python agent 可在本地进程、自托管 `agents serve` 或 Mistral 托管 `agents deploy` 三模式运行；部署后支持持久会话、崩溃后从最后完成步骤恢复、等待人工审批后继续；内置 tracing 与沙箱环境【已证实/二手】([Mistral Docs](https://docs.mistral.ai/studio/agents/overview), [Mistral Release Notes](https://docs.mistral.ai/resources/release-notes?entry=2026-11-05-a528ab2e5db6))
+
+---
+
+## 主题：AI 形式化验证与高保证软件
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-11-10 — Google DeepMind 发布 AlphaProof Code：多 LLM agent 框架将 Signal 安全目标转为人机共审的 Lean 规范，再由 Gemini Carbon 驱动生成逾 600 万行 Lean 证明，审计后仅约 1% 代码需人工复核；4 周内完成 Signal 协议实现层的机器码级形式化验证，为首次对广泛部署的加密协议实现进行此类验证。 artifacts 已开源【已证实】([DeepMind Blog](https://deepmind.google/blog/introducing-alphaproof-code/), [Verification Artifacts](https://google-deepmind.github.io/code-verification/))
+
+---
+
+## 主题：Anthropic Fable / Mythos 前沿模型
+- 状态：关注中
+- 时间线（最新在最上，最多 12 条）：
+  - 2026-11-09 — Anthropic 发布 Claude Fable 5.2（公众可用）与 Mythos 5.2（限 Cyber/Life Sciences 验证项目）：输出速度比 5.1 快 30%，定价降至 8/40 美元每百万 input/output tokens，Fable 5.2 max 在 AA Intelligence Index v5.0 得 64.6 分，超越 Gemini 4 Carbon（60.0）与 Claude Opus 5.5（59.1）；Mythos 5.2 在 CVE Rediscovery 上比 Opus 5.5 多发现 10.2% 漏洞。这是 Anthropic 在 IPO 路演前夜展示前沿能力的关键发布【已证实】([Anthropic](https://www.anthropic.com/claude-fable-and-mythos-5-2))
